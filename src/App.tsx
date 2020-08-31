@@ -2,11 +2,12 @@ import React from 'react';
 import Navbar from './components/Navbar/Navbar'
 import GlobalStyle from './styles/GlobalStyle';
 import useTheme from "./helpers/hooks/useTheme";
+import useIntro from "./helpers/hooks/useIntro";
 import {ThemeProvider} from 'styled-components';
 import {light, dark} from './styles/theme/theme';
 
 function App() {
-
+    const showIntro = useIntro();
     const [theme, toggleTheme] = useTheme();
 
     return (
