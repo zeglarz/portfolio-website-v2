@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom'
 
-const links = [
+interface Links {
+    title: string,
+    to: string,
+}
+
+const links: Links[] = [
     {
         title: 'Home',
         to: '/home'
