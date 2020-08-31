@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background: black;
+    background: ${({theme}) => theme.colors.background};
     font-family: 'Lato', 'Ubuntu', -apple-system, sans-serif;
     scroll-padding-block-start: 60px;
     -webkit-font-smoothing: antialiased;
