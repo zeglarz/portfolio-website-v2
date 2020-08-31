@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {NavLink} from 'react-router-dom'
 import media from '../../../styles/style';
 import Divider from "../../Divider/Dividier";
+import Sun from '../Switch/Sun';
 
 interface Links {
     title: string,
@@ -51,7 +52,7 @@ const StyledList = styled.ul`
             font-weight: 300;
             padding: 1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             transition: all ease-in-out 200ms;
             color: ${({theme}) => theme.colors.text};
             ${media.bigDesktop`
@@ -86,7 +87,7 @@ const NavLinks = ({toggleTheme}) => {
                 )}
             </StyledList>
             <Divider vert/>
-            <button onClick={toggleTheme}>Switch Theme</button>
+            <Sun toggleTheme={toggleTheme}/>
         </StyledLinkContainer>
     );
 }

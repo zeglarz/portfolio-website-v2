@@ -2,7 +2,6 @@ import {createGlobalStyle} from 'styled-components';
 import media from './style';
 
 const GlobalStyle = createGlobalStyle`
-//Fonts
  ::-webkit-scrollbar {
       display: none;
   }
