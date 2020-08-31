@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useViewportScroll, motion} from 'framer-motion';
+import {motion} from 'framer-motion';
 import NavLinks from './NavLinks/NavLinks';
 import BrandLogo from './BrandName/BrandLogo';
-import Divider from "../Divider/Dividier";
 
 const NavbarContainer = styled(motion.nav)`
     position: fixed;
@@ -22,11 +21,11 @@ const NavbarContent = styled.div`
     max-width: 1920px;
 `
 
-const Navbar = ({toggleTheme}) => {
+const Navbar = ({toggleTheme, showIntro}) => {
     return (
         <NavbarContainer>
             <NavbarContent>
-                <BrandLogo size={'70px'}/>
+                <BrandLogo size={'70px'} showIntro={showIntro}/>
                 <NavLinks toggleTheme={toggleTheme}/>
             </NavbarContent>
         </NavbarContainer>

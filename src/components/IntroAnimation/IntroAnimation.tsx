@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import React from 'react';
+import {motion} from 'framer-motion';
 import Logo from './Logo';
 import styled from 'styled-components';
 
@@ -25,13 +25,13 @@ const StyledLogo = styled.div`
   }
 `;
 
-const IntroAnimation = ({ loading }) => {
+const IntroAnimation = ({loading}) => {
     return (
-        <StyledContainer exit={{ opacity: 0 }} initial={{ display: loading ? 'flex' : 'none', opacity: 1 }}
+        <StyledContainer exit={{opacity: 0}} initial={{display: loading ? 'flex' : 'none', opacity: 1}}
                          animate={{
                              opacity: 0,
-                             transition: { delay: 2.25, duration: 2.45 },
-                             transitionEnd: { display: 'none' }
+                             transition: {delay: 2.25, duration: 2.45},
+                             transitionEnd: {display: 'none'}
                          }}
         >
             <StyledLogo>

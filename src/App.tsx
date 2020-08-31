@@ -5,6 +5,7 @@ import useTheme from "./helpers/hooks/useTheme";
 import useIntro from "./helpers/hooks/useIntro";
 import {ThemeProvider} from 'styled-components';
 import {light, dark} from './styles/theme/theme';
+import IntroAnimation from "./components/IntroAnimation/IntroAnimation";
 
 function App() {
     const showIntro = useIntro();
@@ -12,8 +13,9 @@ function App() {
 
     return (
         <ThemeProvider theme={theme ? dark : light}>
+            <IntroAnimation loading={showIntro}/>
             <GlobalStyle/>
-            <Navbar toggleTheme={toggleTheme}/>
+            <Navbar toggleTheme={toggleTheme} showIntro={showIntro}/>
             <h1>Hello World</h1>
         </ThemeProvider>
     );
