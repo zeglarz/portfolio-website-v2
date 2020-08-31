@@ -16,7 +16,6 @@ interface BrandProps {
     size: string
 }
 
-
 const BrandLogo: React.FC<BrandProps> = ({size, ...props}) => {
     return (
         <StyledSVG width={size} height={size} viewBox="0 0 430 430" {...props}>
