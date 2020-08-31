@@ -47,13 +47,17 @@ const StyledList = styled.ul`
     li a {
             display: flex;
             font-size: 0.8rem;
+            font-family: 'Lato';
+            font-weight: 300;
             padding: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            transition: all ease-in-out 200ms;
             color: ${({theme}) => theme.colors.text};
             ${media.bigDesktop`
                 font-size: 0.7rem;
                 padding: 0.8rem 0.5rem;
+                font-weight: 400;
             `}
             &.active {
                   display: inline-block;
