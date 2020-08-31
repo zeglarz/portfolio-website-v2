@@ -23,21 +23,20 @@ const GlobalStyle = createGlobalStyle`
     scroll-padding-block-start: 60px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+        ${media.tablet`
+      font-size: .75rem;
+      svg {
+        width: 35px;
+        height: 35px;
+      } 
+  `};
   }
   
   a {
     text-decoration: none;
     color: inherit;
   }
-    ${media.tablet`
-      font-size: .75rem;
-      font-size: 0.77rem !important; 
-      padding: .4 .55rem !important;
-      svg {
-        width: 35px;
-        height: 35px;
-      } 
-  `};
+
 `;
 
 export default GlobalStyle;

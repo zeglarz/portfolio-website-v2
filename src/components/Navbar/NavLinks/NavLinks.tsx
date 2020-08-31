@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom'
+import Divider from '../../Divider/Dividier';
 
 interface Links {
     title: string,
@@ -49,6 +50,7 @@ const NavLinks = () => {
                     </li>
                 )
             )}
+            <Divider vert/>
         </StyledList>
     );
 }
