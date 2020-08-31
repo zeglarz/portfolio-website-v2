@@ -7,10 +7,10 @@ const StyledSVG = styled.svg`
     overflow:hidden;
     box-shadow: none;
     text {
-      fill: white;
+      fill: ${({theme}) => theme.colors.text};
     }
     #main-square {
-      fill: black;
+      fill: ${({theme}) => theme.colors.background};
     }
 `;
 

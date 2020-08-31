@@ -25,7 +25,7 @@ const Navbar = ({toggleTheme, showIntro}) => {
     return (
         <NavbarContainer>
             <NavbarContent>
-                <BrandLogo size={'70px'} showIntro={showIntro}/>
+                <BrandLogo size={'50px'} showIntro={showIntro}/>
                 <NavLinks toggleTheme={toggleTheme}/>
             </NavbarContent>
         </NavbarContainer>

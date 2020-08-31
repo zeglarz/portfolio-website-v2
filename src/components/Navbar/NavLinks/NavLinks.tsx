@@ -50,6 +50,7 @@ const StyledList = styled.ul`
             letter-spacing: 1px;
             color: ${({theme}) => theme.colors.text}
     }
+    
 `
 
 const NavLinks = ({toggleTheme}) => {

@@ -2,11 +2,11 @@ import React from 'react';
 import {motion} from 'framer-motion';
 
 const pathVariants = {
-    init: {
+    start: {
         opacity: 0,
         pathLength: 0
     },
-    target: {
+    end: {
         opacity: 1,
         pathLength: 1.0,
         transition: {
@@ -16,16 +16,63 @@ const pathVariants = {
     }
 };
 
+const endPathVariants = {
+    end: {
+        scale: [1.0, 1.15, 0],
+        opacity: [1, 0],
+        transition: {
+            duration: 0.5,
+            delay: 2,
+            ease: 'easeOut'
+        }
+    }
+};
+
+const startVariants = {
+    end: {
+        opacity: [0, 1],
+        transition: {
+            duration: 1,
+            ease: 'easeOut'
+        }
+    },
+    tap: {
+        scale: 0.95
+    },
+    hover: {
+        scale: 1.2
+    }
+};
+
+const gradientVariants = {
+    end: {
+        x1: ['-360%', '360%'],
+        transition: {
+            duration: 4,
+            ease: 'easeOut',
+            yoyo: Infinity
+        }
+    }
+};
+
+const rotateVariants = {
+    end: {
+        rotate: [-45, 90],
+        transition: {
+            duration: 1.5,
+            ease: 'backOut'
+        }
+    }
+};
+
 export default function Logo({bcgColor, size}) {
     return (
         <motion.svg
-            transition={{
-                duration: 1,
-                ease: 'easeOut'
-            }}
-            animate={{opacity: [0, 1]}}
-            whileTap={{scale: 0.95}}
-            whileHover={{scale: 1.2}}
+            variants={startVariants}
+            initial={'start'}
+            animate={'end'}
+            whileTap={'tap'}
+            whileHover={'hover'}
             style={{originX: '50%', originY: '50%'}}
             overflow="visible"
             height={size}
@@ -38,14 +85,7 @@ export default function Logo({bcgColor, size}) {
             <title>{'myLogo'}</title>
             <defs>
                 <motion.linearGradient
-                    transition={{
-                        duration: 4,
-                        ease: 'easeOut',
-                        yoyo: Infinity
-                    }}
-                    animate={{
-                        x1: ['-360%', '360%']
-                    }}
+                    variants={gradientVariants}
                     x1="-9.515%"
                     y1="-30.83%"
                     x2="92.107%"
@@ -61,21 +101,12 @@ export default function Logo({bcgColor, size}) {
                 </motion.linearGradient>
             </defs>
             <motion.g
-                transition={{
-                    duration: 0.5,
-                    delay: 2,
-                    ease: 'easeOut'
-                }}
-                animate={{scale: [1.0, 1.15, 0], opacity: [1, 0]}}
+                variants={endPathVariants}
             >
                 <motion.g
                     fill="none"
                     fillRule="evenodd"
-                    transition={{
-                        duration: 1.5,
-                        ease: 'backOut'
-                    }}
-                    animate={{rotate: [-45, 90]}}
+                    variants={rotateVariants}
                     width="100%"
                     height="100%"
                 >
@@ -87,8 +118,6 @@ export default function Logo({bcgColor, size}) {
                     />
                     <motion.path
                         variants={pathVariants}
-                        initial='init'
-                        animate='target'
                         stroke="url(#chroma)"
                         strokeWidth={12}
                         d="M35 34h361v361H35z"
