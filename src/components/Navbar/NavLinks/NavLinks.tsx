@@ -26,9 +26,22 @@ const links: Links[] = [
     }
 ]
 
+const StyledList = styled.ul`
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    li a {
+            padding: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+    }
+`
+
 const NavLinks = () => {
     return (
-        <ul>
+        <StyledList>
             {links.map(link =>
                 (
                     <li key={link.title}>
@@ -36,7 +49,7 @@ const NavLinks = () => {
                     </li>
                 )
             )}
-        </ul>
+        </StyledList>
     );
 }
 
