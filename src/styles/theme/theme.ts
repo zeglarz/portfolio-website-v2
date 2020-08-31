@@ -2,7 +2,7 @@ import {DefaultTheme} from 'styled-components';
 
 const light: DefaultTheme = {
     colors: {
-        primary: 'black',
+        text: 'black',
         background: 'white'
     },
     gradients: {
@@ -19,7 +19,7 @@ const light: DefaultTheme = {
 
 const dark: DefaultTheme = {
     colors: {
-        primary: 'white',
+        text: 'white',
         background: '#100E17'
     },
     gradients: {

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom'
-import Divider from '../../Divider/Dividier';
+import media from '../../../styles/style';
+import Divider from "../../Divider/Dividier";
 
 interface Links {
     title: string,
@@ -27,6 +28,16 @@ const links: Links[] = [
     }
 ]
 
+const StyledLinkContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+     ${media.desktop`
+        display: none;
+    `}
+`
+
 const StyledList = styled.ul`
     list-style: none;
     display: flex;
@@ -37,21 +48,25 @@ const StyledList = styled.ul`
             padding: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: ${({theme}) => theme.colors.text}
     }
 `
 
-const NavLinks = () => {
+const NavLinks = ({toggleTheme}) => {
     return (
-        <StyledList>
-            {links.map(link =>
-                (
-                    <li key={link.title}>
-                        <NavLink to={link.to}>{link.title}</NavLink>
-                    </li>
-                )
-            )}
+        <StyledLinkContainer>
+            <StyledList>
+                {links.map(link =>
+                    (
+                        <li key={link.title}>
+                            <NavLink to={link.to}>{link.title}</NavLink>
+                        </li>
+                    )
+                )}
+            </StyledList>
             <Divider vert/>
-        </StyledList>
+            <button onClick={toggleTheme}>Switch Theme</button>
+        </StyledLinkContainer>
     );
 }
 

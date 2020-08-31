@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import {useViewportScroll, motion} from 'framer-motion';
 import NavLinks from './NavLinks/NavLinks';
 import BrandLogo from './BrandName/BrandLogo';
+import Divider from "../Divider/Dividier";
 
 const NavbarContainer = styled(motion.nav)`
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: red;
+    background: ${({theme}) => theme.colors.background};
 `;
 
 const NavbarContent = styled.div`
@@ -26,8 +27,7 @@ const Navbar = ({toggleTheme}) => {
         <NavbarContainer>
             <NavbarContent>
                 <BrandLogo size={'70px'}/>
-                <NavLinks/>
-                <button onClick={toggleTheme}>Switch Theme</button>
+                <NavLinks toggleTheme={toggleTheme}/>
             </NavbarContent>
         </NavbarContainer>
     )
