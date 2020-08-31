@@ -65,6 +65,16 @@ const rotateVariants = {
     }
 };
 
+const textVariants = {
+    end: {
+        opacity: [0, 1],
+        transition: {
+            duration: 1.5,
+            ease: 'circIn'
+        }
+    }
+};
+
 export default function Logo({bcgColor, size}) {
     return (
         <motion.svg
@@ -100,9 +110,7 @@ export default function Logo({bcgColor, size}) {
                     <stop stopColor="#2F0" offset="100%"/>
                 </motion.linearGradient>
             </defs>
-            <motion.g
-                variants={endPathVariants}
-            >
+            <motion.g variants={endPathVariants}>
                 <motion.g
                     fill="none"
                     fillRule="evenodd"
@@ -124,12 +132,7 @@ export default function Logo({bcgColor, size}) {
                     />
                 </motion.g>
                 <motion.text
-                    opacity="0"
-                    transition={{
-                        duration: 1.5,
-                        ease: 'circIn'
-                    }}
-                    animate={{opacity: [0, 1]}}
+                    variants={textVariants}
                     id="text"
                     transform="translate(105 96)"
                     fill="#FFF"
@@ -137,9 +140,7 @@ export default function Logo({bcgColor, size}) {
                     fontFamily="TrebuchetMS, Trebuchet MS"
                     fontSize={220}
                 >
-                    <tspan x={0} y={207}>
-                        {'Kr'}
-                    </tspan>
+                    <tspan x={0} y={207}>{'Kr'}</tspan>
                 </motion.text>
             </motion.g>
         </motion.svg>

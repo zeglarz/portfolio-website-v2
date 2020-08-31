@@ -19,7 +19,7 @@ const StyledDivider = styled.div<IDivider>`
     span {
     width: ${({vert}) => (vert ? '1px' : '40px')};
     height: ${({vert}) => (vert ? '20px' : '1px')};
-    background: black;
+    background: ${({theme}) => theme.colors.text};
     opacity: 0.25;
     }
 `;

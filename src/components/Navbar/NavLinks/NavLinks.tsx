@@ -25,7 +25,7 @@ const links: Links[] = [
     {
         title: 'Contact',
         to: '/contact'
-    }
+    },
 ]
 
 const StyledLinkContainer = styled.div`
@@ -45,10 +45,26 @@ const StyledList = styled.ul`
     justify-content: center;
     
     li a {
+            display: flex;
+            font-size: 0.8rem;
             padding: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: ${({theme}) => theme.colors.text}
+            color: ${({theme}) => theme.colors.text};
+            ${media.bigDesktop`
+                font-size: 0.7rem;
+                padding: 0.8rem 0.5rem;
+            `}
+            &.active {
+                  display: inline-block;
+                  background: ${({theme}) => theme.gradients.primary};
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  -webkit-box-decoration-break: clone;
+            }
+            &:hover {
+                  color: ${({theme}) => theme.gradients.primary};
+        }
     }
     
 `
