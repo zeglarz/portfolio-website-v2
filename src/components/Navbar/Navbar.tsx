@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import NavLinks from './NavLinks/NavLinks';
 import BrandLogo from './BrandName/BrandLogo';
+import NavMenu from "./NavMenu/NavMenu";
 
 const NavbarContainer = styled(motion.nav)`
     position: fixed;
@@ -27,6 +28,7 @@ const Navbar = ({toggleTheme, showIntro, theme}) => {
             <NavbarContent>
                 <BrandLogo size={'50px'} showIntro={showIntro}/>
                 <NavLinks toggleTheme={toggleTheme} theme={theme}/>
+                <NavMenu toggleTheme={toggleTheme} theme={theme}/>
             </NavbarContent>
         </NavbarContainer>
     )
