@@ -3,6 +3,7 @@ import {motion, Variants} from "framer-motion";
 import styled from 'styled-components';
 
 const StyledSun = styled(motion.svg)`
+cursor: pointer;
 `;
 
 const StyledCircle = styled(motion.g)`
@@ -17,7 +18,7 @@ const circleTransition = {
             delay: 0.3,
             duration: 0.3
         },
-        staggerChildren: 0.03,
+        staggerChildren: 0.045,
         staggerDirection: 1,
         delayChildren: 0.15,
         duration: 0.25,
@@ -121,8 +122,8 @@ const Sun = ({toggleTheme, theme}) => {
                 toggleTheme();
                 console.log('clicked');
             }}
-            width={24}
-            height={24}
+            width={18}
+            height={18}
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
