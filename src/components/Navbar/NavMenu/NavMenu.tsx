@@ -2,12 +2,16 @@ import React, {useState} from 'react';
 import ThemeIcon from '../Switch/Sun';
 import styled from 'styled-components';
 import Burger from "./Burger/Burger";
+import media from '../../../styles/style';
 
 const StyledNavMenu = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+    @media (min-width: 1001px) {
+    display: none;
+  }
 `;
 
 

@@ -9,7 +9,6 @@ cursor: pointer;
 const StyledCircle = styled(motion.g)`
     fill: ${({theme}) => theme.colors.background};
     stroke: ${({theme}) => theme.colors.text};
-
 `
 
 const circleTransition = {
@@ -95,7 +94,7 @@ const moonTransition = {
         },
         scale: {
             delay: 0.25,
-            duration: 0.5
+            duration: 0.6
         }
     }
 }
@@ -109,7 +108,7 @@ const moonVariants: Variants = {
     },
     show: {
         opacity: 0,
-        scale: 0.5,
+        scale: 0.4,
         rotate: -270,
         ...moonTransition
     },
@@ -122,8 +121,8 @@ const Sun = ({toggleTheme, theme}) => {
                 toggleTheme();
                 console.log('clicked');
             }}
-            width={18}
-            height={18}
+            width={20}
+            height={20}
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -133,9 +132,7 @@ const Sun = ({toggleTheme, theme}) => {
             initial={'show'}
             animate={theme ? 'show' : 'hidden'}
         >
-            <StyledCircle
-                variants={circleVaraints}
-            >
+            <StyledCircle variants={circleVaraints} style={{originX: '12px', originY: '12px'}}>
                 //N
                 <motion.line x1="12" y1="1" x2="12" y2="3" variants={rayN}/>
                 //NE
@@ -155,7 +152,8 @@ const Sun = ({toggleTheme, theme}) => {
                 <circle cx={12} cy={12} r={5}/>
             </StyledCircle>
             //Moon
-            <motion.path variants={moonVariants} opacity='0' d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            <motion.path style={{originX: '12px', originY: '12px'}} variants={moonVariants} opacity='0'
+                         d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </StyledSun>
     )
 }

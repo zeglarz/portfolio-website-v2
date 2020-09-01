@@ -85,9 +85,9 @@ const NavLinks = ({toggleTheme, theme}) => {
                         </li>
                     )
                 )}
+                <Divider vert/>
+                <li><Sun toggleTheme={toggleTheme} theme={theme}/></li>
             </StyledList>
-            <Divider vert/>
-            <Sun toggleTheme={toggleTheme} theme={theme}/>
         </StyledLinkContainer>
     );
 }
