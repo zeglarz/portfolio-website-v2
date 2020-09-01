@@ -15,7 +15,7 @@ function App() {
         <ThemeProvider theme={theme ? dark : light}>
             <IntroAnimation loading={showIntro}/>
             <GlobalStyle/>
-            <Navbar toggleTheme={toggleTheme} showIntro={showIntro}/>
+            <Navbar toggleTheme={toggleTheme} showIntro={showIntro} theme={theme}/>
             <h1>Hello World</h1>
         </ThemeProvider>
     );

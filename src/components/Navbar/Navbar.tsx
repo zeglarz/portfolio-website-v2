@@ -21,12 +21,12 @@ const NavbarContent = styled.div`
     max-width: 1920px;
 `
 
-const Navbar = ({toggleTheme, showIntro}) => {
+const Navbar = ({toggleTheme, showIntro, theme}) => {
     return (
         <NavbarContainer>
             <NavbarContent>
                 <BrandLogo size={'50px'} showIntro={showIntro}/>
-                <NavLinks toggleTheme={toggleTheme}/>
+                <NavLinks toggleTheme={toggleTheme} theme={theme}/>
             </NavbarContent>
         </NavbarContainer>
     )

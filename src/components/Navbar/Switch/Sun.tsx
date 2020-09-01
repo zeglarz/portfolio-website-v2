@@ -1,15 +1,38 @@
 import React, {useState} from "react"
-import {motion} from "framer-motion";
+import {motion, Variants} from "framer-motion";
 import styled from 'styled-components';
 
 const StyledSun = styled(motion.svg)`
 `;
-const circle = {
-    show: {},
-    hidden: {
-        rotate: -360,
-        transition: {staggerChildren: 0.05, staggerDirection: 1, delayChildren: 0.2}
+
+const StyledCircle = styled(motion.g)`
+    fill: ${({theme}) => theme.colors.background};
+    stroke: ${({theme}) => theme.colors.text};
+
+`
+
+const circleTransition = {
+    transition: {
+        rotate: {
+            delay: 0.3,
+            duration: 0.3
+        },
+        staggerChildren: 0.03,
+        staggerDirection: 1,
+        delayChildren: 0.15,
+        duration: 0.25,
+        opacity: {delay: 0.15}
     }
+}
+
+const circleVaraints: Variants = {
+    show: {opacity: 1, scale: 1, rotate: 0, ...circleTransition},
+    hidden: {
+        scale: 0.8,
+        rotate: -90,
+        opacity: 0,
+        ...circleTransition
+    },
 };
 
 const rayN = {
@@ -19,56 +42,85 @@ const rayN = {
     }
 }
 const rayW = {
+    show: {x: 0},
     hidden: {
         x: 6
     }
 }
 const rayS = {
+    show: {y: 0},
     hidden: {
         y: -6
     }
 }
 const rayE = {
+    show: {x: 0},
     hidden: {
         x: -6
     }
 }
 const raySE = {
+    show: {x: 0, y: 0},
     hidden: {
         x: -4.3, y: -4.3
     }
 }
 const rayNW = {
+    show: {x: 0, y: 0},
     hidden: {
         x: 4.3, y: 4.3
     }
 }
 const raySW = {
+    show: {x: 0, y: 0},
     hidden: {
         x: 4.3, y: -4.3
     }
 }
 const rayNE = {
+    show: {x: 0, y: 0},
     hidden: {
         x: -4.3,
         y: 4.3
     }
 }
 
+const moonTransition = {
+    transition: {
+        delay: 0.1,
+        rotate: {
+            delay: 0.3,
+            duration: 0.3
+        },
+        scale: {
+            delay: 0.25,
+            duration: 0.5
+        }
+    }
+}
 
-const Sun = ({toggleTheme}) => {
-    const [isOpen, setIsOpen] = useState(false)
+const moonVariants: Variants = {
+    hidden: {
+        opacity: 1,
+        scale: 1,
+        rotate: 0,
+        ...moonTransition
+    },
+    show: {
+        opacity: 0,
+        scale: 0.5,
+        rotate: -270,
+        ...moonTransition
+    },
+}
 
+const Sun = ({toggleTheme, theme}) => {
     return (
         <StyledSun
             onClick={() => {
                 toggleTheme();
-                setIsOpen(!isOpen);
                 console.log('clicked');
             }}
-            variants={circle}
-            initial={'show'}
-            animate={isOpen ? 'hidden' : 'show'}
             width={24}
             height={24}
             viewBox="0 0 24 24"
@@ -77,9 +129,12 @@ const Sun = ({toggleTheme}) => {
             strokeWidth={2}
             strokeLinecap="round"
             strokeLinejoin="round"
+            initial={'show'}
+            animate={theme ? 'show' : 'hidden'}
         >
-            <motion.g>
-                <circle cx={12} cy={12} r={5}/>
+            <StyledCircle
+                variants={circleVaraints}
+            >
                 //N
                 <motion.line x1="12" y1="1" x2="12" y2="3" variants={rayN}/>
                 //NE
@@ -96,9 +151,10 @@ const Sun = ({toggleTheme}) => {
                 <motion.line x1="1" y1="12" x2="3" y2="12" variants={rayW}/>
                 //NW
                 <motion.line x1="4.22" y1="4.22" x2="5.64" y2="5.64" variants={rayNW}/>
-            </motion.g>
+                <circle cx={12} cy={12} r={5}/>
+            </StyledCircle>
             //Moon
-            <motion.path opacity='0' d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            <motion.path variants={moonVariants} opacity='0' d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </StyledSun>
     )
 }

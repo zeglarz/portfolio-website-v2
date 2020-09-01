@@ -74,7 +74,7 @@ const StyledList = styled.ul`
     
 `
 
-const NavLinks = ({toggleTheme}) => {
+const NavLinks = ({toggleTheme, theme}) => {
     return (
         <StyledLinkContainer>
             <StyledList>
@@ -87,7 +87,7 @@ const NavLinks = ({toggleTheme}) => {
                 )}
             </StyledList>
             <Divider vert/>
-            <Sun toggleTheme={toggleTheme}/>
+            <Sun toggleTheme={toggleTheme} theme={theme}/>
         </StyledLinkContainer>
     );
 }
