@@ -4,30 +4,7 @@ import {NavLink} from 'react-router-dom'
 import media from '../../../styles/style';
 import Divider from "../../Divider/Dividier";
 import Sun from '../Switch/Sun';
-
-interface Links {
-    title: string,
-    to: string,
-}
-
-const links: Links[] = [
-    {
-        title: 'Home',
-        to: '/home'
-    },
-    {
-        title: 'About Me',
-        to: '/about'
-    },
-    {
-        title: 'Projects',
-        to: '/projects'
-    },
-    {
-        title: 'Contact',
-        to: '/contact'
-    },
-]
+import {LINKS as links} from '../constants'
 
 const StyledLinkContainer = styled.div`
   display: flex;
@@ -86,7 +63,9 @@ const NavLinks = ({toggleTheme, theme}) => {
                     )
                 )}
                 <Divider vert/>
-                <li><Sun toggleTheme={toggleTheme} theme={theme}/></li>
+                <li>
+                    <Sun toggleTheme={toggleTheme} theme={theme}/>
+                </li>
             </StyledList>
         </StyledLinkContainer>
     );

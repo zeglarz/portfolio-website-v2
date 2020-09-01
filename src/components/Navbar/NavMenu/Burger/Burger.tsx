@@ -7,7 +7,7 @@ const StyledBurger = styled.button`
   align-items: center;
   cursor: pointer;
   transition-property: opacity, filter;
-  transition-duration: 0.25s;
+  transition-duration: 0.35s;
   transition-timing-function: linear;
   font: inherit;
   color: red;

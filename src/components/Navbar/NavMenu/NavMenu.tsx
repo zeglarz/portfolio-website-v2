@@ -3,6 +3,7 @@ import ThemeIcon from '../Switch/Sun';
 import styled from 'styled-components';
 import Burger from "./Burger/Burger";
 import media from '../../../styles/style';
+import Menu from "./Menu/Menu";
 
 const StyledNavMenu = styled.div`
   display: flex;
@@ -22,6 +23,7 @@ const NavMenu = ({toggleTheme, theme}) => {
         <StyledNavMenu>
             <Burger className={isOpen ? 'is-active' : ''} onClick={() => setIsOpen(!isOpen)}/>
             <ThemeIcon toggleTheme={toggleTheme} theme={theme}/>
+            {isOpen && <Menu/>}
         </StyledNavMenu>
     );
 }
