@@ -66,8 +66,6 @@ const StyledMenu = styled(motion.div)`
                       -webkit-background-clip: text;
                       -webkit-text-fill-color: transparent;
                       -webkit-box-decoration-break: clone;
-              &::before {
-                width: 100%;
               }
               &:hover {
                 color: ${({theme}) => theme.colors.text};
