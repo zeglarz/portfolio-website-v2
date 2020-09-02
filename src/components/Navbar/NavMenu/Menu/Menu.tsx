@@ -6,7 +6,7 @@ import {motion} from 'framer-motion';
 
 const mainTransition = {
     transition: {
-        staggerChildren: 0.25,
+        staggerChildren: 0.23,
         delayChildren: 0.1
     }
 }
@@ -23,7 +23,7 @@ const menuVariants = {
 
 const childrenTransition = {
     transition: {
-        duration: 1,
+        duration: 0.7,
     }
 }
 
