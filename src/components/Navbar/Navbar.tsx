@@ -11,6 +11,7 @@ const NavbarContainer = styled(motion.nav)`
     left: 0;
     right: 0;
     background: ${({theme}) => theme.colors.background};
+    z-index: 999;
 `;
 
 const NavbarContent = styled.div`
@@ -22,13 +23,13 @@ const NavbarContent = styled.div`
     max-width: 1920px;
 `
 
-const Navbar = ({toggleTheme, showIntro, theme}) => {
+const Navbar = ({toggleTheme, showIntro, theme, menuOpen, setMenuOpen}) => {
     return (
         <NavbarContainer>
             <NavbarContent>
                 <BrandLogo size={'50px'} showIntro={showIntro}/>
                 <NavLinks toggleTheme={toggleTheme} theme={theme}/>
-                <NavMenu toggleTheme={toggleTheme} theme={theme}/>
+                <NavMenu toggleTheme={toggleTheme} theme={theme} menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
             </NavbarContent>
         </NavbarContainer>
     )

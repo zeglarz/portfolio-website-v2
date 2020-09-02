@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ThemeIcon from '../Switch/Sun';
 import styled from 'styled-components';
 import Burger from "./Burger/Burger";
 import media from '../../../styles/style';
 import Menu from "./Menu/Menu";
+import {motion} from 'framer-motion';
+import Navbar from "../Navbar";
 
-const StyledNavMenu = styled.div`
+const StyledNavMenu = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,14 +18,13 @@ const StyledNavMenu = styled.div`
 `;
 
 
-const NavMenu = ({toggleTheme, theme}) => {
-    const [isOpen, setIsOpen] = useState<boolean>(false)
+const NavMenu = ({toggleTheme, theme, menuOpen, setMenuOpen}) => {
 
     return (
         <StyledNavMenu>
-            <Burger className={isOpen ? 'is-active' : ''} onClick={() => setIsOpen(!isOpen)}/>
+            <Burger className={menuOpen ? 'is-active' : ''} onClick={() => setMenuOpen(!menuOpen)}/>
             <ThemeIcon toggleTheme={toggleTheme} theme={theme}/>
-            {isOpen && <Menu/>}
+            <Menu menuOpen={menuOpen}/>
         </StyledNavMenu>
     );
 }

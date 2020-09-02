@@ -3,11 +3,20 @@ import {StyledMenu, StyledContainer} from './MenuStyle';
 import {NavLink} from 'react-router-dom';
 import {LINKS as links} from '../../constants'
 
-const Menu = () => {
+const menuVariants = {
+    hidden: {
+        y: '-100vh'
+    },
+    show: {
+        y: 0
+    }
+}
+
+const Menu = ({menuOpen}) => {
     return (
-        <StyledMenu>
-            <div className='menu-secondary-background'/>
-            <div className='menu-layer'>
+        <StyledMenu variants={menuVariants} initial={'hidden'} animate={menuOpen ? 'show' : 'hidden'}>
+            <div className='backdrop'/>
+            <div className='menu-container'>
                 <StyledContainer>
                     <nav className='menu-links'>
                         <ul>
