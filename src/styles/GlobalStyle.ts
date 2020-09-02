@@ -24,10 +24,6 @@ const GlobalStyle = createGlobalStyle`
     
     ${media.tablet`
       font-size: .75rem;
-      svg {
-        width: 35px;
-        height: 35px;
-      } 
     `};
   }
   

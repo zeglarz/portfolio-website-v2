@@ -31,6 +31,58 @@ const StyledMenu = styled(motion.div)`
   }
    .menu-links {
       width: 100%;
+      ul {
+        display: flex;
+        flex-direction: column;
+        li {
+          position: relative;
+          list-style: none;
+          font-size: 3.5rem;
+          font-weight: 700;
+          height: 90px;
+          overflow: hidden;
+          @media (max-width: 1440px) {
+            font-size: 2rem;
+            height: 55px;
+          }
+          a {
+            position: absolute;
+            color: ${({theme}) => theme.colors.text};
+            &::before {
+              content: '';
+              height: 100%;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0;
+              z-index: -1;
+              background: ${({theme}) => theme.colors.text};
+              transition: all ease-in-out 80ms;
+            }
+            &.active {
+                 display: inline-block;
+                      background: ${({theme}) => theme.gradients.primary};
+                      -webkit-background-clip: text;
+                      -webkit-text-fill-color: transparent;
+                      -webkit-box-decoration-break: clone;
+              &::before {
+                width: 100%;
+              }
+              &:hover {
+                color: ${({theme}) => theme.colors.text};
+                &::before {
+                  height: 80%;
+                }
+              }
+            }
+
+            &:hover {
+              color: ${({theme}) => theme.colors.text};
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
