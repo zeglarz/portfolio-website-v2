@@ -4,12 +4,13 @@ import {motion} from 'framer-motion';
 
 const StyledMenu = styled(motion.div)`
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;
   z-index: -1;
+  
   .backdrop {
    background: ${({theme}) => theme.gradients.primary};
     position: fixed;
@@ -21,6 +22,7 @@ const StyledMenu = styled(motion.div)`
     bottom: 0;
     z-index: -1
   }
+  
   .menu-container {
     position: relative;
     background: ${({theme}) => theme.colors.background};
@@ -29,24 +31,23 @@ const StyledMenu = styled(motion.div)`
     display: flex;
     align-items: center;
   }
+  
    .menu-links {
-      width: 100%;
       ul {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         li {
+          margin: 0 auto;
+          display: inline-block;
           position: relative;
           list-style: none;
-          font-size: 3.5rem;
+          font-size: 2em;
           font-weight: 700;
-          height: 90px;
+          height: 55px;
           overflow: hidden;
-          @media (max-width: 1440px) {
-            font-size: 2rem;
-            height: 55px;
-          }
+        } 
           a {
-            position: absolute;
             color: ${({theme}) => theme.colors.text};
             &::before {
               content: '';
@@ -75,7 +76,6 @@ const StyledMenu = styled(motion.div)`
                 }
               }
             }
-
             &:hover {
               color: ${({theme}) => theme.colors.text};
             }
@@ -83,7 +83,6 @@ const StyledMenu = styled(motion.div)`
         }
       }
     }
-  }
 `;
 
 const StyledContainer = styled.div`
