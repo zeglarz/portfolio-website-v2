@@ -38,44 +38,36 @@ const StyledMenu = styled(motion.div)`
         flex-direction: column;
         justify-content: center;
         li {
-          margin: 0 auto;
+          margin: 10px auto;
           display: inline-block;
           position: relative;
           list-style: none;
           font-size: 2em;
           font-weight: 700;
-          height: 55px;
           overflow: hidden;
         } 
+        .motionContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
           a {
+            display: inline-block;
             color: ${({theme}) => theme.colors.text};
-            &::before {
-              content: '';
-              height: 100%;
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 0;
-              z-index: -1;
-              background: ${({theme}) => theme.colors.text};
-              transition: all ease-in-out 80ms;
-            }
+            padding: 10px 20px;
             &.active {
-                 display: inline-block;
-                      background: ${({theme}) => theme.gradients.primary};
-                      -webkit-background-clip: text;
-                      -webkit-text-fill-color: transparent;
-                      -webkit-box-decoration-break: clone;
+                  background: ${({theme}) => theme.gradients.primary};
+                  color: ${({theme}) => theme.colors.text};
               }
-              &:hover {
-                color: ${({theme}) => theme.colors.text};
-                &::before {
-                  height: 80%;
-                }
+              &:hover:not(.active) {
+                  background: ${({theme}) => theme.gradients.primary};
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  -webkit-box-decoration-break: clone;
               }
             }
             &:hover {
-              color: ${({theme}) => theme.colors.text};
+
             }
           }
         }

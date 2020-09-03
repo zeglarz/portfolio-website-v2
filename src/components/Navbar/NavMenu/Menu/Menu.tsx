@@ -105,11 +105,11 @@ const Menu = ({menuOpen}) => {
                             {links.map(link =>
                                 (
                                     <li key={link.to}>
-                                        <motion.div variants={childrenVariants} custom={menuOpen}
+                                        <motion.div className={'motionContainer'} variants={childrenVariants}
+                                                    custom={menuOpen}
                                                     whileHover={{
                                                         y: 3,
                                                         scale: 0.9,
-
                                                         transition: {duration: 0.3}
                                                     }}>
                                             <NavLink to={link.to}>
