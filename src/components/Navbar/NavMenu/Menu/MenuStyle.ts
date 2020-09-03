@@ -57,7 +57,7 @@ const StyledMenu = styled(motion.div)`
             padding: 10px 20px;
             &.active {
                   background: ${({theme}) => theme.gradients.primary};
-                  color: ${({theme}) => theme.colors.text};
+                  color: white;
               }
               &:hover:not(.active) {
                   background: ${({theme}) => theme.gradients.primary};

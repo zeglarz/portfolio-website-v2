@@ -4,6 +4,7 @@ import {motion} from 'framer-motion';
 import NavLinks from './NavLinks/NavLinks';
 import BrandLogo from './BrandName/BrandLogo';
 import NavMenu from "./NavMenu/NavMenu";
+import media from '../../styles/style';
 
 const NavbarContainer = styled(motion.nav)`
     position: fixed;
@@ -21,6 +22,9 @@ const NavbarContent = styled.div`
     padding: 1rem 2rem;
     margin: 0 auto;
     max-width: 1920px;
+    ${media.tiny`
+    padding: 0.7rem 1rem;
+    `}
 `
 
 const Navbar = ({toggleTheme, showIntro, theme, menuOpen, setMenuOpen}) => {
