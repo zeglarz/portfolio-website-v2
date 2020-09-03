@@ -24,7 +24,12 @@ const circleTransition = {
     }
 }
 const circleVaraints: Variants = {
-    show: {opacity: 1, scale: 1, rotate: 0, ...circleTransition},
+    show: {
+        opacity: 1,
+        scale: 1,
+        rotate: 0,
+        ...circleTransition
+    },
     hidden: {
         scale: 0.8,
         rotate: -90,
@@ -34,49 +39,63 @@ const circleVaraints: Variants = {
 };
 
 const rayN = {
-    show: {y: 0},
+    show: {
+        y: 0
+    },
     hidden: {
         y: 6,
     }
 }
 const rayW = {
-    show: {x: 0},
+    show: {
+        x: 0
+    },
     hidden: {
         x: 6,
     }
 }
 const rayS = {
-    show: {y: 0,},
+    show: {
+        y: 0
+    },
     hidden: {
         y: -6,
     }
 }
 const rayE = {
-    show: {x: 0},
+    show: {
+        x: 0
+    },
     hidden: {
         x: -6,
     }
 }
 const raySE = {
-    show: {x: 0, y: 0},
+    show: {
+        x: 0,
+        y: 0
+    },
     hidden: {
-        x: -4.3, y: -4.3
-
+        x: -4.3,
+        y: -4.3
     }
-}
+};
+
 const rayNW = {
     show: {x: 0, y: 0},
     hidden: {
         x: 4.3, y: 4.3
 
     }
-}
+};
+
 const raySW = {
     show: {x: 0, y: 0},
     hidden: {
         x: 4.3, y: -4.3
     }
-}
+};
+
 const rayNE = {
     show: {
         x: 0, y: 0
@@ -85,7 +104,7 @@ const rayNE = {
         x: -4.3,
         y: 4.3,
     }
-}
+};
 
 const moonTransition = {
     transition: {
@@ -99,7 +118,7 @@ const moonTransition = {
             duration: 0.6
         }
     }
-}
+};
 
 const moonVariants: Variants = {
     hidden: {
@@ -136,7 +155,7 @@ const Sun = ({toggleTheme, theme}) => {
             strokeWidth={2}
             strokeLinecap="round"
             strokeLinejoin="round"
-            initial={'show'}
+            initial={theme ? 'show' : 'hidden'}
             animate={theme ? 'show' : 'hidden'}
         >
             <StyledCircle variants={circleVaraints} style={{originX: '12px', originY: '12px'}} custom={iconClicked}

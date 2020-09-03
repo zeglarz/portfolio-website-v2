@@ -20,7 +20,7 @@ const StyledDivider = styled.div<IDivider>`
     width: ${({vert}) => (vert ? '1px' : '40px')};
     height: ${({vert}) => (vert ? '20px' : '1px')};
     background: ${({theme}) => theme.colors.text};
-    opacity: 0.25;
+    opacity: 0.3;
     }
 `;
 

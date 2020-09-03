@@ -65,7 +65,7 @@ const backdropTransition = {
 const backdropVariants = {
     hidden: {
         height: 0,
-        skewY: [0, 3, 0],
+        skewY: [0, 2.5, 0],
         transition: {
             duration: 0.5,
             skewY: {
@@ -75,7 +75,7 @@ const backdropVariants = {
     },
     show: {
         height: '100%',
-        skewY: [0, 3, 0],
+        skewY: [0, 2.5, 0],
         transition: {
             duration: 0.4,
             skewY: {
