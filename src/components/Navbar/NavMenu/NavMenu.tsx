@@ -5,15 +5,19 @@ import Burger from "./Burger/Burger";
 import media from '../../../styles/style';
 import Menu from "./Menu/Menu";
 import {motion} from 'framer-motion';
-import Navbar from "../Navbar";
 
 const StyledNavMenu = styled(motion.div)`
+    @media (min-width: 1001px) {
+    display: none;
+  }
+`;
+const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-    @media (min-width: 1001px) {
-    display: none;
+  svg {
+  margin-right: 5px;
   }
 `;
 
@@ -22,8 +26,10 @@ const NavMenu = ({toggleTheme, theme, menuOpen, setMenuOpen}) => {
 
     return (
         <StyledNavMenu>
-            <Burger className={menuOpen ? 'is-active' : ''} onClick={() => setMenuOpen(!menuOpen)}/>
-            <ThemeIcon toggleTheme={toggleTheme} theme={theme}/>
+            <IconWrapper>
+                <ThemeIcon toggleTheme={toggleTheme} theme={theme}/>
+                <Burger className={menuOpen ? 'is-active' : ''} onClick={() => setMenuOpen(!menuOpen)}/>
+            </IconWrapper>
             <Menu menuOpen={menuOpen}/>
         </StyledNavMenu>
     );

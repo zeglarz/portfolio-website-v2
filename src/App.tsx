@@ -10,10 +10,9 @@ import IntroAnimation from "./components/IntroAnimation/IntroAnimation";
 
 function App() {
     const [menuOpen, setMenuOpen] = useState(false);
-
-    const locationChanged = useHistoryListen(() => setMenuOpen(!menuOpen));
     const showIntro = useIntro();
     const [theme, toggleTheme] = useTheme();
+    useHistoryListen(() => setMenuOpen(!menuOpen));
 
 
     return (

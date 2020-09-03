@@ -11,7 +11,7 @@ const NavbarContainer = styled(motion.nav)`
     left: 0;
     right: 0;
     background: ${({theme}) => theme.colors.background};
-    z-index: 999;
+    z-index: 1;
 `;
 
 const NavbarContent = styled.div`

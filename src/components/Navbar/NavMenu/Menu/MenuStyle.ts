@@ -80,7 +80,6 @@ const StyledMenu = styled(motion.div)`
           }
         }
       }
-    }
 `;
 
 const StyledContainer = styled.div`

@@ -5,31 +5,42 @@ import {LINKS as links} from '../../constants'
 import {motion} from 'framer-motion';
 
 const mainTransition = {
-    transition: {
-        staggerChildren: 0.23,
-        delayChildren: 0.1
-    }
+    transition: custom => ({
+        staggerChildren: 2.33,
+        delayChildren: 0.1,
+        staggerDirection: custom ? -1 : 1
+    })
 }
 
 const menuVariants = {
-    hidden: {
-        y: '-100vh',
-    },
-    show: {
+    hidden: custom => ({
+        y: '0',
+        transition: {
+            staggerChildren: 0.13,
+            delayChildren: 0.1,
+            staggerDirection: custom ? 1 : -1
+        }
+    }),
+    show: custom => ({
         y: 0,
-        ...mainTransition
-    }
+        transition: {
+            staggerChildren: 0.13,
+            delayChildren: 0.1,
+            staggerDirection: custom ? 1 : -1
+        }
+    })
 }
 
 const childrenTransition = {
     transition: {
-        duration: 0.7,
+        duration: 0.65,
     }
 }
 
 const childrenVariants = {
     hidden: {
-        y: 100
+        y: 100,
+        ...childrenTransition
     },
     show: {
         y: 0,
@@ -37,14 +48,51 @@ const childrenVariants = {
     }
 }
 
+const backdropTransition = {
+    transition: {
+        duration: 2.7,
+        skewY: {
+            delay: 0.5
+        }
+    }
+}
+
+const backdropVariants = {
+    hidden: {
+        height: 0,
+        skewY: 3,
+        ...backdropTransition
+    },
+    show: {
+        height: '100%',
+        skewY: 0,
+        ...backdropTransition
+    }
+}
+
+const listVariants = {
+    show: {
+        transition: {
+            staggerChildren: 0.23,
+            delayChildren: 0.25
+        }
+    },
+    hidden: {
+        transition: {
+            staggerChildren: 0.13,
+            delayChildren: 0.3
+        }
+    }
+}
+
 const Menu = ({menuOpen}) => {
     return (
-        <StyledMenu variants={menuVariants} initial={'hidden'} animate={menuOpen ? 'show' : 'hidden'}>
-            <div className='backdrop'/>
-            <div className='menu-container'>
+        <StyledMenu variants={menuVariants} initial={'hidden'} animate={menuOpen ? 'show' : 'hidden'} custom={menuOpen}>
+            <motion.div className='backdrop' variants={backdropVariants}/>
+            <motion.div className='menu-container' variants={backdropVariants}>
                 <StyledContainer>
                     <nav className='menu-links'>
-                        <ul>
+                        <motion.ul variants={listVariants}>
                             {links.map(link =>
                                 (
                                     <li>
@@ -56,10 +104,10 @@ const Menu = ({menuOpen}) => {
                                     </li>
                                 )
                             )}
-                        </ul>
+                        </motion.ul>
                     </nav>
                 </StyledContainer>
-            </div>
+            </motion.div>
         </StyledMenu>
     );
 }
