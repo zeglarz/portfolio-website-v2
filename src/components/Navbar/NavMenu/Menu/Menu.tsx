@@ -104,7 +104,7 @@ const Menu = ({menuOpen}) => {
                         <motion.ul variants={listVariants}>
                             {links.map(link =>
                                 (
-                                    <li>
+                                    <li key={link.to}>
                                         <motion.div variants={childrenVariants} custom={menuOpen}>
                                             <NavLink to={link.to}>
                                                 {link.title}
