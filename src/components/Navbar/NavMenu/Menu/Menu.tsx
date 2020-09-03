@@ -12,6 +12,7 @@ const mainTransition = {
     })
 }
 
+
 const menuVariants = {
     hidden: custom => ({
         transition: {

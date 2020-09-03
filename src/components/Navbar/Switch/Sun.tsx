@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import {motion, Variants} from "framer-motion";
 import styled from 'styled-components';
 
@@ -7,7 +7,7 @@ cursor: pointer;
 `;
 
 const StyledCircle = styled(motion.g)`
-    fill: ${({theme}) => theme.colors.background};
+    fill: ${({theme, custom}) => custom ? theme.colors.background : 'none'};
     stroke: ${({theme}) => theme.colors.text};
 `
 const circleTransition = {
@@ -117,10 +117,15 @@ const moonVariants: Variants = {
 }
 
 const Sun = ({toggleTheme, theme}) => {
+    const [iconClicked, setIconClicked] = useState(false);
+    useEffect(() => {
+        setTimeout(() => setIconClicked(false), 700);
+    }, [iconClicked])
     return (
         <StyledSun
             onClick={() => {
                 toggleTheme();
+                setIconClicked(true);
                 console.log('clicked');
             }}
             width={20}
@@ -134,7 +139,8 @@ const Sun = ({toggleTheme, theme}) => {
             initial={'show'}
             animate={theme ? 'show' : 'hidden'}
         >
-            <StyledCircle variants={circleVaraints} style={{originX: '12px', originY: '12px'}}>
+            <StyledCircle variants={circleVaraints} style={{originX: '12px', originY: '12px'}} custom={iconClicked}
+            >
                 //N
                 <motion.line x1="12" y1="1" x2="12" y2="3" variants={rayN}/>
                 //NE

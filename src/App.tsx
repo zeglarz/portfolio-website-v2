@@ -12,7 +12,7 @@ function App() {
     const [menuOpen, setMenuOpen] = useState(false);
     const showIntro = useIntro();
     const [theme, toggleTheme] = useTheme();
-    useHistoryListen(() => setMenuOpen(!menuOpen));
+    useHistoryListen(() => setMenuOpen(false));
 
 
     return (
