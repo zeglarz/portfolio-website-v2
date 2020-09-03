@@ -1,10 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import {Button, Tooltip} from '@material-ui/core';
 
-const Hero = (props) => {
+const StyledLink = styled.a.attrs(({
+    rel: 'noopener noreferrer',
+    target: '_blank'
+}))`
+
+`;
+
+const Hero = () => {
     return (
-        <div>lol</div>
+        <StyledLink href={'/book'}>lol</StyledLink>
     );
 }
 

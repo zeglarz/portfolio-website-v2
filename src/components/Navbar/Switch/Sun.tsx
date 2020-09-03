@@ -119,14 +119,14 @@ const moonVariants: Variants = {
 const Sun = ({toggleTheme, theme}) => {
     const [iconClicked, setIconClicked] = useState(false);
     useEffect(() => {
-        setTimeout(() => setIconClicked(false), 700);
+        console.log(iconClicked);
+        setTimeout(() => setIconClicked(false), 500);
     }, [iconClicked])
     return (
         <StyledSun
             onClick={() => {
-                toggleTheme();
-                setIconClicked(true);
-                console.log('clicked');
+                !iconClicked && toggleTheme();
+                !iconClicked && setIconClicked(true);
             }}
             width={20}
             height={20}

@@ -12,16 +12,20 @@ const mainTransition = {
     })
 }
 
-
 const menuVariants = {
     hidden: custom => ({
+        transitionEnd: {
+            display: 'none'
+        },
         transition: {
+            when: 'afterChildren',
             staggerChildren: 0.06,
             delayChildren: 0.3,
             staggerDirection: custom ? 1 : -1
         }
     }),
     show: custom => ({
+        display: 'block',
         transition: {
             staggerChildren: 0.1,
             delayChildren: 0.06,

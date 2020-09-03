@@ -7,6 +7,7 @@ import {useHistoryListen} from "./helpers/hooks/useHistoryListen";
 import {ThemeProvider} from 'styled-components';
 import {light, dark} from './styles/theme/theme';
 import IntroAnimation from "./components/IntroAnimation/IntroAnimation";
+import Home from './views/Home/Home';
 
 function App() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -22,6 +23,11 @@ function App() {
             <Navbar toggleTheme={toggleTheme} showIntro={showIntro} theme={theme} menuOpen={menuOpen}
                     setMenuOpen={setMenuOpen}/>
             <h1>Hello World</h1>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <Home/>
         </ThemeProvider>
     );
 }
