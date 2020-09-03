@@ -16,8 +16,8 @@ const circleTransition = {
             delay: 0.3,
             duration: 0.3
         },
-        staggerChildren: 0.25,
-        staggerDirection: -1,
+        staggerChildren: 0.045,
+        staggerDirection: 1,
         delayChildren: 0.15,
         duration: 0.25,
         opacity: {delay: 0.15}
@@ -33,49 +33,42 @@ const circleVaraints: Variants = {
     },
 };
 
-const rays = {
-    show: {
-        pathLength: 1,
-    },
-    hidden: {
-        pathLength: 0,
-    }
-}
-
 const rayN = {
     show: {y: 0},
     hidden: {
-        y: 6
+        y: 6,
     }
 }
 const rayW = {
     show: {x: 0},
     hidden: {
-        x: 6
+        x: 6,
     }
 }
 const rayS = {
-    show: {y: 0},
+    show: {y: 0,},
     hidden: {
-        y: -6
+        y: -6,
     }
 }
 const rayE = {
     show: {x: 0},
     hidden: {
-        x: -6
+        x: -6,
     }
 }
 const raySE = {
     show: {x: 0, y: 0},
     hidden: {
         x: -4.3, y: -4.3
+
     }
 }
 const rayNW = {
     show: {x: 0, y: 0},
     hidden: {
         x: 4.3, y: 4.3
+
     }
 }
 const raySW = {
@@ -85,10 +78,12 @@ const raySW = {
     }
 }
 const rayNE = {
-    show: {x: 0, y: 0},
+    show: {
+        x: 0, y: 0
+    },
     hidden: {
         x: -4.3,
-        y: 4.3
+        y: 4.3,
     }
 }
 
@@ -141,21 +136,21 @@ const Sun = ({toggleTheme, theme}) => {
         >
             <StyledCircle variants={circleVaraints} style={{originX: '12px', originY: '12px'}}>
                 //N
-                <motion.path d="M12 3 L12 1" variants={rays}/>
+                <motion.line x1="12" y1="1" x2="12" y2="3" variants={rayN}/>
                 //NE
-                <motion.path d="M19.78 4.22 L18.36 5.64" variants={rays}/>
+                <motion.line x1="18.36" y1="5.64" x2="19.78" y2="4.22" variants={rayNE}/>
                 //E
-                <motion.path d="M23 12 L21 12" variants={rays}/>
+                <motion.line x1="21" y1="12" x2="23" y2="12" variants={rayE}/>
                 //SE
-                <motion.path d="M19.78 19.78 L18.36 18.36" variants={rays}/>
+                <motion.line x1="18.36" y1="18.36" x2="19.78" y2="19.78" variants={raySE}/>
                 //S
-                <motion.path d="M12 21 L12 23" variants={rays}/>
+                <motion.line x1="12" y1="21" x2="12" y2="23" variants={rayS}/>
                 //SW
-                <motion.path d="M5.64 18.36 L4.22 19.78" variants={rays}/>
+                <motion.line x1="4.22" y1="19.78" x2="5.64" y2="18.36" variants={raySW}/>
                 //W
-                <motion.path d="M1 12 L3 12" variants={rays}/>
+                <motion.line x1="1" y1="12" x2="3" y2="12" variants={rayW}/>
                 //NW
-                <motion.path d="M5.64 5.64 L4.22 4.22" variants={rays}/>
+                <motion.line x1="4.22" y1="4.22" x2="5.64" y2="5.64" variants={rayNW}/>
                 <circle cx={12} cy={12} r={5}/>
             </StyledCircle>
             //Moon
