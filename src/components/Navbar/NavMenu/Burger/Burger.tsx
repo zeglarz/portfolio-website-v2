@@ -10,28 +10,26 @@ const StyledBurger = styled.button`
   transition-duration: 0.35s;
   transition-timing-function: linear;
   font: inherit;
-  color: red;
   text-transform: none;
   overflow: visible;
   background-color: transparent;
   border: 0;
   margin: 0 auto;
   
-  &:hover .hamburger-inner {
-     background-color: ${({theme}) => theme.colors.text};
-    }
-    &:hover .hamburger-inner::before {
-     background-color: ${({theme}) => theme.colors.text};
-    }
-    &:hover .hamburger-inner::after {
-     background-color: ${({theme}) => theme.colors.text};
-    }
+  &:hover .hamburger-inner,
+  &:hover  .hamburger-inner::before,
+  &:hover  .hamburger-inner::after {
+     background: ${({theme}) => theme.gradients.primary};
+  }
+
   &.is-active:hover {
-    opacity: 0.7; }
+    opacity: 0.7; 
+  }
+    
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner::before,
   .hamburger.is-active .hamburger-inner::after {
-      background-color: ${({theme}) => theme.colors.background};
+      background: ${({theme}) => theme.gradients.primary};
 }
 
 .hamburger-box {
@@ -49,7 +47,7 @@ text-align: center;
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 22px;
     height: 2px;
-    background-color: ${({theme}) => theme.colors.text};
+    background: ${({theme}) => theme.colors.text};
     border-radius: 3px;
     position: absolute;
     transition-property: transform;

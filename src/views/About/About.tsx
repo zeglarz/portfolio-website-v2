@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {Container} from '@material-ui/core';
 import media from '../../styles/style';
 
-const StyledHome = styled.div`
+const StyledAbout = styled.div`
   .mid {
     .about {
       display: grid;
@@ -34,7 +34,7 @@ const About = () => {
     });
 
     return (
-        <StyledHome>
+        <StyledAbout>
             <Container>
                 <div className='top'>
                     <section>
@@ -50,7 +50,7 @@ const About = () => {
                     </section>
                 </div>
             </Container>
-        </StyledHome>
+        </StyledAbout>
     );
 };
 

@@ -28,9 +28,8 @@ const StyledLink = styled.a.attrs({
       
       &:hover {
         svg {
-          stroke: ${({theme, withoutOutline}) => withoutOutline ? '' : theme.gradients.svg};
           fill: ${({theme, withoutOutline}) => !withoutOutline ? '' : theme.gradients.svg};
-
+          stroke: ${({theme, withoutOutline}) => withoutOutline ? '' : theme.gradients.svg};
         }
       }
     }

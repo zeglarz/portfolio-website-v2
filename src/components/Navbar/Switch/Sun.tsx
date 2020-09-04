@@ -2,14 +2,19 @@ import React, {useEffect, useState} from "react"
 import {motion, Variants} from "framer-motion";
 import styled from 'styled-components';
 
-const StyledSun = styled(motion.svg)`
-cursor: pointer;
-`;
-
 const StyledCircle = styled(motion.g)`
     fill: ${({theme, custom}) => custom ? theme.colors.background : 'none'};
     stroke: ${({theme}) => theme.colors.text};
 `
+
+const StyledSun = styled(motion.svg)`
+cursor: pointer;
+margin: 10px;
+  &:hover ${StyledCircle} {
+        stroke: ${({theme}) => theme.gradients.svg};
+    }
+`;
+
 const circleTransition = {
     transition: {
         rotate: {
@@ -159,32 +164,21 @@ const Sun = ({toggleTheme, theme}) => {
             initial={theme ? 'show' : 'hidden'}
             animate={theme ? 'show' : 'hidden'}
         >
-            <defs>
-                <linearGradient id='light'>
-                    <stop stopColor='#7700ff'/>
-                    <stop offset='1' stop-color='#40f'/>
-                </linearGradient>
-                <linearGradient id='dark'>
-                    <stop stopColor='#ff8a00'/>
-                    <stop offset='1' stopColor='#e52e71'/>
-                </linearGradient>
-            </defs>
-            <StyledCircle variants={circleVaraints} style={{originX: '12px', originY: '12px'}} custom={iconClicked}
-            >
+            <StyledCircle variants={circleVaraints} style={{originX: '12px', originY: '12px'}} custom={iconClicked}>
                 //N
-                <motion.line x1="12" y1="1" x2="12" y2="3" variants={rayN}/>
+                <motion.line x1="12" y1="1" x2="12.001" y2="3" variants={rayN}/>
                 //NE
                 <motion.line x1="18.36" y1="5.64" x2="19.78" y2="4.22" variants={rayNE}/>
                 //E
-                <motion.line x1="21" y1="12" x2="23" y2="12" variants={rayE}/>
+                <motion.line x1="21" y1="12.001" x2="23" y2="12" variants={rayE}/>
                 //SE
                 <motion.line x1="18.36" y1="18.36" x2="19.78" y2="19.78" variants={raySE}/>
                 //S
-                <motion.line x1="12" y1="21" x2="12" y2="23" variants={rayS}/>
+                <motion.line x1="12" y1="21" x2="12.001" y2="23" variants={rayS}/>
                 //SW
                 <motion.line x1="4.22" y1="19.78" x2="5.64" y2="18.36" variants={raySW}/>
                 //W
-                <motion.line x1="1" y1="12" x2="3" y2="12" variants={rayW}/>
+                <motion.line x1="1" y1="12.001" x2="3" y2="12" variants={rayW}/>
                 //NW
                 <motion.line x1="4.22" y1="4.22" x2="5.64" y2="5.64" variants={rayNW}/>
                 <circle cx={12} cy={12} r={5}/>

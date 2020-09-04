@@ -7,7 +7,7 @@ const light: DefaultTheme = {
     },
     gradients: {
         primary: 'linear-gradient(90deg, #7700ff 0%, rgb(68, 0, 255) 100%)',
-        svg: 'url(#light)'
+        svg: "url(#light)"
 
     },
     shadows: {
