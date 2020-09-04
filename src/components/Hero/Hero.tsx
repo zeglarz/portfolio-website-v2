@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import {Link} from 'react-router-dom';
 import {Button, Tooltip} from '@material-ui/core';
 import media from '../../styles/style';
@@ -29,6 +29,7 @@ const StyledHero = styled.div`
         flex-direction: column;
         
         .paragraph {
+            color: ${({theme}) => theme.colors.text};
             font-size: 1.1rem;
             line-height: 1.8;
             overflow-wrap: break-word;
@@ -96,37 +97,162 @@ const StyledHero = styled.div`
           }
         }
     }
-    .line-container {
+`;
+
+interface ITitle {
+    elTitle?: boolean;
+    pageTitle?: boolean;
+    section?: boolean
+}
+
+const Title = styled.div<ITitle>`
+  font-size: 2.5rem;
+  @media (max-width: 1366px) {
+    font-size: 1.7rem;
+  }
+  @media (max-width: 992px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+  }
+  @media (max-width: 576px) {
+    font-size: 1.8rem;
+  }
+  line-height: 1.2;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  color: ${({theme}) => theme.colors.text};
+  font-family: 'Abril Fatface';
+  font-weight: 900;
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+  .line-wrapper {
+    position: relative;
+    overflow: hidden;
+    .line {
+      max-width: 480px;
+      background: ${({theme}) => theme.gradients.primary};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+          /* visibility: hidden; */
+    }
+  }
+
+  ${({elTitle}) =>
+    elTitle &&
+    css`
+      font-size: 1.5rem;
+      letter-spacing: 0px;
+      color: ${({theme}) => theme.colors.text};
+      font-family: 'Lato';
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      .line-wrapper {
         position: relative;
         overflow: hidden;
-    .line {
-        max-width: 480px;
-        background: ${({theme}) => theme.gradients.primary};
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -webkit-box-decoration-break: clone;
+        .line {
+          max-width: 480px;
+          visibility: visible;
+        }
       }
-    }
+      @media (max-width: 1366px) {
+        font-size: 1.2rem;
+      }
+      @media (max-width: 992px) {
+        font-size: 1.1rem;
+      }
+      @media (max-width: 768px) {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+      }
+      @media (max-width: 576px) {
+        font-size: 1.1rem;
+      }
+    `}
+
+  ${({section}) =>
+    section &&
+    css`
+      font-size: 1.7rem;
+      letter-spacing: 0px;
+      .line-wrapper {
+        position: relative;
+        overflow: hidden;
+        .line {
+          max-width: 480px;
+          visibility: visible;
+        }
+      }
+      @media (max-width: 1366px) {
+        font-size: 1.3rem;
+      }
+      @media (max-width: 992px) {
+        font-size: 1.1rem;
+      }
+      @media (max-width: 768px) {
+        font-size: 1.4rem;
+      }
+      @media (max-width: 576px) {
+        font-size: 1.3rem;
+      }
+    `}
+
+  ${({pageTitle}) =>
+    pageTitle &&
+    css`
+      font-size: 1rem;
+      font-weight: 900;
+      font-family: 'Abril Fatface';
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: gray;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      @media (max-width: 1366px) {
+        font-size: 0.85rem;
+      }
+      @media (max-width: 992px) {
+        font-size: 0.8rem;
+      }
+      @media (max-width: 768px) {
+        font-size: 0.85rem;
+        margin-bottom: 0.7rem;
+      }
+      @media (max-width: 576px) {
+        font-size: 0.8rem;
+      }
+      .line-wrapper {
+        position: relative;
+        overflow: hidden;
+        .line {
+          max-width: 480px;
+          visibility: visible;
+        }
+      }
+    `}
 `;
 
 
 const Hero = ({title, fLine, sLine, content}) => {
     return (
         <StyledHero>
-            <div className='hero-wrapper'>
-                <h3>{title}</h3>
-                <div>
-                    <div className='line'>
-                        <div className='line-container'>
+            <div className='hero-container'>
+                <Title pageTitle>{title}</Title>
+                <Title>
+                    <div className='line-container'>
+                        <div className='line'>
                             {fLine && fLine}
                         </div>
                     </div>
-                    <div className='line'>
-                        <div className='line-container'>
+                    <div className='line-container'>
+                        <div className='line'>
                             {sLine && sLine}
                         </div>
                     </div>
-                </div>
+                </Title>
                 <div className='paragraph'>
                     <div className='text-wrapper'>
                         <div className='content'>{content && content}</div>
