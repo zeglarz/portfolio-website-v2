@@ -22,7 +22,8 @@ const StyledList = styled.ul`
     align-items: center;
     justify-content: center;
     
-    li a {
+    li {
+        a {
             display: flex;
             font-size: 0.8rem;
             font-family: 'Lato';
@@ -46,6 +47,13 @@ const StyledList = styled.ul`
             }
             &:hover {
                   color: ${({theme}) => theme.gradients.primary};
+                  svg {
+                      fill: ${({theme}) => theme.gradients.svg};
+                  }
+            }
+        } 
+        svg {
+            margin: 5px;
         }
     }
     

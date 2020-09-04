@@ -148,6 +148,7 @@ const Sun = ({toggleTheme, theme}) => {
                 !iconClicked && setIconClicked(true);
             }}
             width={20}
+            whileHover={{stroke: 'url(#light)'}}
             height={20}
             viewBox="0 0 24 24"
             fill="none"
@@ -158,6 +159,16 @@ const Sun = ({toggleTheme, theme}) => {
             initial={theme ? 'show' : 'hidden'}
             animate={theme ? 'show' : 'hidden'}
         >
+            <defs>
+                <linearGradient id='light'>
+                    <stop stopColor='#7700ff'/>
+                    <stop offset='1' stop-color='#40f'/>
+                </linearGradient>
+                <linearGradient id='dark'>
+                    <stop stopColor='#ff8a00'/>
+                    <stop offset='1' stopColor='#e52e71'/>
+                </linearGradient>
+            </defs>
             <StyledCircle variants={circleVaraints} style={{originX: '12px', originY: '12px'}} custom={iconClicked}
             >
                 //N
