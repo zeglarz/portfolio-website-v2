@@ -14,24 +14,26 @@ const StyledLink = styled.a.attrs({
     rel: 'noopener noreferrer',
     target: '_blank',
 })<Custom>`
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-inline-end: 8px;
-              padding: 8px;
-              svg {
-                color: ${({theme}) => theme.colors.text};
-                width: 24px;
-                height: 24px;
-              }
-              &:hover {
-                svg {
-                  stroke: ${({theme, withoutOutline}) => withoutOutline ? '' : theme.gradients.svg};
-                  fill: ${({theme, withoutOutline}) => !withoutOutline ? '' : theme.gradients.svg};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-inline-end: 8px;
+      padding: 8px;
+      
+      svg {
+        color: ${({theme}) => theme.colors.text};
+        width: 24px;
+        height: 24px;
+      }
+      
+      &:hover {
+        svg {
+          stroke: ${({theme, withoutOutline}) => withoutOutline ? '' : theme.gradients.svg};
+          fill: ${({theme, withoutOutline}) => !withoutOutline ? '' : theme.gradients.svg};
 
-                }
-              }
-            }
+        }
+      }
+    }
 `;
 
 const StyledHero = styled.div`
@@ -62,21 +64,26 @@ const StyledHero = styled.div`
             -ms-hyphens: auto;
             hyphens: auto;
             max-width: 720px;
+            margin-bottom: 30px;
+            color: ${({theme}) => theme.colors.text};
+            
             ${media.giant`
                 font-size: 0.95rem;
+                max-width: 390px;
             `}
+            
             ${media.desktop`
                 font-size: 0.9rem;
             `}
+            
              ${media.tablet`
                 margin-bottom: 20px;
                 font-size: 0.95rem;
             `}
+             
             ${media.thone`
                 font-size: 0.9rem;
             `}
-            margin-bottom: 30px;
-            color: ${({theme}) => theme.colors.text};
           
             .content-container {
                 position: relative;
@@ -87,10 +94,7 @@ const StyledHero = styled.div`
                 .content {
                     max-width: 450px;
                 }
-              }
-            ${media.giant`
-                max-width: 390px;
-            `}
+            }
         }
     }
     
@@ -101,6 +105,7 @@ const StyledHero = styled.div`
           display: flex;
           list-style: none;
         }
+    }
 `;
 
 interface ITitle {
@@ -111,26 +116,29 @@ interface ITitle {
 
 const Title = styled.div<ITitle>`
   font-size: 2.5rem;
-  ${media.giant`
-      font-size: 1.7rem;
-  `}
-   ${media.desktop`
-        font-size: 1.5rem;
-  `}
-   ${media.tablet`
-        font-size: 2.2rem;
-        margin-bottom: 20px;
-  `}
-   ${media.thone`
-        font-size: 1.8rem;
-  `}
-   
   line-height: 1.2;
   margin-bottom: 30px;
   letter-spacing: 1px;
   color: ${({theme}) => theme.colors.text};
   font-family: 'Lato';
   font-weight: 900;
+  
+  ${media.giant`
+      font-size: 1.7rem;
+  `}
+  
+   ${media.desktop`
+        font-size: 1.5rem;
+  `}
+   
+   ${media.tablet`
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+  `}
+   
+   ${media.thone`
+        font-size: 1.8rem;
+  `}
  
   .line-wrapper {
     position: relative;
@@ -155,30 +163,34 @@ const Title = styled.div<ITitle>`
       font-weight: 700;
       margin-bottom: 1.2rem;
       
+      ${media.giant`
+        font-size: 1.2rem;
+      `}
+    
+      ${media.desktop`
+        font-size: 1.1rem;
+      `}
+    
+      ${media.tablet`
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+      `}
+    
+      ${media.giant`
+        font-size: 1.1rem;
+      `}
+      
       .line-wrapper {
         position: relative;
         overflow: hidden;
         
-            .line {
-              max-width: 480px;
-              visibility: visible;
-            }
+        .line {
+          max-width: 480px;
+          visibility: visible;
+        }
       }
-      
-        ${media.giant`
-            font-size: 1.2rem;
-        `}
-        ${media.desktop`
-            font-size: 1.1rem;
-        `}
-        ${media.tablet`
-            font-size: 1.2rem;
-            margin-bottom: 0.6rem;
-        `}
-        ${media.giant`
-            font-size: 1.1rem;
-        `}
-    `}
+    `
+}
 
   ${({section}) =>
     section &&
@@ -188,24 +200,30 @@ const Title = styled.div<ITitle>`
       .line-wrapper {
         position: relative;
         overflow: hidden;
+        
         .line {
           max-width: 480px;
           visibility: visible;
         }
       }
+      
       ${media.giant`
             font-size: 1.3rem;
       `}
+      
       ${media.desktop`
             font-size: 1.1rem;
       `}
+      
       ${media.tablet`
             font-size: 1.4rem;
       `}
+      
       ${media.thone`
             font-size: 1.3rem;
       `}
-    `}
+    `
+}
 
   ${({pageTitle}) =>
     pageTitle &&
@@ -217,16 +235,20 @@ const Title = styled.div<ITitle>`
       letter-spacing: 1px;
       color: #808080;
       margin-bottom: 1rem;
+      
       ${media.giant`
         font-size: 0.85rem;
       `}
+      
       ${media.desktop`
         font-size: 0.8rem;
       `}
+      
       ${media.tablet`
         font-size: 0.85rem;
         margin-bottom: 0.7rem;
       `}
+      
       ${media.thone`
         font-size: 0.8rem;
       `}
@@ -240,7 +262,7 @@ const Title = styled.div<ITitle>`
           visibility: visible;
         }
       }
-    `}
+   `}
 `;
 
 
@@ -274,9 +296,9 @@ const Hero = ({title, fLine, sLine, content, withSocial = false}) => {
                                     <li key={social.link}>
                                         <Tooltip arrow title={social.name}>
                                             <StyledLink href={social.link}
-                                                        withoutOutline={social.name === 'Stack Overflow'}>
+                                                        withoutOutline={social.name === 'Stack Overflow' || social.name === "Mail"}>
                                                 <Icon icon={social.icon}
-                                                      withoutOutline={social.name === 'Stack Overflow'}/>
+                                                      withoutOutline={social.name === 'Stack Overflow' || social.name === "Mail"}/>
                                             </StyledLink>
                                         </Tooltip>
                                     </li>

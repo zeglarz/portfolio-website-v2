@@ -1,4 +1,4 @@
-import {github, stackoverflow, twitter, linkedin} from './SocialIcons/icons';
+import {github, stackoverflow, twitter, linkedin, mail} from './SocialIcons/icons';
 
 interface ISocial {
     name: string,
@@ -26,6 +26,11 @@ export const SOCIAL: ISocial[] = [
         name: 'LinkedIn',
         link: 'https://www.linkedin.com/in/konradrudnicki/',
         icon: linkedin
+    },
+    {
+        name: 'Mail',
+        link: 'mailto://konrad.rudnicki@gmail.com',
+        icon: mail
     }
 ]
 

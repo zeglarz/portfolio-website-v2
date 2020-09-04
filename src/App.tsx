@@ -9,6 +9,7 @@ import {ThemeProvider} from 'styled-components';
 import {light, dark} from './styles/theme/theme';
 import IntroAnimation from "./components/IntroAnimation/IntroAnimation";
 import Home from './views/Home/Home';
+import About from './views/About/About';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <PageWrapper>
                 <Switch>
                     <Route exact path={'/home'} component={Home}/>
+                    <Route exact path={'/about'} component={About}/>
                 </Switch>
             </PageWrapper>
         </ThemeProvider>
