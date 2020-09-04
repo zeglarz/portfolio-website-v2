@@ -6,11 +6,15 @@ import media from '../../styles/style';
 import Icon from './SocialIcons/withIcon';
 import {SOCIAL as socials} from './constants';
 
+interface Custom {
+    withoutOutline?: boolean;
+}
+
 const StyledLink = styled.a.attrs({
     rel: 'noopener noreferrer',
     target: '_blank',
-})`
- display: flex;
+})<Custom>`
+              display: flex;
               align-items: center;
               justify-content: center;
               margin-inline-end: 8px;
@@ -22,7 +26,9 @@ const StyledLink = styled.a.attrs({
               }
               &:hover {
                 svg {
-                  color: ${({theme}) => theme.colors.text};
+                  stroke: ${({theme, withoutOutline}) => withoutOutline ? '' : theme.gradients.svg};
+                  fill: ${({theme, withoutOutline}) => !withoutOutline ? '' : theme.gradients.svg};
+
                 }
               }
             }
@@ -267,8 +273,10 @@ const Hero = ({title, fLine, sLine, content, withSocial = false}) => {
                                 (
                                     <li key={social.link}>
                                         <Tooltip arrow title={social.name}>
-                                            <StyledLink href={social.link}>
-                                                <Icon icon={social.icon}/>
+                                            <StyledLink href={social.link}
+                                                        withoutOutline={social.name === 'Stack Overflow'}>
+                                                <Icon icon={social.icon}
+                                                      withoutOutline={social.name === 'Stack Overflow'}/>
                                             </StyledLink>
                                         </Tooltip>
                                     </li>

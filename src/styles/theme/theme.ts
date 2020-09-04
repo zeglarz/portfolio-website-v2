@@ -6,7 +6,8 @@ const light: DefaultTheme = {
         background: 'white'
     },
     gradients: {
-        primary: 'linear-gradient(90deg, #7700ff 0%, rgb(68, 0, 255) 100%)'
+        primary: 'linear-gradient(90deg, #7700ff 0%, rgb(68, 0, 255) 100%)',
+        svg: 'url(#light)'
 
     },
     shadows: {
@@ -23,8 +24,8 @@ const dark: DefaultTheme = {
         background: '#100E17'
     },
     gradients: {
-        primary: 'linear-gradient(90deg,#ff8a00,#e52e71)'
-
+        primary: 'linear-gradient(90deg,#ff8a00,#e52e71)',
+        svg: 'url(#dark)'
     },
     shadows: {
         primary: `0 2.8px 2.2px rgba(255, 255, 255, 0.034),

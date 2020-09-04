@@ -8,6 +8,7 @@ declare module 'styled-components' {
         },
         gradients: {
             primary: string,
+            svg: string
         },
         shadows: {
             primary: string
