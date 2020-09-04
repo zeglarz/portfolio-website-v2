@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {Container} from '@material-ui/core';
 
 
-const SHome = styled.div`
+const StyledHome = styled.div`
   .mid {
     .about {
       display: grid;
@@ -49,28 +49,30 @@ const SHome = styled.div`
   }
 `;
 
-const Home = ({pageTitle}) => {
+const Home = () => {
 
     useEffect(() => {
-        document.title = ` ${pageTitle} · Konrad Rudnicki`;
+        document.title = `Home · Konrad Rudnicki`;
     });
 
     return (
-        <SHome>
+        <StyledHome>
             <Container>
                 <div className='top --reverse'>
                     <section>
-                        <div style={{height: 400, width: '100%', display: 'flex'}}>
-                            <h1>Welcome to</h1>
-                            <h2>my personal portfolio</h2>
-                        </div>
+                        <Hero
+                            title={'Home'}
+                            fLine={'Welcome to my'}
+                            sLine={'personal porfolio'}
+                            content={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus distinctio doloremque dolores dolorum, earum facere, id illum in ipsum, itaque laudantium magni maiores molestiae mollitia neque nostrum qui repellendus.'}
+                        />
                     </section>
                     <section>
                         <img style={{display: 'flex', maxWidth: 480, width: '100%'}} src={'//unsplash.it/500/500'}/>
                     </section>
                 </div>
             </Container>
-        </SHome>
+        </StyledHome>
     );
 };
 
