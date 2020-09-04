@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
+import {Route, Switch} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar'
 import GlobalStyle from './styles/GlobalStyle';
 import useTheme from "./helpers/hooks/useTheme";
@@ -8,6 +9,7 @@ import {ThemeProvider} from 'styled-components';
 import {light, dark} from './styles/theme/theme';
 import IntroAnimation from "./components/IntroAnimation/IntroAnimation";
 import Home from './views/Home/Home';
+import PageWrapper from './components/PageWrapper/PageWrapper';
 
 function App() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -22,12 +24,11 @@ function App() {
             <GlobalStyle/>
             <Navbar toggleTheme={toggleTheme} showIntro={showIntro} theme={theme} menuOpen={menuOpen}
                     setMenuOpen={setMenuOpen}/>
-            <h1>Hello World</h1>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <Home/>
+            <PageWrapper>
+                <Switch>
+                    <Route exact path={'/home'} component={Home}/>
+                </Switch>
+            </PageWrapper>
         </ThemeProvider>
     );
 }

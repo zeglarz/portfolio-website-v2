@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import media from '../../../styles/style';
+import media from '../../styles/style';
 
 const PageWrapper = styled.div`
     display: flex;
@@ -51,7 +51,7 @@ const PageWrapper = styled.div`
       }
   }
 
-  .middle {
+.middle {
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -59,9 +59,9 @@ const PageWrapper = styled.div`
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-  }
+}
 
-  .bottom {
+.bottom {
     width: 100%;
     height: 100%;
     flex-direction: column;
@@ -70,7 +70,7 @@ const PageWrapper = styled.div`
         padding-bottom: 5rem;
     `}
     
-    .button-banner {
+   .button-banner {
       margin: 2rem 0;
       display: flex;
       flex-direction: column;
@@ -82,8 +82,8 @@ const PageWrapper = styled.div`
       ${media.tablet`
           padding: 1.4rem;
       `}
-    }
-  }
+   }
+}
 `;
 
 export default PageWrapper;
