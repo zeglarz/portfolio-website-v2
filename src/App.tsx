@@ -17,7 +17,6 @@ function App() {
     const [theme, toggleTheme] = useTheme();
     useHistoryListen(() => setMenuOpen(false));
 
-
     return (
         <ThemeProvider theme={theme ? dark : light}>
             <IntroAnimation loading={showIntro}/>

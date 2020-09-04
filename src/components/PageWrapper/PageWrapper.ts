@@ -14,6 +14,7 @@ const PageWrapper = styled.div`
     }
 
     .top {
+        display: flex;
         width: 100%;
         height: 100%;
         min-height: calc(100vh - 85px);
@@ -26,15 +27,11 @@ const PageWrapper = styled.div`
         `}
 
     &.--reverse {
-      flex-direction: row-reverse;
+        flex-direction: row-reverse;
         ${media.tablet`
                flex-direction: column-reverse;
-            `}
+        `}
     }
-
-    ${media.tablet`
-        flex-direction: column-reverse;
-    `}
 
      ${media.tablet`
         flex-direction: column;
