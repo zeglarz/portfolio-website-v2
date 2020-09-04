@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Hero from '../../components/Hero/Hero';
 import styled from 'styled-components';
 import {Container} from '@material-ui/core';
-
+import media from '../../styles/style';
 
 const StyledHome = styled.div`
   .mid {
@@ -20,31 +20,9 @@ const StyledHome = styled.div`
           color: ${({theme}) => theme.colors.text};
         }
       }
-      @media (max-width: 768px) {
+      ${media.thone`
         grid-template-columns: 1fr;
-      }
-      .item {
-        .counter {
-          font-size: 3rem;
-          @media (max-width: 1200px) {
-            font-size: 2.75rem;
-          }
-          @media (max-width: 992px) {
-            font-size: 2.5rem;
-          }
-          @media (max-width: 768px) {
-            font-size: 2.25rem;
-          }
-          @media (max-width: 576px) {
-            font-size: 2rem;
-          }
-          color: ${({theme}) => theme.colors.text};
-          font-family: 'Lato';
-        }
-        .text {
-          color: ${({theme}) => theme.colors.text};
-        }
-      }
+      `}
     }
   }
 `;

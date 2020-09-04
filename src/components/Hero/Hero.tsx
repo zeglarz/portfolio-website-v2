@@ -38,30 +38,30 @@ const StyledHero = styled.div`
             -ms-hyphens: auto;
             hyphens: auto;
             max-width: 720px;
-            @media (max-width: 1366px) {
-            font-size: 0.95rem;
-            }
-            @media (max-width: 992px) {
-            font-size: 0.9rem;
-            }
-            @media (max-width: 768px) {
-            font-size: 0.95rem;
-            }
-            @media (max-width: 576px) {
-            font-size: 0.9rem;
-            }
+            ${media.giant`
+                font-size: 0.95rem;
+            `}
+            ${media.desktop`
+                font-size: 0.9rem;
+            `}
+             ${media.tablet`
+                margin-bottom: 20px;
+                font-size: 0.95rem;
+            `}
+            ${media.thone`
+                font-size: 0.9rem;
+            `}
             margin-bottom: 30px;
             color: ${({theme}) => theme.colors.text};
-            @media (max-width: 768px) {
-            margin-bottom: 20px;
-            }
+          
             .content-container {
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            width: 100%;
-            .content {
-              max-width: 450px;
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                width: 100%;
+                
+                .content {
+                    max-width: 450px;
                 }
               }
             ${media.giant`
@@ -107,37 +107,37 @@ interface ITitle {
 
 const Title = styled.div<ITitle>`
   font-size: 2.5rem;
-  @media (max-width: 1366px) {
-    font-size: 1.7rem;
-  }
-  @media (max-width: 992px) {
-    font-size: 1.5rem;
-  }
-  @media (max-width: 768px) {
-    font-size: 2.2rem;
-  }
-  @media (max-width: 576px) {
-    font-size: 1.8rem;
-  }
+  ${media.giant`
+      font-size: 1.7rem;
+  `}
+   ${media.desktop`
+        font-size: 1.5rem;
+  `}
+   ${media.tablet`
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+  `}
+   ${media.thone`
+        font-size: 1.8rem;
+  `}
+   
   line-height: 1.2;
   margin-bottom: 30px;
   letter-spacing: 1px;
   color: ${({theme}) => theme.colors.text};
-  font-family: 'Abril Fatface';
+  font-family: 'Lato';
   font-weight: 900;
-  @media (max-width: 768px) {
-    margin-bottom: 20px;
-  }
+ 
   .line-wrapper {
     position: relative;
     overflow: hidden;
+    
     .line {
-      max-width: 480px;
-      background: ${({theme}) => theme.gradients.primary};
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-box-decoration-break: clone;
-          /* visibility: hidden; */
+        max-width: 480px;
+        background: ${({theme}) => theme.gradients.primary};
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-box-decoration-break: clone;
     }
   }
 
@@ -150,27 +150,30 @@ const Title = styled.div<ITitle>`
       font-family: 'Lato';
       font-weight: 700;
       margin-bottom: 1.2rem;
+      
       .line-wrapper {
         position: relative;
         overflow: hidden;
-        .line {
-          max-width: 480px;
-          visibility: visible;
-        }
+        
+            .line {
+              max-width: 480px;
+              visibility: visible;
+            }
       }
-      @media (max-width: 1366px) {
-        font-size: 1.2rem;
-      }
-      @media (max-width: 992px) {
-        font-size: 1.1rem;
-      }
-      @media (max-width: 768px) {
-        font-size: 1.2rem;
-        margin-bottom: 0.6rem;
-      }
-      @media (max-width: 576px) {
-        font-size: 1.1rem;
-      }
+      
+        ${media.giant`
+            font-size: 1.2rem;
+        `}
+        ${media.desktop`
+            font-size: 1.1rem;
+        `}
+        ${media.tablet`
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+        `}
+        ${media.giant`
+            font-size: 1.1rem;
+        `}
     `}
 
   ${({section}) =>
@@ -186,47 +189,48 @@ const Title = styled.div<ITitle>`
           visibility: visible;
         }
       }
-      @media (max-width: 1366px) {
-        font-size: 1.3rem;
-      }
-      @media (max-width: 992px) {
-        font-size: 1.1rem;
-      }
-      @media (max-width: 768px) {
-        font-size: 1.4rem;
-      }
-      @media (max-width: 576px) {
-        font-size: 1.3rem;
-      }
+      ${media.giant`
+            font-size: 1.3rem;
+      `}
+      ${media.desktop`
+            font-size: 1.1rem;
+      `}
+      ${media.tablet`
+            font-size: 1.4rem;
+      `}
+      ${media.thone`
+            font-size: 1.3rem;
+      `}
     `}
 
   ${({pageTitle}) =>
     pageTitle &&
     css`
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: 900;
       font-family: 'Abril Fatface';
       text-transform: uppercase;
       letter-spacing: 1px;
       color: gray;
-      font-size: 0.8rem;
       margin-bottom: 1rem;
-      @media (max-width: 1366px) {
+      ${media.giant`
         font-size: 0.85rem;
-      }
-      @media (max-width: 992px) {
+      `}
+      ${media.desktop`
         font-size: 0.8rem;
-      }
-      @media (max-width: 768px) {
+      `}
+      ${media.tablet`
         font-size: 0.85rem;
         margin-bottom: 0.7rem;
-      }
-      @media (max-width: 576px) {
+      `}
+      ${media.thone`
         font-size: 0.8rem;
-      }
+      `}
+      
       .line-wrapper {
         position: relative;
         overflow: hidden;
+        
         .line {
           max-width: 480px;
           visibility: visible;
