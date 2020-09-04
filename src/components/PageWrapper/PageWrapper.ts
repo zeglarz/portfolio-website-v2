@@ -63,6 +63,7 @@ const PageWrapper = styled.div`
     height: 100%;
     flex-direction: column;
     padding-bottom: 7rem;
+    
     ${media.tablet`
         padding-bottom: 5rem;
     `}

@@ -3,12 +3,30 @@ import styled, {css} from 'styled-components';
 import {Link} from 'react-router-dom';
 import {Button, Tooltip} from '@material-ui/core';
 import media from '../../styles/style';
-
+import Icon from './SocialIcons/withIcon';
+import {SOCIAL as socials} from './constants';
 
 const StyledLink = styled.a.attrs({
     rel: 'noopener noreferrer',
     target: '_blank',
-})``;
+})`
+ display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-inline-end: 8px;
+              padding: 8px;
+              svg {
+                color: ${({theme}) => theme.colors.text};
+                width: 24px;
+                height: 24px;
+              }
+              &:hover {
+                svg {
+                  color: ${({theme}) => theme.colors.text};
+                }
+              }
+            }
+`;
 
 const StyledHero = styled.div`
     justify-content: center;
@@ -76,27 +94,7 @@ const StyledHero = styled.div`
         ul {
           display: flex;
           list-style: none;
-          li {
-            a {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin-inline-end: 8px;
-              padding: 8px;
-              svg {
-                color: ${({theme}) => theme.colors.text};
-                width: 24px;
-                height: 24px;
-              }
-              &:hover {
-                svg {
-                  color: ${({theme}) => theme.colors.text};
-                }
-              }
-            }
-          }
         }
-    }
 `;
 
 interface ITitle {
@@ -211,7 +209,7 @@ const Title = styled.div<ITitle>`
       font-family: 'Abril Fatface';
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: gray;
+      color: #808080;
       margin-bottom: 1rem;
       ${media.giant`
         font-size: 0.85rem;
@@ -240,7 +238,7 @@ const Title = styled.div<ITitle>`
 `;
 
 
-const Hero = ({title, fLine, sLine, content}) => {
+const Hero = ({title, fLine, sLine, content, withSocial = false}) => {
     return (
         <StyledHero>
             <div className='hero-container'>
@@ -262,6 +260,23 @@ const Hero = ({title, fLine, sLine, content}) => {
                         <div className='content'>{content && content}</div>
                     </div>
                 </div>
+                {withSocial && (
+                    <div className='social-links'>
+                        <ul>
+                            {socials.map(social =>
+                                (
+                                    <li key={social.link}>
+                                        <Tooltip arrow title={social.name}>
+                                            <StyledLink href={social.link}>
+                                                <Icon icon={social.icon}/>
+                                            </StyledLink>
+                                        </Tooltip>
+                                    </li>
+                                )
+                            )}
+                        </ul>
+                    </div>
+                )}
             </div>
         </StyledHero>
     );

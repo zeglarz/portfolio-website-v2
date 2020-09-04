@@ -39,6 +39,7 @@ const Home = () => {
                 <div className='top --reverse'>
                     <section>
                         <Hero
+                            withSocial
                             title={'Home'}
                             fLine={'Welcome to my'}
                             sLine={'personal porfolio'}

@@ -15,12 +15,12 @@ export const SOCIAL: ISocial[] = [
     {
         name: 'Twitter',
         link: 'https://twitter.com/KonradRudnicki6',
-        icon: stackoverflow
+        icon: twitter
     },
     {
-        name: 'StackOverflow',
+        name: 'Stack Overflow',
         link: 'https://stackoverflow.com/users/10702224/indyanin',
-        icon: twitter
+        icon: stackoverflow
     },
     {
         name: 'LinkedIn',
