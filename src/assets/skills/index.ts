@@ -37,6 +37,7 @@ import terminal from './terminal.png';
 import vscode from './vscode.png';
 import webpack from './webpack.png';
 import webstorm from './webstorm.png';
+import typescript from './typescript.png';
 
 
 export {
@@ -78,5 +79,6 @@ export {
     terminal,
     vscode,
     webpack,
-    webstorm
+    webstorm,
+    typescript
 };

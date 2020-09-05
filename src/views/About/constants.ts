@@ -1,4 +1,5 @@
 import {ITechs, LEVELS} from './constants.d';
+import * as img from '../../assets/skills';
 
 
 export const TECHS: ITechs[] = [
@@ -8,35 +9,43 @@ export const TECHS: ITechs[] = [
             {
                 name: 'HTML',
                 proficiency: LEVELS.proficient,
-                image: module.html5
+                image: img.html5
             },
             {
                 name: 'CSS',
-                proficiency: LEVELS.proficient
+                proficiency: LEVELS.proficient,
+                image: img.css3
             },
             {
                 name: 'JavaScript',
-                proficiency: LEVELS.proficient
+                proficiency: LEVELS.proficient,
+                image: img.javascript
             },
             {
                 name: 'TypeScript',
-                proficiency: LEVELS.beginner
+                proficiency: LEVELS.beginner,
+                image: img.typescript
+
             },
             {
                 name: 'React JS',
-                proficiency: LEVELS.proficient
+                proficiency: LEVELS.proficient,
+                image: img.react
             },
             {
                 name: 'Sass',
-                proficiency: LEVELS.competent
+                proficiency: LEVELS.competent,
+                image: img.sass
             },
             {
                 name: 'Gatsby',
-                proficiency: LEVELS.beginner
+                proficiency: LEVELS.beginner,
+                image: img.gatsby
             },
             {
                 name: 'Styled Components',
-                proficiency: LEVELS.proficient
+                proficiency: LEVELS.proficient,
+                image: img.styledcomponents
             }
         ]
     },
@@ -45,19 +54,23 @@ export const TECHS: ITechs[] = [
         stack: [
             {
                 name: 'NodeJS',
-                proficiency: LEVELS.competent
+                proficiency: LEVELS.competent,
+                image: img.nodejs
             },
             {
                 name: 'PostgreSQL',
-                proficiency: LEVELS.beginner
+                proficiency: LEVELS.beginner,
+                image: img.postgres
             },
             {
                 name: 'MongoDB',
-                proficiency: LEVELS.competent
+                proficiency: LEVELS.competent,
+                image: img.mongodb
             },
             {
                 name: 'Express',
-                proficiency: LEVELS.competent
+                proficiency: LEVELS.competent,
+                image: img.express
             }
         ]
     },
@@ -66,27 +79,33 @@ export const TECHS: ITechs[] = [
         stack: [
             {
                 name: 'VSCode',
-                proficiency: LEVELS.competent
+                proficiency: LEVELS.competent,
+                image: img.vscode
             },
             {
                 name: 'Postman',
-                proficiency: LEVELS.competent
+                proficiency: LEVELS.competent,
+                image: img.postman
             },
             {
                 name: 'Adobe Xd',
-                proficiency: LEVELS.beginner
+                proficiency: LEVELS.beginner,
+                image: img.adobexd
             },
             {
                 name: 'Adobe Illustrator',
-                proficiency: LEVELS.beginner
+                proficiency: LEVELS.beginner,
+                image: img.illustrator
             },
             {
                 name: 'GitHub',
-                proficiency: LEVELS.competent
+                proficiency: LEVELS.competent,
+                image: img.github
             },
             {
                 name: 'Sketch',
-                proficiency: LEVELS.competent
+                proficiency: LEVELS.competent,
+                image: img.sketch
             }
         ]
     },
@@ -95,39 +114,53 @@ export const TECHS: ITechs[] = [
         stack: [
             {
                 name: 'Git',
-                proficiency: LEVELS.competent
+                proficiency: LEVELS.competent,
+                image: img.git
             },
             {
                 name: 'Firebase',
-                proficiency: LEVELS.beginner
+                proficiency: LEVELS.beginner,
+                image: img.firebase
             },
             {
                 name: 'GraphQL',
-                proficiency: LEVELS.beginner
+                proficiency: LEVELS.beginner,
+                image: img.graphql
             },
             {
                 name: 'Redux',
-                proficiency: LEVELS.competent
+                proficiency: LEVELS.competent,
+                image: img.redux
             },
             {
                 name: 'Jest',
-                proficiency: LEVELS.beginner
+                proficiency: LEVELS.beginner,
+                image: img.jest
             },
             {
                 name: 'Socket IO',
-                proficiency: LEVELS.beginner
+                proficiency: LEVELS.beginner,
+                image: img.socketio
             },
             {
                 name: 'Apollo',
-                proficiency: LEVELS.beginner
+                proficiency: LEVELS.beginner,
+                image: img.apollo
             },
             {
                 name: 'NPM',
-                proficiency: LEVELS.proficient
+                proficiency: LEVELS.proficient,
+                image: img.npm
             },
             {
                 name: 'Webpack',
-                proficiency: LEVELS.competent
+                proficiency: LEVELS.competent,
+                image: img.webpack
+            },
+            {
+                name: 'Webstorm',
+                proficiency: LEVELS.competent,
+                image: img.webstorm
             }
         ]
     }

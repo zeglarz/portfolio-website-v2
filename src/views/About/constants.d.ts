@@ -7,7 +7,8 @@ export enum LEVELS {
 
 interface IStack {
     name: string,
-    proficiency: LEVELS
+    proficiency: LEVELS,
+    image: string
 }
 
 export interface ITechs {

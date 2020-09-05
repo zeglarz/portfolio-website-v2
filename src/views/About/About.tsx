@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import Hero from '../../components/Hero/Hero';
 import styled from 'styled-components';
 import {Container} from '@material-ui/core';
-import media from '../../styles/style';
 import {TECHS as techs} from './constants';
 import {Title} from '../../styles/Title';
 
@@ -56,7 +55,7 @@ const About = () => {
                                     <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start'}}>
                                         {tech.stack.map((stack, i) =>
                                             <li className='item' style={{width: '33.3%'}} key={stack.name}>
-                                                <img src={`//unsplash.it/${50 + 1}/${50 + i}`}
+                                                <img src={stack.image}
                                                      alt={stack.name}/>
                                                 <h4 className='item__title'>{stack.name}</h4>
                                                 <p className='item__level'>{stack.proficiency}</p>
