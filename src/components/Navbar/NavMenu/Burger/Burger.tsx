@@ -17,8 +17,8 @@ const StyledBurger = styled.button`
   margin: 0 auto;
   
   &:hover .hamburger-inner,
-  &:hover  .hamburger-inner::before,
-  &:hover  .hamburger-inner::after {
+  &:hover .hamburger-inner::before,
+  &:hover .hamburger-inner::after {
      background: ${({theme}) => theme.gradients.primary};
   }
 
@@ -40,11 +40,14 @@ const StyledBurger = styled.button`
   }
 
 .hamburger-inner {
-text-align: center;
+  text-align: center;
   display: block;
-    margin: 11px auto;
-  }
-  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  margin: 11px auto;
+ }
+ 
+  .hamburger-inner, 
+  .hamburger-inner::before,
+  .hamburger-inner::after {
     width: 22px;
     height: 2px;
     background: ${({theme}) => theme.colors.text};
@@ -52,14 +55,22 @@ text-align: center;
     position: absolute;
     transition-property: transform;
     transition-duration: 0.15s;
-    transition-timing-function: ease; }
-  .hamburger-inner::before, .hamburger-inner::after {
-    content: "";
-    display: block; }
-  .hamburger-inner::before {
-    top: -7px; }
+    transition-timing-function: ease; 
+  }
+    
+  .hamburger-inner::before,
   .hamburger-inner::after {
-    bottom: -7px; }
+    content: "";
+    display: block; 
+  }
+  
+  .hamburger-inner::before {
+    top: -7px; 
+  }
+  
+  .hamburger-inner::after {
+    bottom: -7px; 
+  }
 
 & .hamburger-inner {
   transition-duration: 0.22s;

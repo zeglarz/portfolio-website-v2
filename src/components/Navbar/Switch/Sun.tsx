@@ -184,8 +184,12 @@ const Sun = ({toggleTheme, theme}) => {
                 <circle cx={12} cy={12} r={5}/>
             </StyledCircle>
             //Moon
-            <motion.path style={{originX: '12px', originY: '12px'}} variants={moonVariants} opacity='0'
-                         d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            <motion.path
+                style={{originX: '12px', originY: '12px'}}
+                variants={moonVariants}
+                opacity='0'
+                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+            />
         </StyledSun>
     )
 }
