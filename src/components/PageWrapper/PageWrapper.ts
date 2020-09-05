@@ -24,6 +24,7 @@ const PageWrapper = styled.div`
         min-height: calc(100vh - 85px);
         ${media.tablet`
             min-height: 750px;
+            flex-direction: column-reverse;
         `}
         ${media.desktop`
             padding-top: 100px;

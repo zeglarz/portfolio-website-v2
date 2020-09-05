@@ -1,8 +1,8 @@
 import {ITechs, LEVELS} from './constants.d'
 
-const techs: ITechs[] = [
+export const TECHS: ITechs[] = [
     {
-        title: 'Front-end technologies',
+        title: 'Front-end',
         stack: [
             {
                 name: 'HTML',
@@ -35,7 +35,7 @@ const techs: ITechs[] = [
         ]
     },
     {
-        title: 'Back-end technologies',
+        title: 'Back-end',
         stack: [
             {
                 name: 'NodeJS',
@@ -56,7 +56,7 @@ const techs: ITechs[] = [
         ]
     },
     {
-        title: 'Software & tools',
+        title: 'Software & other tools',
         stack: [
             {
                 name: 'VSCode',

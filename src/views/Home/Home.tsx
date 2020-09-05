@@ -5,26 +5,6 @@ import {Container} from '@material-ui/core';
 import media from '../../styles/style';
 
 const StyledHome = styled.div`
-  .mid {
-    .about {
-      display: grid;
-      grid-column-gap: 6rem;
-      grid-row-gap: 2rem;
-      grid-template-columns: repeat(2, 1fr);
-      width: 100%;
-      a {
-        text-decoration: underline;
-        transition: all ease-in-out 250ms;
-        font-weight: 700;
-        &:hover {
-          color: ${({theme}) => theme.colors.text};
-        }
-      }
-      ${media.thone`
-        grid-template-columns: 1fr;
-      `}
-    }
-  }
 `;
 
 const Home = () => {
