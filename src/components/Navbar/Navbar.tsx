@@ -22,6 +22,7 @@ const NavbarContent = styled.div`
     padding: 1rem 2rem;
     margin: 0 auto;
     max-width: 1920px;
+    
     ${media.tiny`
         padding: 0.7rem 1rem;
     `}

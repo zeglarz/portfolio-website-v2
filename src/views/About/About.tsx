@@ -54,9 +54,9 @@ const About = () => {
                                 <div className='skills__list__set' key={tech.title}>
                                     <h3>{tech.title}</h3>
                                     <ul style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start'}}>
-                                        {tech.stack.map(stack =>
+                                        {tech.stack.map((stack, i) =>
                                             <li className='item' style={{width: '33.3%'}} key={stack.name}>
-                                                <img src={'//unsplash.it/50/50'}
+                                                <img src={`//unsplash.it/${50 + 1}/${50 + i}`}
                                                      alt={stack.name}/>
                                                 <h4 className='item__title'>{stack.name}</h4>
                                                 <p className='item__level'>{stack.proficiency}</p>

@@ -1,4 +1,5 @@
-import {ITechs, LEVELS} from './constants.d'
+import {ITechs, LEVELS} from './constants.d';
+
 
 export const TECHS: ITechs[] = [
     {
@@ -6,7 +7,8 @@ export const TECHS: ITechs[] = [
         stack: [
             {
                 name: 'HTML',
-                proficiency: LEVELS.proficient
+                proficiency: LEVELS.proficient,
+                image: module.html5
             },
             {
                 name: 'CSS',
@@ -15,6 +17,10 @@ export const TECHS: ITechs[] = [
             {
                 name: 'JavaScript',
                 proficiency: LEVELS.proficient
+            },
+            {
+                name: 'TypeScript',
+                proficiency: LEVELS.beginner
             },
             {
                 name: 'React JS',

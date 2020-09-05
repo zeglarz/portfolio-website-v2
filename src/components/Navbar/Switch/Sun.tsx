@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledCircle = styled(motion.g)`
     fill: ${({theme, custom}) => custom ? theme.colors.background : 'none'};
-    stroke: ${({theme}) => theme.colors.text};
+    stroke: ${({theme}) => theme.colors.text};    
 `
 
 const StyledSun = styled(motion.svg)`

@@ -14,3 +14,4 @@ export interface ITechs {
     title: string,
     stack: IStack[]
 }
+
