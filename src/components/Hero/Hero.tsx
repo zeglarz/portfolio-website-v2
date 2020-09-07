@@ -1,7 +1,6 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
-import {Link} from 'react-router-dom';
-import {Button, Tooltip} from '@material-ui/core';
+import styled from 'styled-components';
+import {Tooltip} from '@material-ui/core';
 import media from '../../styles/style';
 import Icon from './SocialIcons/withIcon';
 import {SOCIAL as socials} from './constants';
@@ -11,10 +10,7 @@ interface Custom {
     withoutOutline?: boolean;
 }
 
-const StyledLink = styled.a.attrs({
-    rel: 'noopener noreferrer',
-    target: '_blank',
-})<Custom>`
+const StyledLink = styled.a.attrs({rel: 'noopener noreferrer', target: '_blank',})<Custom>`
       display: flex;
       align-items: center;
       justify-content: center;
@@ -53,49 +49,7 @@ const StyledHero = styled.div`
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-        
-        .paragraph {
-            color: ${({theme}) => theme.colors.text};
-            font-size: 1.1rem;
-            line-height: 1.8;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            hyphens: auto;
-            max-width: 720px;
-            margin-bottom: 30px;
-            color: ${({theme}) => theme.colors.text};
-            
-            ${media.giant`
-                font-size: 0.95rem;
-                max-width: 390px;
-            `}
-            
-            ${media.desktop`
-                font-size: 0.9rem;
-            `}
-            
-             ${media.tablet`
-                margin-bottom: 20px;
-                font-size: 0.95rem;
-            `}
-             
-            ${media.thone`
-                font-size: 0.9rem;
-            `}
-          
-            .content-container {
-                position: relative;
-                overflow: hidden;
-                display: flex;
-                width: 100%;
-                
-                .content {
-                    max-width: 450px;
-                }
-            }
-        }
+       
     }
     
     .social-links {
@@ -107,7 +61,6 @@ const StyledHero = styled.div`
         }
     }
 `;
-
 
 
 const Hero = ({title, fLine, sLine, content, withSocial = false}) => {
@@ -139,10 +92,14 @@ const Hero = ({title, fLine, sLine, content, withSocial = false}) => {
                                 (
                                     <li key={social.link}>
                                         <Tooltip arrow title={social.name}>
-                                            <StyledLink href={social.link}
-                                                        withoutOutline={social.name === 'Stack Overflow' || social.name === "Mail"}>
-                                                <Icon icon={social.icon}
-                                                      withoutOutline={social.name === 'Stack Overflow' || social.name === "Mail"}/>
+                                            <StyledLink
+                                                href={social.link}
+                                                withoutOutline={social.name === 'Stack Overflow' || social.name === "Mail"}
+                                            >
+                                                <Icon
+                                                    icon={social.icon}
+                                                    withoutOutline={social.name === 'Stack Overflow' || social.name === "Mail"}
+                                                />
                                             </StyledLink>
                                         </Tooltip>
                                     </li>

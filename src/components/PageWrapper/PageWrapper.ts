@@ -83,6 +83,47 @@ const PageWrapper = styled.div`
         `}
    }
 }
+.paragraph {
+            color: ${({theme}) => theme.colors.text};
+            font-size: 1.1rem;
+            line-height: 1.8;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+            max-width: 720px;
+            margin-bottom: 30px;
+            color: ${({theme}) => theme.colors.text};
+            
+            ${media.giant`
+                font-size: 0.95rem;
+            `}
+            
+            ${media.desktop`
+                font-size: 0.9rem;
+            `}
+            
+             ${media.tablet`
+                margin-bottom: 20px;
+                font-size: 0.95rem;
+            `}
+             
+            ${media.thone`
+                font-size: 0.9rem;
+            `}
+          
+            .content-container {
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                width: 100%;
+                
+                .content {
+                    max-width: 450px;
+                }
+            }
+        }
 `;
 
 export default PageWrapper;
