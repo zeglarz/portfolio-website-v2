@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Container } from '@material-ui/core';
 import { TECHS as techs } from './constants';
 import { Title } from '../../styles/Title';
+import Image from '../../components/Hero/Image/Image';
 
 
 const ListContainer = styled.div`
@@ -131,7 +132,7 @@ const About = () => {
                         />
                     </section>
                     <section>
-                        <img style={{ display: 'flex', maxWidth: 480, width: '100%' }} src={'//unsplash.it/501/501'}/>
+                        <Image src={'//unsplash.it/501/501'}/>
                     </section>
                 </div>
                 <div className={'middle'}>
