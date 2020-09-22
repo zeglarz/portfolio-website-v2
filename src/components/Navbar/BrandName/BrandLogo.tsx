@@ -40,7 +40,7 @@ const pathVariants = {
 
 const BrandLogo: React.FC<BrandProps> = ({size, showIntro, ...props}) => {
     return (
-        <Link to={'/home'}>
+        <Link to={'/home'} style={{zIndex: 11}}>
             <StyledSVG width={size} height={size} viewBox="0 0 430 430" {...props}>
                 <title>{'myLogo'}</title>
                 <defs>

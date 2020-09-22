@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 import media from '../../styles/style';
 
-const PageWrapper = styled.div`
+
+interface IPageWrapper {
+    reverse?: boolean;
+}
+
+const PageWrapper = styled.div<IPageWrapper>`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: ${({theme}) => theme.colors.background};
+    background: ${({ theme }) => theme.colors.background};
     z-index: 2;
     width: 100%;
     
@@ -22,6 +27,7 @@ const PageWrapper = styled.div`
         width: 100%;
         height: 100%;
         min-height: calc(100vh - 85px);
+        flex-direction: ${({ reverse }) => reverse ? 'row-reverse' : 'row'};
         ${media.tablet`
             min-height: 750px;
             flex-direction: column-reverse;
@@ -30,12 +36,6 @@ const PageWrapper = styled.div`
             padding-top: 100px;
             padding-bottom: 100px;    
         `}
-
-    &.--reverse {
-        flex-direction: row-reverse;
-        ${media.tablet`
-               flex-direction: column-reverse;
-        `}
     }
 
     section {
@@ -43,7 +43,6 @@ const PageWrapper = styled.div`
         justify-content: center;
         align-items: center;
         ${media.tablet`
-            justify-content: flex-start;
             align-items: flex-start;
         `}
     }
@@ -76,7 +75,7 @@ const PageWrapper = styled.div`
         justify-content: center;
         align-items: flex-start;
         padding: 4rem 3rem;
-        background: ${({theme}) => theme.colors.text};
+        background: ${({ theme }) => theme.colors.text};
         border-radius: 5px;
         ${media.tablet`
           padding: 1.4rem;
@@ -84,7 +83,7 @@ const PageWrapper = styled.div`
    }
 }
 .paragraph {
-            color: ${({theme}) => theme.colors.text};
+            color: ${({ theme }) => theme.colors.text};
             font-size: 1.1rem;
             line-height: 1.8;
             overflow-wrap: break-word;
@@ -94,7 +93,7 @@ const PageWrapper = styled.div`
             hyphens: auto;
             max-width: 720px;
             margin-bottom: 30px;
-            color: ${({theme}) => theme.colors.text};
+            color: ${({ theme }) => theme.colors.text};
             
             ${media.giant`
                 font-size: 0.95rem;

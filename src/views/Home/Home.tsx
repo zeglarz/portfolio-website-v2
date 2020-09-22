@@ -3,9 +3,27 @@ import Hero from '../../components/Hero/Hero';
 import styled from 'styled-components';
 import { Container } from '@material-ui/core';
 import Image from '../../components/Hero/Image/Image';
+import media from '../../styles/style';
 
 
-const StyledHome = styled.div`
+interface IPageWrapper {
+    reverse?: boolean;
+}
+
+const StyledTop = styled.div<IPageWrapper>`
+ display: flex;
+        width: 100%;
+        height: 100%;
+        min-height: calc(100vh - 85px);
+        flex-direction: ${({ reverse }) => reverse ? 'row-reverse' : 'row'};
+        ${media.tablet`
+            min-height: 750px;
+            flex-direction: column-reverse;
+        `}
+        ${media.desktop`
+            padding-top: 100px;
+            padding-bottom: 100px;    
+        `}
 `;
 
 const Home = () => {
@@ -15,9 +33,9 @@ const Home = () => {
     });
 
     return (
-        <StyledHome>
+        <div>
             <Container>
-                <div className='top --reverse'>
+                <StyledTop reverse>
                     <section>
                         <Hero
                             withSocial
@@ -30,9 +48,9 @@ const Home = () => {
                     <section>
                         <Image src={'//unsplash.it/500/500'}/>
                     </section>
-                </div>
+                </StyledTop>
             </Container>
-        </StyledHome>
+        </div>
     );
 };
 

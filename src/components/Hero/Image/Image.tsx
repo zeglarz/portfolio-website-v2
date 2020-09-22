@@ -22,7 +22,7 @@ const StyledImgContainer = styled(motion.div)`
     right: 0;
     width: 100%;
     height: 100%;
-    z-index: 3;
+    z-index: 1;
   }
   .rect2 {
     position: absolute;
@@ -31,7 +31,7 @@ const StyledImgContainer = styled(motion.div)`
     right: 0;
     width: 100%;
     height: 100%;
-    z-index: 4;
+    z-index: 2;
   }
 `;
 

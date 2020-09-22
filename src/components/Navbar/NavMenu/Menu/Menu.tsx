@@ -25,6 +25,7 @@ const menuVariants = {
         }
     }),
     show: custom => ({
+        zIndex: 4,
         display: 'block',
         transition: {
             staggerChildren: 0.1,
