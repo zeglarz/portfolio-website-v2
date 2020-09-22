@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Tooltip} from '@material-ui/core';
+import { Tooltip } from '@material-ui/core';
 import media from '../../styles/style';
 import Icon from './SocialIcons/withIcon';
-import {SOCIAL as socials} from './constants';
-import {Title} from '../../styles/Title';
+import { SOCIAL as socials } from './constants';
+import { Title } from '../../styles/Title';
+
 
 interface Custom {
     withoutOutline?: boolean;
 }
 
-const StyledLink = styled.a.attrs({rel: 'noopener noreferrer', target: '_blank',})<Custom>`
+const StyledLink = styled.a.attrs({ rel: 'noopener noreferrer', target: '_blank' })<Custom>`
       display: flex;
       align-items: center;
       justify-content: center;
@@ -18,15 +19,15 @@ const StyledLink = styled.a.attrs({rel: 'noopener noreferrer', target: '_blank',
       padding: 8px;
       
       svg {
-        color: ${({theme}) => theme.colors.text};
+        color: ${({ theme }) => theme.colors.text};
         width: 24px;
         height: 24px;
       }
       
       &:hover {
         svg {
-          fill: ${({theme, withoutOutline}) => !withoutOutline ? '' : theme.gradients.svg};
-          stroke: ${({theme, withoutOutline}) => withoutOutline ? '' : theme.gradients.svg};
+          fill: ${({ theme, withoutOutline }) => !withoutOutline ? '' : theme.gradients.svg};
+          stroke: ${({ theme, withoutOutline }) => withoutOutline ? '' : theme.gradients.svg};
         }
       }
     }
@@ -63,18 +64,18 @@ const StyledHero = styled.div`
 `;
 
 
-const Hero = ({title, fLine, sLine, content, withSocial = false}) => {
+const Hero = ({ title, fLine, sLine, content, withSocial = false }) => {
     return (
         <StyledHero>
             <div className='hero-container'>
                 <Title pageTitle>{title}</Title>
                 <Title>
-                    <div className='line-container'>
+                    <div className='line-wrapper'>
                         <div className='line'>
                             {fLine && fLine}
                         </div>
                     </div>
-                    <div className='line-container'>
+                    <div className='line-wrapper'>
                         <div className='line'>
                             {sLine && sLine}
                         </div>
@@ -94,16 +95,16 @@ const Hero = ({title, fLine, sLine, content, withSocial = false}) => {
                                         <Tooltip arrow title={social.name}>
                                             <StyledLink
                                                 href={social.link}
-                                                withoutOutline={social.name === 'Stack Overflow' || social.name === "Mail"}
+                                                withoutOutline={social.name === 'Stack Overflow' || social.name === 'Mail'}
                                             >
                                                 <Icon
                                                     icon={social.icon}
-                                                    withoutOutline={social.name === 'Stack Overflow' || social.name === "Mail"}
+                                                    withoutOutline={social.name === 'Stack Overflow' || social.name === 'Mail'}
                                                 />
                                             </StyledLink>
                                         </Tooltip>
                                     </li>
-                                )
+                                ),
                             )}
                         </ul>
                     </div>
@@ -111,6 +112,6 @@ const Hero = ({title, fLine, sLine, content, withSocial = false}) => {
             </div>
         </StyledHero>
     );
-}
+};
 
 export default Hero;
