@@ -123,7 +123,7 @@ export const Title = styled.div<ITitle>`
     css`
       font-size: 0.8rem;
       font-weight: 900;
-      font-family: 'Abril';
+      font-family: 'Abril Fatface';
       text-transform: uppercase;
       letter-spacing: 1px;
       color: #808080;

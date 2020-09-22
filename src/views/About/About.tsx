@@ -25,7 +25,7 @@ const ListContainer = styled.div`
         h3 {
           text-align: center;
           margin-bottom: 3rem;
-          font-family: 'Abril', 'Lato';
+          font-family: 'Abril Fatface', 'Lato';
           color: ${({ theme }) => theme.colors.text};
           @media (max-width: 768px) {
             text-align: start;
