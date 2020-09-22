@@ -5,7 +5,7 @@ import media from '../../styles/style';
 import Icon from './SocialIcons/withIcon';
 import { SOCIAL as socials } from './constants';
 import { Title } from '../../styles/Title';
-
+import { motion, Variants } from 'framer-motion';
 
 interface Custom {
     withoutOutline?: boolean;
@@ -49,8 +49,7 @@ const StyledHero = styled.div`
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        flex-direction: column;
-       
+        flex-direction: column; 
     }
     
     .social-links {
@@ -63,22 +62,38 @@ const StyledHero = styled.div`
     }
 `;
 
+const main = {
+    animate: {
+        transition: {
+            staggerChildren: .3,
+        },
+    },
+};
+const variants: Variants = {
+    init: { y: 300, visibility: 'hidden' },
+    animate: {
+        y: 0,
+        visibility: 'visible',
+        transition: { duration: 0.9, ease: 'easeOut' },
+    },
+};
+
 
 const Hero = ({ title, fLine, sLine, content, withSocial = false }) => {
     return (
         <StyledHero>
             <div className='hero-container'>
                 <Title pageTitle>{title}</Title>
-                <Title>
+                <Title initial='init' animate='animate' variants={main}>
                     <div className='line-wrapper'>
-                        <div className='line'>
+                        <motion.div variants={variants} className='line'>
                             {fLine && fLine}
-                        </div>
+                        </motion.div>
                     </div>
                     <div className='line-wrapper'>
-                        <div className='line'>
+                        <motion.div variants={variants} className='line'>
                             {sLine && sLine}
-                        </div>
+                        </motion.div>
                     </div>
                 </Title>
                 <div className='paragraph'>

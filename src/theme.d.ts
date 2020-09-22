@@ -1,9 +1,11 @@
-import 'styled-components'
+import 'styled-components';
+
 
 declare module 'styled-components' {
     export interface DefaultTheme {
         colors: {
             text: string,
+            contrast: string,
             background: string,
         },
         gradients: {

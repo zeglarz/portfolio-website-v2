@@ -25,7 +25,7 @@ const ListContainer = styled.div`
         h3 {
           text-align: center;
           margin-bottom: 3rem;
-          font-family: 'Abril Fatface', 'Lato';
+          font-family: 'Abril Fatface', 'Lato', sans-serif;
           color: ${({ theme }) => theme.colors.text};
           @media (max-width: 768px) {
             text-align: start;
@@ -72,6 +72,9 @@ const ListContainer = styled.div`
             }
             &:hover {
               background: ${({ theme }) => theme.colors.text};
+              h4, p {
+              color: ${({ theme }) => theme.colors.contrast};
+              }
               box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
             }
           }

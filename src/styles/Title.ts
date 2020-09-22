@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import media from './style';
+import { motion } from 'framer-motion';
 
 
 interface ITitle {
@@ -8,7 +9,7 @@ interface ITitle {
     section?: boolean
 }
 
-export const Title = styled.div<ITitle>`
+export const Title = styled(motion.div)<ITitle>`
   font-size: 2.5rem;
   line-height: 1.2;
   margin-bottom: 30px;
