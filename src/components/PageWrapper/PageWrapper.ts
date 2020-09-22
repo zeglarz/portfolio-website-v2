@@ -2,43 +2,20 @@ import styled from 'styled-components';
 import media from '../../styles/style';
 
 
-interface IPageWrapper {
-    reverse?: boolean;
-}
-
-const PageWrapper = styled.div<IPageWrapper>`
+const PageWrapper = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: ${({ theme }) => theme.colors.background};
     z-index: 2;
     width: 100%;
-    
-    section {
-        width: 100%;
-    }
-    
+
      ${media.tablet`
         flex-direction: column;
      `}
 
-    .top {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        min-height: calc(100vh - 85px);
-        flex-direction: ${({ reverse }) => reverse ? 'row-reverse' : 'row'};
-        ${media.tablet`
-            min-height: 750px;
-            flex-direction: column-reverse;
-        `}
-        ${media.desktop`
-            padding-top: 100px;
-            padding-bottom: 100px;    
-        `}
-    }
-
     section {
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -46,17 +23,16 @@ const PageWrapper = styled.div<IPageWrapper>`
             align-items: flex-start;
         `}
     }
-  }
 
-.middle {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-    width: 100%;
-    height: 100%;
-}
+    .middle {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100%;
+        height: 100%;
+    }
 
 .bottom {
     width: 100%;

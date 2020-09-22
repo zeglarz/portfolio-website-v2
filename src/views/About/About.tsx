@@ -5,6 +5,7 @@ import { Container } from '@material-ui/core';
 import { TECHS as techs } from './constants';
 import { Title } from '../../styles/Title';
 import Image from '../../components/Hero/Image/Image';
+import StyledTop from '../../styles/Top';
 
 
 const ListContainer = styled.div`
@@ -39,9 +40,7 @@ const ListContainer = styled.div`
           justify-content: flex-start;
           align-items: center;
           list-style: none;
-          @media (max-width: 768px) {
-            justify-content: space-between;
-          }
+  
           li {
             width: 33.3%;
             transition: background ease 250ms;
@@ -49,7 +48,7 @@ const ListContainer = styled.div`
             border-radius: 3px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             flex-direction: column;
             cursor: default;
             
@@ -122,7 +121,7 @@ const About = () => {
     return (
         <StyledAbout>
             <Container>
-                <div className='top'>
+                <StyledTop>
                     <section>
                         <Hero
                             title={'About'}
@@ -134,7 +133,7 @@ const About = () => {
                     <section>
                         <Image src={'//unsplash.it/501/501'}/>
                     </section>
-                </div>
+                </StyledTop>
                 <div className={'middle'}>
                     <div className={'skills'}>
                         <Header>
