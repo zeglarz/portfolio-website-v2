@@ -1,8 +1,9 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Hero from '../../components/Hero/Hero';
 import styled from 'styled-components';
-import {Container} from '@material-ui/core';
-import media from '../../styles/style';
+import { Container } from '@material-ui/core';
+import Image from '../../components/Hero/Image/Image';
+
 
 const StyledHome = styled.div`
 `;
@@ -27,7 +28,7 @@ const Home = () => {
                         />
                     </section>
                     <section>
-                        <img style={{display: 'flex', maxWidth: 480, width: '100%'}} src={'//unsplash.it/500/500'}/>
+                        <Image src={'//unsplash.it/500/500'}/>
                     </section>
                 </div>
             </Container>

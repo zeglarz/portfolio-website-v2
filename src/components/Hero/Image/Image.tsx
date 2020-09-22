@@ -72,7 +72,6 @@ const imgVariants = {
     init: { scale: 1.6 },
     end: {
         scale: 0.9,
-        filter: ['brightness(0.3)', 'brightness(2.3)'],
         transition: {
             filter: {
                 duration: 3,
@@ -89,7 +88,7 @@ const Image: FunctionComponent<ImageProps> = ({ src }) => {
         <StyledImgContainer variants={variants} initial='init' animate='end'>
             <motion.div variants={divVariants2} className='rect2'></motion.div>
             <motion.div variants={divVariants} className='rect1'></motion.div>
-            <img src={src} alt={''}/>
+            <motion.img src={src} variants={imgVariants} alt={'hero image'}/>
         </StyledImgContainer>
     );
 };
