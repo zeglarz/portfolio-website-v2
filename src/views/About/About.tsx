@@ -1,9 +1,10 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Hero from '../../components/Hero/Hero';
 import styled from 'styled-components';
-import {Container} from '@material-ui/core';
-import {TECHS as techs} from './constants';
-import {Title} from '../../styles/Title';
+import { Container } from '@material-ui/core';
+import { TECHS as techs } from './constants';
+import { Title } from '../../styles/Title';
+
 
 const ListContainer = styled.div`
       width: 100%;
@@ -24,8 +25,8 @@ const ListContainer = styled.div`
         h3 {
           text-align: center;
           margin-bottom: 3rem;
-          font-family: 'Abril Fatface', 'Lato';
-          color: ${({theme}) => theme.colors.text};
+          font-family: 'Abril', 'Lato';
+          color: ${({ theme }) => theme.colors.text};
           @media (max-width: 768px) {
             text-align: start;
             margin-bottom: 1rem;
@@ -61,22 +62,22 @@ const ListContainer = styled.div`
               }
             }
             h4 {
-              color: ${({theme}) => theme.colors.text};
+              color: ${({ theme }) => theme.colors.text};
               text-align: center;
               margin: 1rem 0 0.25rem 0;
             }
             p {
               text-align: center;
-              color: ${({theme}) => theme.colors.text};
+              color: ${({ theme }) => theme.colors.text};
             }
             &:hover {
-              background: ${({theme}) => theme.colors.text};
+              background: ${({ theme }) => theme.colors.text};
               box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
             }
           }
         }
       }
-`
+`;
 
 const Header = styled.div`
       position: sticky;
@@ -87,7 +88,7 @@ const Header = styled.div`
         position: static;
         padding: 0 0 2rem 0;
       }
-`
+`;
 
 const StyledAbout = styled.div`
   width: 100%;
@@ -127,7 +128,7 @@ const About = () => {
                         />
                     </section>
                     <section>
-                        <img style={{display: 'flex', maxWidth: 480, width: '100%'}} src={'//unsplash.it/501/501'}/>
+                        <img style={{ display: 'flex', maxWidth: 480, width: '100%' }} src={'//unsplash.it/501/501'}/>
                     </section>
                 </div>
                 <div className={'middle'}>
@@ -155,14 +156,13 @@ const About = () => {
                                     <ul>
                                         {tech.stack.map(stack =>
                                             <li key={stack.name}>
-                                                <img src={stack.image}
-                                                     alt={stack.name}/>
+                                                <img src={stack.image} alt={stack.name}/>
                                                 <h4>{stack.name}</h4>
                                                 <p>{stack.proficiency}</p>
-                                            </li>
+                                            </li>,
                                         )}
                                     </ul>
-                                </div>
+                                </div>,
                             )}
                         </ListContainer>
                     </div>
