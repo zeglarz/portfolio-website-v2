@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Hero from '../../components/Hero/Hero';
 import styled from 'styled-components';
 import { Container } from '@material-ui/core';
@@ -136,10 +136,27 @@ const StyledAbout = styled.div`
 `;
 
 const About = () => {
+    const [dimensions, setDimensions] = useState({});
+    const [windowSize, setWindowSize] = useState<number>(0);
+
+    const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         document.title = `Home · Konrad Rudnicki`;
     });
+
+    useLayoutEffect(() => {
+        const handleResize = () => {
+            setWindowSize(window.document.body.offsetHeight);
+            setDimensions({
+                offsetY: ref.current && ref.current.offsetTop,
+            });
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
 
     return (
         <StyledAbout>
@@ -158,7 +175,7 @@ const About = () => {
                     </section>
                 </StyledTop>
                 <div className={'middle'}>
-                    <StyledImageSection>
+                    <StyledImageSection ref={ref}>
                         <div>
                             <img
                                 src={'//unsplash.it/450/450'}
@@ -208,7 +225,7 @@ const About = () => {
                                             </li>,
                                         )}
                                     </ul>
-                                </div>
+                                </div>,
                             )}
                         </ListContainer>
                     </div>
