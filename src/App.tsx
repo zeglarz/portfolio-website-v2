@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import GlobalStyle from './styles/GlobalStyle';
 import useTheme from './helpers/hooks/useTheme';
@@ -13,7 +13,7 @@ import About from './views/About/About';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 
 
-function App() {
+const App = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const showIntro = useIntro();
     const [theme, toggleTheme] = useTheme();
@@ -34,6 +34,7 @@ function App() {
                 <Switch>
                     <Route exact path={'/home'} component={Home}/>
                     <Route exact path={'/about'} component={About}/>
+                    <Redirect to='/home'/>
                 </Switch>
             </PageWrapper>
         </ThemeProvider>
