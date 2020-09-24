@@ -6,6 +6,7 @@ import { TECHS as techs } from './constants';
 import { Title } from '../../styles/Title';
 import Image from '../../components/Hero/Image/Image';
 import StyledTop from '../../styles/Top';
+import media from '../../styles/style';
 
 
 const ListContainer = styled.div`
@@ -82,6 +83,29 @@ const ListContainer = styled.div`
       }
 `;
 
+const StyledImageSection = styled.div`
+    width: 100%;
+    display: flex;
+      justify-content: space-between;
+    align-items: center;
+    ${media.tablet`
+            margin-top: 10px;
+            justify-content: center;
+            flex-direction: column;
+      `}
+              img {
+        width: 100%;
+        max-width: 400px;      
+      }
+       .item {
+      position: relative;
+      ${media.tablet`
+            margin-top: 20px;
+            `}
+  
+    }
+`;
+
 const Header = styled.div`
       position: sticky;
       top: 6rem;
@@ -108,7 +132,6 @@ const StyledAbout = styled.div`
       flex-direction: column;
       justify-content: flex-start;
     }
- 
   }
 `;
 
@@ -135,6 +158,26 @@ const About = () => {
                     </section>
                 </StyledTop>
                 <div className={'middle'}>
+                    <StyledImageSection>
+                        <div>
+                            <img
+                                src={'//unsplash.it/450/450'}
+                                alt='placeholder image'/>
+                        </div>
+                        <div className='item'>
+                            <Title pageTitle>Who am I?</Title>
+                            <Title section>
+                                <div className='line-wrapper'>
+                                    <div className='line'>My name is Konrad</div>
+                                </div>
+                            </Title>
+                            <div className='paragraph'>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus beatae commodi
+                                consectetur cum dolorem doloribus, fugiat id libero minima molestiae necessitatibus
+                                nihil odio quam quia quisquam quo tenetur ullam voluptas!
+                            </div>
+                        </div>
+                    </StyledImageSection>
                     <div className={'skills'}>
                         <Header>
                             <Title pageTitle>Skills</Title>
@@ -165,7 +208,7 @@ const About = () => {
                                             </li>,
                                         )}
                                     </ul>
-                                </div>,
+                                </div>
                             )}
                         </ListContainer>
                     </div>
