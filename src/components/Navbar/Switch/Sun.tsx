@@ -143,7 +143,6 @@ const moonVariants: Variants = {
 const Sun = ({toggleTheme, theme}) => {
     const [iconClicked, setIconClicked] = useState(false);
     useEffect(() => {
-        console.log(iconClicked);
         setTimeout(() => setIconClicked(false), 500);
     }, [iconClicked])
     return (
