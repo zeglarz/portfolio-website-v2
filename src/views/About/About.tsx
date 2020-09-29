@@ -234,7 +234,7 @@ const About = () => {
                                                 <img src={stack.image} alt={stack.name}/>
                                                 <h4>{stack.name}</h4>
                                                 <p>{stack.proficiency}</p>
-                                            </li>,
+                                            </li>
                                         )}
                                     </ul>
                                 </div>,

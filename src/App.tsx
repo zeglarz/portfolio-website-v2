@@ -10,6 +10,7 @@ import { dark, light } from './styles/theme/theme';
 import IntroAnimation from './components/IntroAnimation/IntroAnimation';
 import Home from './views/Home/Home';
 import About from './views/About/About';
+import Contact from './views/Contact/Contact';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 
 
@@ -34,6 +35,7 @@ const App = () => {
                 <Switch>
                     <Route exact path={'/home'} component={Home}/>
                     <Route exact path={'/about'} component={About}/>
+                    <Route exact path={'/contact'} component={Contact}/>
                     <Redirect to='/home'/>
                 </Switch>
             </PageWrapper>
