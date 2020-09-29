@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Container } from '@material-ui/core';
 import Hero from '../../components/Hero/Hero';
 import StyledTop from '../../styles/Top';
+import ContactForm from '../../components/ContactForm/ContactForm';
 
 
 const StyledContact = styled.div`
@@ -25,7 +26,7 @@ const Contact = ({ pageTitle }) => {
                         />
                     </section>
                     <section>
-                        <div/>
+                        <ContactForm/>
                     </section>
                 </StyledTop>
             </Container>
