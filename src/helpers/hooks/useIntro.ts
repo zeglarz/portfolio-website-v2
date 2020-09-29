@@ -11,7 +11,7 @@ export const useIntro = () => {
 
     useEffect(() => {
         hasTimePassed ? storage.setItem('timestamp', currTimestamp.toString()) : storage.setItem('timestamp', timestamp.toString());
-    }, []);
+    });
     return hasTimePassed;
 };
 export default useIntro;

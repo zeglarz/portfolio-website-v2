@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { createRef, MutableRefObject, RefObject, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Hero from '../../components/Hero/Hero';
 import styled from 'styled-components';
 import { Container } from '@material-ui/core';
@@ -7,8 +7,9 @@ import { Title } from '../../styles/Title';
 import Image from '../../components/Hero/Image/Image';
 import StyledTop from '../../styles/Top';
 import media from '../../styles/style';
+import { motion, useTransform, useViewportScroll } from 'framer-motion';
+import ja from '../../assets/img/ja.png'
 import { useWindowResize } from '../../helpers/hooks/useWindowResize';
-
 
 const ListContainer = styled.div`
       width: 100%;
@@ -133,12 +134,30 @@ const StyledAbout = styled.div`
       flex-direction: column;
       justify-content: flex-start;
     }
-  }
+  } 
 `;
 
 const About = () => {
-    const ref = useRef<HTMLDivElement>(null);
-    const [dimensions, windowSize] = useWindowResize(ref);
+    const ref: MutableRefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
+    const [ratio, setRatio] = useState(0);
+
+    useLayoutEffect(() => {
+        const handleResize = () => {
+            if (ref.current) {
+                setRatio(ref.current.offsetTop / window.document.body.offsetHeight);
+            }
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [ratio]);
+    console.log("ratio1", ratio);
+
+    const { scrollYProgress } = useViewportScroll();
+    const handleRotation = useTransform(scrollYProgress, [0, ratio], [90, 360]);
+    const handleMove = useTransform(scrollYProgress, [0, ratio], ["-50vw", "0vw"]);
+    const handleScale = useTransform(scrollYProgress, [0, ratio], [0.3, 1]);
+    const handleOpacity = useTransform(scrollYProgress, [0, ratio], [0, 1]);
 
     useEffect(() => {
         document.title = `Home · Konrad Rudnicki`;
@@ -163,9 +182,16 @@ const About = () => {
                 <div className={'middle'}>
                     <StyledImageSection ref={ref}>
                         <div>
-                            <img
-                                src={'//unsplash.it/450/450'}
-                                alt='placeholder image'/>
+                            <motion.img
+                                style={{
+                                rotate: handleRotation,
+                                x: handleMove,
+                                scale: handleScale,
+                                opacity: handleOpacity
+                            }}
+                                src={ja}
+                                alt='placeholder image'
+                            />
                         </div>
                         <div className='item'>
                             <Title pageTitle>Who am I?</Title>

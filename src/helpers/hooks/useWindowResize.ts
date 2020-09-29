@@ -2,21 +2,19 @@ import { useLayoutEffect, useState } from 'react';
 
 
 export const useWindowResize = (ref) => {
-
-    const [dimensions, setDimensions] = useState({});
-    const [windowSize, setWindowSize] = useState<number>(0);
+    const [ratio, setRatio] = useState(0.9);
 
     useLayoutEffect(() => {
+        const top = ref?.current?.offsetTop;
         const handleResize = () => {
-            setWindowSize(window.document.body.offsetHeight);
-            setDimensions({
-                offsetY: ref.current && ref.current.offsetTop,
-            });
+            setRatio(top / window.document.body.offsetHeight);
+            console.log('first render', top);
         };
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    }, [ratio]);
+    console.log('ratio', ratio);
 
-    return [dimensions, windowSize];
+    return ratio;
 };

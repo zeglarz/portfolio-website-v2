@@ -1,4 +1,5 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
+
 
 export const useTheme = () => {
     const storage = window.localStorage;
@@ -10,11 +11,7 @@ export const useTheme = () => {
         theme ? storage.setItem('isDarkTheme', 'true') : storage.setItem('isDarkTheme', 'false');
     }, [storage, theme]);
 
-    const switchTheme = () => {
-        console.log('fireing');
-        setTheme(!theme);
-        console.log('theme', theme);
-    };
+    const switchTheme = () => setTheme(!theme);
 
     return [theme, switchTheme];
 };

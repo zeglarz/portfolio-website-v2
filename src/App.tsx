@@ -39,6 +39,6 @@ const App = () => {
             </PageWrapper>
         </ThemeProvider>
     );
-}
+};
 
 export default App;
