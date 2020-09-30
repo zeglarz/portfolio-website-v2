@@ -19,9 +19,6 @@ const PageWrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        ${media.tablet`
-            align-items: flex-start;
-        `}
     }
 
     .middle {

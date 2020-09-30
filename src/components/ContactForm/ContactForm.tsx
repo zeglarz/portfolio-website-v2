@@ -5,6 +5,7 @@ import email from 'emailjs-com';
 import styled from 'styled-components';
 import { TextFieldProps } from '@material-ui/core/TextField/TextField';
 import { object, string } from 'yup';
+import media from '../../styles/style';
 
 
 const initialValues = {
@@ -19,7 +20,11 @@ const StyledForm = styled.div`
     margin: 0 auto;
     max-width: 400px;
     margin-inline-end: 2rem;
-    
+      ${media.tablet`
+            margin-top: 2rem;
+            margin-inline-end: auto;
+
+        `}
     form {
         display: grid;
         grid-gap: 1rem;

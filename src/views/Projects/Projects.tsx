@@ -3,6 +3,7 @@ import Hero from '../../components/Hero/Hero';
 import { Container } from '@material-ui/core';
 import Image from '../../components/Hero/Image/Image';
 import StyledTop from '../../styles/Top';
+import ProjectList from '../../components/ProjectList/ProjectList';
 
 
 const Projects = () => {
@@ -27,6 +28,9 @@ const Projects = () => {
                         <Image src={'//unsplash.it/500/500'}/>
                     </section>
                 </StyledTop>
+                <div className='middle'>
+                    <ProjectList/>
+                </div>
             </Container>
         </div>
     );

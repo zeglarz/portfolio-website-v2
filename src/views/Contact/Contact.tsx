@@ -14,7 +14,7 @@ const Contact = () => {
     return (
         <StyledContact>
             <Container>
-                <StyledTop>
+                <StyledTop noReverse>
                     <section>
                         <Hero
                             title={'Contact'}

@@ -44,7 +44,7 @@ interface IProjects {
 }
 
 
-const projects: IProjects[] = [
+export const projects: IProjects[] = [
     {
         id: 1,
         title: 'News Feed API',
@@ -245,7 +245,7 @@ const projects: IProjects[] = [
             mnie było wprowadzenie tzw. sceleton loadingu, czyli wyświetlania szkieletu treśći, które dopiero są fetchowane,
             zmiast przestarzałego już podejścia, czyli tzw. loader'a najczęściej pod postacią kręcącego się kółka.`,
         },
-        stack: [Stack.react, Stack.ts, Stack.sc, Stack.fm, Stack.formik],
+        stack: [Stack.react, Stack.ts, Stack.sc, Stack.fm, Stack.formik, Stack.sketch],
         category: 'apps',
         img: 'img/socialape.png',
         slug: 'socialape',
