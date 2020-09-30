@@ -4,6 +4,7 @@ import { Button, TextField } from '@material-ui/core';
 import email from 'emailjs-com';
 import styled from 'styled-components';
 import { TextFieldProps } from '@material-ui/core/TextField/TextField';
+import { object, string } from 'yup';
 
 
 const initialValues = {
@@ -32,12 +33,32 @@ display: block;
 }
 `;
 
+const validationSchema = object().shape({
+    email: string()
+        .email('Please make sure you\'ve entered an valid email!')
+        .required('Provide me your email so I can get back to you.'),
+    name: string()
+        .min(2, 'Please enter a correct name.')
+        .max(100, 'Name is too long')
+        .required('Please enter your name!'),
+    title: string()
+        .min(2, 'The email title is too short.')
+        .max(100, 'The email title is too long.')
+        .required('The title is required'),
+    message: string()
+        .min(10, 'Minimum character count is 10.')
+        .max(2000, 'No more than 2000 characters are allowed.')
+        .required('The message field is required!'),
+});
+
+
 const ContactForm = () => {
 
     return (
         <StyledForm>
             <Formik
                 initialValues={initialValues}
+                validationSchema={validationSchema}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
                     email
                         .send(
