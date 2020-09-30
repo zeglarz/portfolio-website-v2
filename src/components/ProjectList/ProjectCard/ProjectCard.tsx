@@ -35,6 +35,13 @@ const ProjectCard: FunctionComponent<IProjects> = ({
                 <Typography variant='body2'>
                     {subtitle.en}
                 </Typography>
+                <div className='skills'>
+                    {stack.map((s) => (
+                        <div key={s}>
+                            <Typography variant='body2'>{s}</Typography>
+                        </div>
+                    ))}
+                </div>
                 <Button>
                     Demo
                 </Button>
