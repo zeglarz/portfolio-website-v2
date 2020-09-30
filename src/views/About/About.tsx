@@ -210,7 +210,7 @@ const About = () => {
                         </Header>
                         <ListContainer>
                             {Object.keys(techs).map(tech =>
-                                <div key={techs[tech]}>
+                                <div key={techs[tech].title}>
                                     <h3>{techs[tech].title}</h3>
                                     <ul>
                                         {techs[tech].stack.map(stack =>

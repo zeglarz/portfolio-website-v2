@@ -8,10 +8,10 @@ const materialThemeLight = responsiveFontSizes(
         },
         palette: {
             primary: {
-                main: '#ff8a00',
+                main: '#7700ff',
             },
             secondary: {
-                main: '#e52e71',
+                main: '#4400FF',
             },
             type: 'light',
         },
@@ -25,10 +25,10 @@ const materialThemeDark = responsiveFontSizes(
         },
         palette: {
             primary: {
-                main: '#7700ff',
+                main: '#ff8a00',
             },
             secondary: {
-                main: '#4400FF',
+                main: '#e52e71',
             },
             type: 'dark',
         },

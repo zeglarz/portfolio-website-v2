@@ -6,19 +6,25 @@ import media from '../../../styles/style';
 import { StyledLink } from '../../../styles/StyledLink';
 
 
+const StyledLinkMod = styled(StyledLink)`
+
+`;
+
 const StyledCard = styled.div`
   width: 100%;
   padding-bottom: 5rem;
   display: flex;
   justify-content: center;
+  text-align: justify;
+
   .image {
     position: relative;
     img {
-      height: auto;
-      width: 100%;
-      max-width: 500px;
-      border-radius: 16px;
-      box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
+        height: auto;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 16px;
+        box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
     }
   }
 
@@ -52,9 +58,13 @@ const StyledCard = styled.div`
       margin-bottom: 8px;
     }
   }
+  
+  button {
+  margin-right: 15px;
+  }
 `;
 
-const Skill = styled.p`
+const Skill = styled.span`
   display: inline-flex;
   padding: 6px;
   border-radius: 7px;
@@ -65,7 +75,6 @@ const Skill = styled.p`
 `;
 
 const ProjectCard: FunctionComponent<IProjects & { index: number }> = ({
-                                                                           id,
                                                                            index,
                                                                            title,
                                                                            subtitle,
@@ -105,11 +114,26 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = ({
                             </Skill>
                         ))}
                     </div>
-                    <StyledLink href={demoURL}>
-                        <Button>
-                            Demo
-                        </Button>
-                    </StyledLink>
+                    <Grid container direction='row' justify={'flex-start'}>
+                        <StyledLinkMod href={demoURL}>
+                            <Button
+                                variant='contained'
+                                color='primary'
+                                size='large'
+                            >
+                                Demo
+                            </Button>
+                        </StyledLinkMod>
+                        <StyledLinkMod href={gitURL}>
+                            <Button
+                                variant='outlined'
+                                color='primary'
+                                size='large'
+                            >
+                                Code
+                            </Button>
+                        </StyledLinkMod>
+                    </Grid>
                 </Grid>
             </Grid>
         </StyledCard>

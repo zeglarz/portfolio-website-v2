@@ -6,7 +6,7 @@ import Icon from './SocialIcons/withIcon';
 import { SOCIAL as socials } from './constants';
 import { Title } from '../../styles/Title';
 import { motion, Variants } from 'framer-motion';
-import {StyledLink} from '../../styles/StyledLink';
+import { StyledLink } from '../../styles/StyledLink';
 
 interface Custom {
     withoutOutline?: boolean;

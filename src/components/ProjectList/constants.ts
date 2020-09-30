@@ -233,8 +233,8 @@ export const projects: IProjects[] = [
         id: 7,
         title: 'Portfolio Website v2',
         subtitle: {
-            en: 'Create React App TypeScript | Personal Portfolio v. 2',
-            pl: 'Create React App TypeScript | Portfolio Personalne 2 odłona',
+            en: 'Create React App TypeScript | Personal Portfolio v2',
+            pl: 'Create React App TypeScript | Portfolio Personalne 2 odsłona',
         },
         description: {
             en: `The second version of my portfolio website, this time made with React. The development process was very
@@ -251,7 +251,7 @@ had thought, I very happy with the final result and I hope you would enjoy it to
               powiedziałem sobie, że się nie poddam! I nie żałuje tej decyzji, gdyż nie tylko udało mi się dowieźć ten projkt do końca,
               ale chyba nawet polubiliśmy się na tyle, że kompilator już tak często się na mnie nie złości`,
         },
-        stack: [Stack.react, Stack.ts, Stack.sc, Stack.fm, Stack.formik, Stack.sketch],
+        stack: [Stack.react, Stack.ts, Stack.sc, Stack.fm, Stack.mui, Stack.formik, Stack.sketch],
         category: 'apps',
         img: portfolio,
         slug: 'portfolio-v2',
