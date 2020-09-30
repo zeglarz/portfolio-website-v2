@@ -6,6 +6,7 @@ const light: DefaultTheme = {
         text: 'black',
         contrast: 'white',
         background: 'white',
+        secondary: '#656565',
     },
     gradients: {
         primary: 'linear-gradient(90deg, #7700ff 0%, rgb(68, 0, 255) 100%)',
@@ -25,6 +26,7 @@ const dark: DefaultTheme = {
         text: 'white',
         contrast: 'black',
         background: '#100E17',
+        secondary: '#aeaeae',
     },
     gradients: {
         primary: 'linear-gradient(90deg,#ff8a00,#e52e71)',

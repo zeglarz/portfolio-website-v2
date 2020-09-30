@@ -7,6 +7,7 @@ declare module 'styled-components' {
             text: string,
             contrast: string,
             background: string,
+            secondary: string
         },
         gradients: {
             primary: string,

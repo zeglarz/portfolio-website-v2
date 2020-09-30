@@ -6,9 +6,10 @@ import { projects } from './constants';
 const ProjectList = () => {
     return (
         <>
-            {projects.map(p =>
+            {projects.map((p, i) =>
                 <ProjectCard
                     key={p.id}
+                    index={i + 1}
                     {...p}
                 />,
             )}

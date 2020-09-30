@@ -66,7 +66,6 @@ const PageWrapper = styled.div`
             hyphens: auto;
             max-width: 720px;
             margin-bottom: 30px;
-            color: ${({ theme }) => theme.colors.text};
             
             ${media.giant`
                 font-size: 0.95rem;
