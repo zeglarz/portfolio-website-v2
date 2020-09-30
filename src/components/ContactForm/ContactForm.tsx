@@ -23,7 +23,6 @@ const StyledForm = styled.div`
       ${media.tablet`
             margin-top: 2rem;
             margin-inline-end: auto;
-
         `}
     form {
         display: grid;

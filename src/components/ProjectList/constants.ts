@@ -225,8 +225,8 @@ export const projects: IProjects[] = [
         id: 7,
         title: 'Portfolio Website v2',
         subtitle: {
-            en: 'Create React App TypeScript | Personal Portfolio',
-            pl: 'Create React App TypeScript | Portfolio Personalne',
+            en: 'Create React App TypeScript | Personal Portfolio v. 2',
+            pl: 'Create React App TypeScript | Portfolio Personalne 2 odłona',
         },
         description: {
             en: `This was a follow along guide on how to create twitter clone app which I decided to undertake for the purpose of familiarizing myself
