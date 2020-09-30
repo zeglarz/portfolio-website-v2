@@ -11,8 +11,14 @@ interface IStack {
     image: string
 }
 
-export interface ITechs {
+interface ITechs {
     title: string,
     stack: IStack[]
 }
 
+export interface ITechObj {
+    fontEnd: ITechs,
+    backEnd: ITechs,
+    software: ITechs,
+    otherTools: ITechs
+}

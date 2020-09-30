@@ -208,11 +208,11 @@ const About = () => {
                             </div>
                         </Header>
                         <ListContainer>
-                            {techs.map(tech =>
-                                <div key={tech.title}>
-                                    <h3>{tech.title}</h3>
+                            {Object.keys(techs).map(tech =>
+                                <div key={techs[tech]}>
+                                    <h3>{techs[tech].title}</h3>
                                     <ul>
-                                        {tech.stack.map(stack =>
+                                        {techs[tech].stack.map(stack =>
                                             <li key={stack.name}>
                                                 <img src={stack.image} alt={stack.name}/>
                                                 <h4>{stack.name}</h4>

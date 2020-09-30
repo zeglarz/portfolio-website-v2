@@ -1,9 +1,9 @@
-import { ITechs, LEVELS } from './constants.d';
+import { ITechObj, LEVELS } from './constants.d';
 import * as img from '../../assets/skills';
 
 
-export const TECHS: ITechs[] = [
-    {
+export const TECHS: ITechObj = {
+    fontEnd: {
         title: 'Front-end',
         stack: [
             {
@@ -49,7 +49,7 @@ export const TECHS: ITechs[] = [
             },
         ],
     },
-    {
+    backEnd: {
         title: 'Back-end',
         stack: [
             {
@@ -74,7 +74,7 @@ export const TECHS: ITechs[] = [
             },
         ],
     },
-    {
+    software: {
         title: 'Software & other tools',
         stack: [
             {
@@ -114,7 +114,7 @@ export const TECHS: ITechs[] = [
             },
         ],
     },
-    {
+    otherTools: {
         title: 'I use these as well',
         stack: [
             {
@@ -164,4 +164,4 @@ export const TECHS: ITechs[] = [
             },
         ],
     },
-];
+};
