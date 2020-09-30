@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import media from '../../../styles/style';
-import Divider from "../../Divider/Dividier";
+import Divider from '../../Divider/Dividier';
 import Sun from '../Switch/Sun';
-import {LINKS as links} from '../constants'
+import { LINKS as links } from '../constants';
+
 
 const StyledLinkContainer = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const StyledLinkContainer = styled.div`
      ${media.desktop`
         display: none;
     `}
-`
+`;
 
 const StyledList = styled.ul`
     list-style: none;
@@ -24,6 +25,7 @@ const StyledList = styled.ul`
     
     li {
         a {
+            cursor: pointer;
             display: flex;
             font-size: 0.8rem;
             font-family: 'Lato';
@@ -32,23 +34,25 @@ const StyledList = styled.ul`
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: all ease-in-out 200ms;
-            color: ${({theme}) => theme.colors.text};
+            color: ${({ theme }) => theme.colors.text};
+            
             ${media.bigDesktop`
                 font-size: 0.7rem;
                 padding: 0.8rem 0.5rem;
                 font-weight: 400;
             `}
+            
             &.active {
                   display: inline-block;
-                  background: ${({theme}) => theme.gradients.primary};
+                  background: ${({ theme }) => theme.gradients.primary};
                   -webkit-background-clip: text;
                   -webkit-text-fill-color: transparent;
                   -webkit-box-decoration-break: clone;
             }
             &:hover {
-                  color: ${({theme}) => theme.gradients.primary};
+                  color: ${({ theme }) => theme.gradients.primary};
                   svg {
-                      fill: ${({theme}) => theme.gradients.svg};
+                      fill: ${({ theme }) => theme.gradients.svg};
                   }
             }
         } 
@@ -57,9 +61,9 @@ const StyledList = styled.ul`
         }
     }
     
-`
+`;
 
-const NavLinks = ({toggleTheme, theme}) => {
+const NavLinks = ({ toggleTheme, theme }) => {
     return (
         <StyledLinkContainer>
             <StyledList>
@@ -68,7 +72,7 @@ const NavLinks = ({toggleTheme, theme}) => {
                         <li key={link.title}>
                             <NavLink to={link.to}>{link.title}</NavLink>
                         </li>
-                    )
+                    ),
                 )}
                 <Divider vert/>
                 <li>
@@ -77,6 +81,6 @@ const NavLinks = ({toggleTheme, theme}) => {
             </StyledList>
         </StyledLinkContainer>
     );
-}
+};
 
 export default NavLinks;

@@ -19,9 +19,24 @@ const ProjectCard: FunctionComponent<IProjects> = ({
                                                    }) => {
     return (
         <StyledCard>
-            <Grid>
+            <Grid
+                container
+                direction={id % 2 === 1 ? 'row-reverse' : 'row'}
+                spacing={4}
+                alignItems='center'
+                justify='center'
+            >
+                <Grid item xs={12} sm={12} md={6}>
+                    <img src={img} alt={title}/>
+                </Grid>
+                <Typography variant='h6'>
+                    {title}
+                </Typography>
+                <Typography variant='body2'>
+                    {subtitle.en}
+                </Typography>
                 <Button>
-                    <Typography>{title}</Typography>
+                    Demo
                 </Button>
             </Grid>
         </StyledCard>

@@ -229,26 +229,24 @@ export const projects: IProjects[] = [
             pl: 'Create React App TypeScript | Portfolio Personalne 2 odłona',
         },
         description: {
-            en: `This was a follow along guide on how to create twitter clone app which I decided to undertake for the purpose of familiarizing myself
-            with Firebase services. This over 11 hour tutorial was very helpful with conveying ins and outs of firebase
-            functionality such as storage, cloud functions, authentication and authorization and last but not least to
-            perform CRUD operations on non-sql database provided by firebase. This project gave me some more practice with
-            state management tool Redux. I made some twists and turns to tweak this follow-along project to my liking. 
-             For example I made use of skeleton loading for the first time which is more modern approach over old turning
-             wheel when data loads. More and more big apps are using it nowadays and basically what it is, is as the name
-             suggest to see a skeleton in form of blocks and circles which pulse in exact place of where data is going to 
-             reveal itself when it's been fetched.`,
-            pl: `Projekt tutorialowy, który podjąłem wcelu nauczenia się korzystania z funkcjonalności dostarczenej przez
-            serwis Firebase i polegał on na stworzeniu klona Twittera. ten ponad 11-godzinny kurs pozlolił mi nauczyć się korzystać ze storage, cloud functions, 
-            jak i komunikacji z niereleacyjną bazą danych oraz uwierzytelniania użytkownika. Tutorial pozwolił mi również 
-            utrwalić wiedzę związaną z wykorzystywaniem Reduxa do zarządznia stanem aplikacji. Pewnym smaczkiem wprowadzonum przeze
-            mnie było wprowadzenie tzw. sceleton loadingu, czyli wyświetlania szkieletu treśći, które dopiero są fetchowane,
-            zmiast przestarzałego już podejścia, czyli tzw. loader'a najczęściej pod postacią kręcącego się kółka.`,
+            en: `The second version of my portfolio website, this time made with React. The development process was very
+challenging but I won't like it, I learned a lot during this time. I must admit that the hardest part of this
+project was to learn TypeScript and make the compiler happy for the most part. I won't be lying that I had a few moments of doubt and had thoughts of going back to plain old JavaScript but I forced my way through and I will never forget this lesson and hopefully, will I have a bright future in my next TS endeavors. For the
+visual part of the website, I worked with Styled-Components which I learned to love and won't ditch it for other styling solutions anytime soon. I also gave a shot and try my best with Framer-Motion in regard to making
+my page more visually appealing with help of animations. Working with framer-motion proved easier than I initially
+had thought, I very happy with the final result and I hope you would enjoy it too as well.`,
+            pl: `Druga odsłona mojego osobistego portfolio, tym razem napisana w Reacie. Projekt ten okazał się dużym
+             wyzwaniem, podczas którego nauczyłem się wielu nowych rzeczy. Pierwszą i najważniejszą jest TypeScript. Jest
+             to pierwsza strona od postaw napisana w tymże języku. Nie ukrywam, że krzywa uczenia była przy tym projekcie
+             dość stroma, miałem kilka momentów zwątpień, kiedy kombilator rozbyłskiwał czerownymi kolorami niczym choinka
+              i myślałem o powrocie do starego poczciwego JavaSripta, ale nie,
+              powiedziałem sobie, że się nie poddam! I nie żałuje tej decyzji, gdyż nie tylko udało mi się dowieźć ten projkt do końca,
+              ale chyba nawet polubiliśmy się na tyle, że kompilator już tak często się na mnie nie złości`,
         },
         stack: [Stack.react, Stack.ts, Stack.sc, Stack.fm, Stack.formik, Stack.sketch],
         category: 'apps',
         img: 'img/socialape.png',
-        slug: 'socialape',
+        slug: 'portfolio-v2',
         demoURL: 'https://socialape-659f4.web.app',
         gitURL: 'https://github.com/zeglarz/socialape-firebase-frontend',
     },
