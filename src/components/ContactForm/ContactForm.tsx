@@ -154,10 +154,10 @@ const ContactForm = () => {
                 }}
                 open={isSuccess || isError}
                 autoHideDuration={3500}
-                message={!isError ? 'Email sent!' : 'Failed to send email!'}
+                message={isSuccess ? 'Email sent!' : 'Failed to send email!'}
                 action={''}
                 onClose={handleClose}
-                className={!isError ? 'success' : 'error'}
+                className={isSuccess ? 'success' : 'error'}
             />
         </StyledForm>
     );
