@@ -1,3 +1,11 @@
+import bookmates from '../../assets/projects/bookmates.png';
+import devbook from '../../assets/projects/devbook.png';
+import newsfeed from '../../assets/projects/newsfeed.png';
+import randomperson from '../../assets/projects/randomperson.png';
+import socialape from '../../assets/projects/socialape.png';
+import portfolio from '../../assets/projects/portfolio.png';
+
+
 enum Stack {
     js = 'JavaScript',
     ts = 'TypeScript',
@@ -64,7 +72,7 @@ export const projects: IProjects[] = [
         },
         stack: [Stack.js, Stack.html, Stack.scss, Stack.node, Stack.express, Stack.api, Stack.jquery, Stack.bootstrap],
         category: 'apps',
-        img: 'img/newsfeed.png',
+        img: newsfeed,
         slug: 'newsfeed',
         demoURL: 'https://newsify.konradrudnicki.com',
         gitURL: 'https://github.com/zeglarz/News-Feed-API',
@@ -95,7 +103,7 @@ export const projects: IProjects[] = [
         },
         stack: [Stack.flutter, Stack.dart, Stack.mui, Stack.api],
         category: 'mobile',
-        img: 'img/randomperson.png',
+        img: randomperson,
         slug: 'randomperson',
         demoURL: 'https://play.google.com/store/apps/details?id=com.konradrudnicki.randompersongenerator',
         gitURL: 'https://github.com/zeglarz/random-person-generator-flutter',
@@ -125,7 +133,7 @@ export const projects: IProjects[] = [
         },
         stack: [Stack.mongo, Stack.express, Stack.react, Stack.redux, Stack.node, Stack.jwt],
         category: 'apps',
-        img: 'img/devbook.png',
+        img: devbook,
         slug: 'devbook',
         demoURL: 'https://devbook.konradrudnicki.com',
         gitURL: 'https://github.com/zeglarz/DevBook',
@@ -154,7 +162,7 @@ export const projects: IProjects[] = [
         },
         stack: [Stack.html, Stack.js, Stack.css, Stack.jquery, Stack.bootstrap, Stack.rwd, Stack.sketch],
         category: 'web',
-        img: 'img/portfolio.png',
+        img: portfolio,
         slug: 'portfolio',
         demoURL: 'https://konradrudnicki.com',
         gitURL: 'https://github.com/zeglarz/portfolio-webpage-v1',
@@ -185,7 +193,7 @@ export const projects: IProjects[] = [
         },
         stack: [Stack.react, Stack.postgres, Stack.js, Stack.node, Stack.express, Stack.scss],
         category: 'apps',
-        img: 'img/bookmates.png',
+        img: bookmates,
         slug: 'bookmates',
         demoURL: 'https://bookmates.krzysztofziemski.com',
         gitURL: 'https://github.com/KrzysztofZiemski/bookmates',
@@ -216,7 +224,7 @@ export const projects: IProjects[] = [
         },
         stack: [Stack.react, Stack.js, Stack.redux, Stack.firebase, Stack.scss],
         category: 'apps',
-        img: 'img/socialape.png',
+        img: socialape,
         slug: 'socialape',
         demoURL: 'https://socialape-659f4.web.app',
         gitURL: 'https://github.com/zeglarz/socialape-firebase-frontend',
@@ -245,7 +253,7 @@ had thought, I very happy with the final result and I hope you would enjoy it to
         },
         stack: [Stack.react, Stack.ts, Stack.sc, Stack.fm, Stack.formik, Stack.sketch],
         category: 'apps',
-        img: 'img/socialape.png',
+        img: portfolio,
         slug: 'portfolio-v2',
         demoURL: 'https://socialape-659f4.web.app',
         gitURL: 'https://github.com/zeglarz/socialape-firebase-frontend',
