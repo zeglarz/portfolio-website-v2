@@ -54,7 +54,7 @@ export const Title = styled(motion.div)<ITitle>`
       font-size: 1.5rem;
       letter-spacing: 0px;
       color: ${({ theme }) => theme.colors.text};
-      font-family: 'Lato';
+      font-family: 'Lato', sans-serif;
       font-weight: 700;
       margin-bottom: 1.2rem;
       

@@ -6,12 +6,13 @@ import Icon from './SocialIcons/withIcon';
 import { SOCIAL as socials } from './constants';
 import { Title } from '../../styles/Title';
 import { motion, Variants } from 'framer-motion';
+import {StyledLink} from '../../styles/StyledLink';
 
 interface Custom {
     withoutOutline?: boolean;
 }
 
-const StyledLink = styled.a.attrs({ rel: 'noopener noreferrer', target: '_blank' })<Custom>`
+const StyledLinkContainer = styled(StyledLink)<Custom>`
       display: flex;
       align-items: center;
       justify-content: center;
@@ -110,7 +111,7 @@ const Hero = ({ title, fLine, sLine, content, withSocial = false }) => {
                                 (
                                     <li key={social.link}>
                                         <Tooltip arrow title={social.name}>
-                                            <StyledLink
+                                            <StyledLinkContainer
                                                 href={social.link}
                                                 withoutOutline={social.name === 'Stack Overflow' || social.name === 'Mail'}
                                             >
@@ -118,7 +119,7 @@ const Hero = ({ title, fLine, sLine, content, withSocial = false }) => {
                                                     icon={social.icon}
                                                     withoutOutline={social.name === 'Stack Overflow' || social.name === 'Mail'}
                                                 />
-                                            </StyledLink>
+                                            </StyledLinkContainer>
                                         </Tooltip>
                                     </li>
                                 ),

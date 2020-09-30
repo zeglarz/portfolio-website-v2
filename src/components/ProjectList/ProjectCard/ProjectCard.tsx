@@ -3,6 +3,7 @@ import { Button, Grid, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 import { IProjects } from '../constants';
 import media from '../../../styles/style';
+import { StyledLink } from '../../../styles/StyledLink';
 
 
 const StyledCard = styled.div`
@@ -95,7 +96,8 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = ({
                     <Typography variant='body2' className='subtitle'>
                         {subtitle.en}
                     </Typography>
-                    <div className={'paragraph'}>{description.en.substr(0, 422).concat('...')}</div>
+                    <div
+                        className={'paragraph'}>{description.en.split(' ').splice(0, 99).join(' ').concat('...')}</div>
                     <div className='skills'>
                         {stack.map((s) => (
                             <Skill key={s}>
@@ -103,9 +105,11 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = ({
                             </Skill>
                         ))}
                     </div>
-                    <Button>
-                        Demo
-                    </Button>
+                    <StyledLink href={demoURL}>
+                        <Button>
+                            Demo
+                        </Button>
+                    </StyledLink>
                 </Grid>
             </Grid>
         </StyledCard>

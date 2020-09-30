@@ -8,20 +8,20 @@ interface IPageWrapper {
 }
 
 const StyledTop = styled.div<IPageWrapper>`
- display: flex;
-width: 100%;
-height: 100%;
-min-height: calc(100vh - 85px);
-flex-direction: ${({ reverse }) => reverse ? 'row-reverse' : 'row'};
-${({ noReverse }) => noReverse ?
-                     css`
+        display: flex;
+        width: 100%;
+        height: 100%;
+        min-height: calc(100vh - 85px);
+        flex-direction: ${({ reverse }) => reverse ? 'row-reverse' : 'row'};
+        ${({ noReverse }) => noReverse ?
+                             css`
                         ${media.tablet`
-                                    min-height: 750px;
-                                    flex-direction: column;
+                            min-height: 750px;
+                            flex-direction: column;
                         `}`
-                               :
-                     css`
-                            ${media.tablet`
+                                       :
+                             css`
+                        ${media.tablet`
                             min-height: 750px;
                             flex-direction: column-reverse;
                         `}`
