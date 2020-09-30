@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik } from 'formik';
-import { Button, TextField } from '@material-ui/core';
+import { Button, Snackbar, TextField } from '@material-ui/core';
 import email from 'emailjs-com';
 import styled from 'styled-components';
 import { TextFieldProps } from '@material-ui/core/TextField/TextField';
@@ -15,22 +15,31 @@ const initialValues = {
 };
 
 const StyledForm = styled.div`
-width: 100%;
-  margin: 0 auto;
-  max-width: 400px;
-  margin-inline-end: 2rem;
-  form {
-    display: grid;
-    grid-gap: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 400px;
+    margin-inline-end: 2rem;
+    
+    form {
+        display: grid;
+        grid-gap: 1rem;
     button {
-      justify-content: center;
-      height: 45px;
+        justify-content: center;
+        height: 45px;
+      }
     }
+    form div {
+        width: 100%;
+        display: block;
+    }
+    .success > div {
+        background: green;
+        color: white;
   }
-form div {
-width: 100%;
-display: block;
-}
+    .error > div {
+        background: red;
+        color: white;
+    }
 `;
 
 const validationSchema = object().shape({
@@ -53,7 +62,14 @@ const validationSchema = object().shape({
 
 
 const ContactForm = () => {
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [isError, setIsError] = useState(false);
 
+    const handleClose = (_, reason) => {
+        if (reason === 'clickaway') return;
+        setIsSuccess(false);
+        setIsError(false);
+    };
     return (
         <StyledForm>
             <Formik
@@ -74,10 +90,14 @@ const ContactForm = () => {
                             process.env.REACT_APP_EMAIL_JS_TOKEN,
                         )
                         .then(() => {
-                                console.log('nana');
+                                setSubmitting(false);
+                                resetForm();
+                                setIsSuccess(true);
                             },
                             error => {
                                 console.log(error);
+                                setIsError(true);
+                                setSubmitting(false);
                             },
                         );
                 }}
@@ -104,28 +124,18 @@ const ContactForm = () => {
                         onBlur: handleBlur,
                         error: isError(type),
                         helperText: helperText(type),
+                        onChange: handleChange,
                     });
 
                     return (
                         <form onSubmit={handleSubmit}>
-                            <TextField
-                                {...standardTextfield('name')}
-                            />
-                            <TextField
-                                {...standardTextfield('email', 'email')}
-                            />
-                            <TextField
-                                {...standardTextfield('title')}
-                            />
-                            <TextField
-                                {...standardTextfield('message')}
-                                multiline
-                                rows={7}
-                            />
+                            <TextField {...standardTextfield('name')}/>
+                            <TextField {...standardTextfield('email', 'email')}/>
+                            <TextField {...standardTextfield('title')}/>
+                            <TextField {...standardTextfield('message')} multiline rows={7}/>
                             <Button
                                 variant='outlined'
                                 color='primary'
-                                className='contact-button custom-button'
                                 size='large'
                                 type='submit'
                                 disabled={isSubmitting}
@@ -137,6 +147,18 @@ const ContactForm = () => {
                     );
                 }}
             </Formik>
+            <Snackbar
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                }}
+                open={isSuccess || isError}
+                autoHideDuration={3500}
+                message={!isError ? 'Email sent!' : 'Failed to send email!'}
+                action={''}
+                onClose={handleClose}
+                className={!isError ? 'success' : 'error'}
+            />
         </StyledForm>
     );
 };
