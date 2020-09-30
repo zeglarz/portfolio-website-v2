@@ -1,19 +1,27 @@
 import React, { FunctionComponent } from 'react';
 import { Button, Grid, Typography } from '@material-ui/core';
 import styled from 'styled-components';
+import { IProjects } from '../constants';
 
-
-interface ProjectCardProps {
-
-}
 
 const StyledCard = styled.div``;
-const ProjectCard: FunctionComponent<ProjectCardProps> = ({}) => {
+const ProjectCard: FunctionComponent<IProjects> = ({
+                                                       id,
+                                                       title,
+                                                       subtitle,
+                                                       description,
+                                                       stack,
+                                                       category,
+                                                       img,
+                                                       slug,
+                                                       demoURL,
+                                                       gitURL,
+                                                   }) => {
     return (
         <StyledCard>
             <Grid>
                 <Button>
-                    <Typography>Nanan</Typography>
+                    <Typography>{title}</Typography>
                 </Button>
             </Grid>
         </StyledCard>

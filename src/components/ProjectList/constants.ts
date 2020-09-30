@@ -30,7 +30,7 @@ interface ILang {
     pl: string
 }
 
-interface IProjects {
+export interface IProjects {
     id: number,
     title: string,
     subtitle: ILang,

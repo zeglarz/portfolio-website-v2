@@ -5,7 +5,6 @@ import Image from '../../components/Hero/Image/Image';
 import StyledTop from '../../styles/Top';
 import ProjectList from '../../components/ProjectList/ProjectList';
 
-
 const Projects = () => {
 
     useEffect(() => {

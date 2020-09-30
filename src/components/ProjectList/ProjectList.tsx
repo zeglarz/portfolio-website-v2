@@ -1,14 +1,18 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
+import ProjectCard from './ProjectCard/ProjectCard';
 import { projects } from './constants';
 
 
-interface ProjectListProps {
-
-}
-
-const ProjectList: FunctionComponent<ProjectListProps> = ({}) => {
+const ProjectList = () => {
     return (
-        <ul>{projects.map(project => <li>{project.id}</li>)}</ul>
+        <>
+            {projects.map(p =>
+                <ProjectCard
+                    key={p.id}
+                    {...p}
+                />,
+            )}
+        </>
     );
 };
 
