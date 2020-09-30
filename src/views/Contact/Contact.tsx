@@ -8,11 +8,9 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 
 const StyledContact = styled.div`
   width: 100%;
-
 `;
 
-const Contact = ({ pageTitle }) => {
-
+const Contact = () => {
     return (
         <StyledContact>
             <Container>

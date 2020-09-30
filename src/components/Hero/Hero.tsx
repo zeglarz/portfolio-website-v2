@@ -54,10 +54,12 @@ const StyledHero = styled.div`
     
     .social-links {
         margin-bottom: 32px;
-        
         ul {
           display: flex;
           list-style: none;
+          li {
+            cursor: pointer;
+          }
         }
     }
 `;

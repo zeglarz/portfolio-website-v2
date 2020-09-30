@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import GlobalStyle from './styles/GlobalStyle';
 import useTheme from './helpers/hooks/useTheme';
 import useIntro from './helpers/hooks/useIntro';
 import { useHistoryListen } from './helpers/hooks/useHistoryListen';
 import { ThemeProvider } from 'styled-components';
-import { MuiThemeProvider } from '@material-ui/core/styles';
 import { dark, light } from './styles/theme/theme';
 import IntroAnimation from './components/IntroAnimation/IntroAnimation';
 import Home from './views/Home/Home';

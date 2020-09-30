@@ -1,13 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { Formik } from 'formik';
 import { Button, TextField } from '@material-ui/core';
 import email from 'emailjs-com';
 import styled from 'styled-components';
+import { TextFieldProps } from '@material-ui/core/TextField/TextField';
 
-
-interface ContactFormProps {
-
-}
 
 const initialValues = {
     email: '',
@@ -35,48 +32,86 @@ display: block;
 }
 `;
 
-const ContactForm: FunctionComponent<ContactFormProps> = () => {
+const ContactForm = () => {
+
     return (
         <StyledForm>
             <Formik
                 initialValues={initialValues}
-                onSubmit={async (values, { setErrors }) => {
+                onSubmit={(values, { setSubmitting, resetForm }) => {
+                    email
+                        .send(
+                            process.env.REACT_APP_EMAIL_JS_SERVICE_ID!,
+                            process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID!,
+                            {
+                                name: values.name,
+                                title: values.title,
+                                message: values.message,
+                                from_email: values.email,
+                                reply_to: values.email,
+                            },
+                            process.env.REACT_APP_EMAIL_JS_TOKEN,
+                        )
+                        .then(() => {
+                                console.log('nana');
+                            },
+                            error => {
+                                console.log(error);
+                            },
+                        );
                 }}
             >
-                {({ isSubmitting }) =>
-                    (
-                        <form>
+                {({
+                      values,
+                      handleChange,
+                      handleBlur,
+                      handleSubmit,
+                      touched,
+                      errors,
+                      isSubmitting,
+                  }) => {
+                    const isError = (type) => !!(touched[type] && errors[type]);
+                    const helperText = (type) => isError(type) && errors[type];
+                    const standardTextfield = (type: string, inputType = 'text'): TextFieldProps => ({
+                        variant: 'filled',
+                        name: type,
+                        type: inputType,
+                        label: `Your ${type}`,
+                        autoComplete: 'off',
+                        value: values[type],
+                        size: 'small',
+                    });
+
+                    return (
+                        <form onSubmit={handleSubmit}>
                             <TextField
-                                variant='filled'
-                                name={'name'}
-                                label={'Name'}
-                                type={'text'}
+                                {...standardTextfield('name')}
                             />
                             <TextField
-                                variant='filled'
-                                name={'email'}
-                                label={'Email'}
-                                type={'email'}
+                                {...standardTextfield('email', 'email')}
                             />
                             <TextField
-                                variant='filled'
-                                name={'title'}
-                                label={'Title'}
-                                type={'text'}
+                                {...standardTextfield('title')}
                             />
                             <TextField
-                                variant='filled'
-                                name={'message'}
-                                label={'Your Message'}
-                                type={'text'}
+                                {...standardTextfield('message')}
+                                multiline
+                                rows={7}
                             />
                             <Button
                                 variant='outlined'
+                                color='primary'
+                                className='contact-button custom-button'
+                                size='large'
+                                type='submit'
+                                disabled={isSubmitting}
+                                endIcon={''}
                             >
                                 Send
                             </Button>
                         </form>
-                    )}
+                    );
+                }}
             </Formik>
         </StyledForm>
     );

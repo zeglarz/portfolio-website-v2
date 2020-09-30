@@ -1,4 +1,4 @@
-import React, { createRef, MutableRefObject, RefObject, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { MutableRefObject, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Hero from '../../components/Hero/Hero';
 import styled from 'styled-components';
 import { Container } from '@material-ui/core';
@@ -139,25 +139,8 @@ const StyledAbout = styled.div`
 
 const About = () => {
     const ref: MutableRefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
-    const [ratio, setRatio] = useState(0);
+    const [handleRotation, handleMove, handleScale, handleOpacity] = useWindowResize(ref);
 
-    useLayoutEffect(() => {
-        const handleResize = () => {
-            if (ref.current) {
-                setRatio(ref.current.offsetTop / window.document.body.offsetHeight);
-            }
-        };
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, [ratio]);
-    console.log("ratio1", ratio);
-
-    const { scrollYProgress } = useViewportScroll();
-    const handleRotation = useTransform(scrollYProgress, [0, ratio], [90, 360]);
-    const handleMove = useTransform(scrollYProgress, [0, ratio], ["-50vw", "0vw"]);
-    const handleScale = useTransform(scrollYProgress, [0, ratio], [0.3, 1]);
-    const handleOpacity = useTransform(scrollYProgress, [0, ratio], [0, 1]);
 
     useEffect(() => {
         document.title = `Home · Konrad Rudnicki`;
