@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { IProjects } from '../constants';
 import media from '../../../styles/style';
 import { StyledLink } from '../../../styles/StyledLink';
+import { Link } from 'react-router-dom';
 
 
 const StyledLinkMod = styled(StyledLink)`
@@ -12,7 +13,7 @@ const StyledLinkMod = styled(StyledLink)`
 
 const StyledCard = styled.div`
   width: 100%;
-  padding-bottom: 5rem;
+  padding-bottom: 5.5rem;
   display: flex;
   justify-content: center;
   text-align: justify;
@@ -62,6 +63,12 @@ const StyledCard = styled.div`
   button {
   margin-right: 15px;
   }
+  .paragraph a {
+    text-decoration: underline;
+float: right;
+      color: ${({ theme }) => theme.colors.text};
+
+  }
 `;
 
 const Skill = styled.span`
@@ -105,8 +112,6 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = ({
                     <Typography variant='body2' className='subtitle'>
                         {subtitle.en}
                     </Typography>
-                    <div
-                        className={'paragraph'}>{description.en.split(' ').splice(0, 99).join(' ').concat('...')}</div>
                     <div className='skills'>
                         {stack.map((s) => (
                             <Skill key={s}>
@@ -114,6 +119,9 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = ({
                             </Skill>
                         ))}
                     </div>
+                    <div
+                        className={'paragraph'}>{description.en.split(' ').splice(0, 99).join(' ').concat('...')}{
+                        <Link to={'/'}>read more</Link>}</div>
                     <Grid container direction='row' justify={'flex-start'}>
                         <StyledLinkMod href={demoURL}>
                             <Button

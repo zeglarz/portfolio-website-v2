@@ -56,7 +56,7 @@ const PageWrapper = styled.div`
    }
 }
 .paragraph {
-            color: ${({ theme }) => theme.colors.text};
+            color: ${({ theme }) => theme.colors.secondary};
             font-size: 1.1rem;
             line-height: 1.8;
             overflow-wrap: break-word;
