@@ -15,7 +15,7 @@ const SyledBar = styled(motion.div)<NavbarTypes>`
         right: 0;
         height: 4px;
         background: ${({ theme }) => theme.gradients.primary};
-        z-index: 4;
+        z-index: 3;
 `;
 
 const ProgressBar = (props) => {

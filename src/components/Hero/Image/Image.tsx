@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
+import media from '../../../styles/style';
 
 interface ImageProps {
     src: string;
@@ -33,6 +34,12 @@ const StyledImgContainer = styled(motion.div)`
     height: 100%;
     z-index: 2;
   }
+  img {
+    ${media.tablet`
+        width: 100%;
+    `}
+  }
+
 `;
 
 const divVariants = {

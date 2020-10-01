@@ -25,7 +25,12 @@ const App = () => {
 
     useEffect(() => {
         console.log('theme', theme);
-    }, [theme]);
+        menuOpen ? document.body.style.overflow = 'hidden' :
+        document.body.style.overflow = 'unset';
+
+        menuOpen ? document.body.style.height = '100vh' :
+        document.body.style.height = '100%';
+    }, [theme, menuOpen]);
     return (
         <ThemeProvider theme={theme ? dark : light}>
             <MuiThemeProvider theme={theme ? materialThemeDark : materialThemeLight}>
