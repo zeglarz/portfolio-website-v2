@@ -42,6 +42,7 @@ const Projects = () => {
                     cumque, doloremque et fugit harum, illum incidunt ipsam iusto molestias natus nisi perspiciatis quae
                     quasi repudiandae sapiente?
                 </div>
+                <div style={{ marginBottom: '4rem' }}/>
                 <ProjectList/>
             </div>
         </Container>

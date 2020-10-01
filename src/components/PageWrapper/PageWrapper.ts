@@ -65,7 +65,7 @@ const PageWrapper = styled.div`
             -ms-hyphens: auto;
             hyphens: auto;
             max-width: 720px;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             
             ${media.giant`
                 font-size: 0.95rem;

@@ -2,9 +2,11 @@ import React, { FunctionComponent } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import styled from 'styled-components';
 import { Button, Grid, Typography } from '@material-ui/core';
-import { IProjects } from '../ProjectList/constants';
-import { StyledLink } from '../../styles/StyledLink';
-import media from '../../styles/style';
+import { IProjects } from '../constants';
+import { StyledLink } from '../../../styles/StyledLink';
+import media from '../../../styles/style';
+import { useHistory } from 'react-router-dom';
+import Zoom from '@material-ui/core/Zoom';
 
 
 interface ModalProps {
@@ -29,6 +31,7 @@ const StyledCloseButton = styled.button`
 `;
 
 const StyledModal = styled(Dialog)`
+background: rgba(0, 0, 0, 0.5);
 .MuiDialog-paper {
           border-radius: 16px;
                     box-shadow: ${({ theme }) => theme.shadows.primary};
@@ -39,22 +42,22 @@ const StyledModal = styled(Dialog)`
           padding: 20px;
      }
      .img-container {
-     width: 100%;
-     height: 100%;
+         width: 100%;
+         height: 100%;
        ${media.tablet`
-   overflow-y: scroll;
-    `}
+            overflow-y: scroll;
+     `}
      img {
           border-radius: 16px;
           width: 100%;
-        height: 100%;
+          height: 100%;
+          
           ${media.thone`
-          width: auto;
-             overflow-y: scroll;
-
-        max-height: 300px;
-    `}
-  }
+                width: auto;
+                overflow-y: scroll;
+                max-height: 300px;
+          `}
+     }
 
     }
      }
@@ -84,12 +87,10 @@ const StyledModal = styled(Dialog)`
          `}
     }
     .skills {
-    margin: 15px 0;
-
-      ${media.tablet`
+    ${media.tablet`
             margin: 0 auto;
          `};
-      margin-bottom: 8px;
+      margin: 15px 0 8px;
     }
   button {
   margin-right: 15px;
@@ -121,6 +122,7 @@ const Skill = styled.span`
 `;
 
 const MuiModal: FunctionComponent<ModalProps & IProjects> = ({ open, stack, setOpen, img, title, subtitle, description, demoURL, gitURL }) => {
+    const history = useHistory();
 
     const handleOpen = () => {
         setOpen(true);
@@ -128,6 +130,7 @@ const MuiModal: FunctionComponent<ModalProps & IProjects> = ({ open, stack, setO
 
     const handleClose = () => {
         setOpen(false);
+        history.push('/projects');
     };
 
     return (
@@ -137,6 +140,7 @@ const MuiModal: FunctionComponent<ModalProps & IProjects> = ({ open, stack, setO
                      aria-describedby="simple-modal-description"
                      scroll={'body'}
                      maxWidth={'md'}
+                     TransitionComponent={Zoom}
         >
             <Grid
                 container
@@ -145,7 +149,7 @@ const MuiModal: FunctionComponent<ModalProps & IProjects> = ({ open, stack, setO
                 justify='center'
                 className={'main-container'}
             >
-                <StyledCloseButton onClick={() => setOpen(false)}>X</StyledCloseButton>
+                <StyledCloseButton onClick={handleClose}>X</StyledCloseButton>
 
                 <Grid
                     container

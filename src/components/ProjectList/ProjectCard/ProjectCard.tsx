@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { IProjects } from '../constants';
 import media from '../../../styles/style';
 import { StyledLink } from '../../../styles/StyledLink';
-import Modal from '../../ContactForm/Modal';
+import Modal from './Modal';
 
 
 const StyledLinkMod = styled(StyledLink)`
@@ -22,9 +22,10 @@ const StyledCard = styled.div`
   .image {
     position: relative;
     img {
+        max-height: 350px;
         height: auto;
-        width: 100%;
-        max-width: 500px;
+        max-width:500px;
+        object-fit: cover;
         border-radius: 16px;
         box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
            ${media.tablet`
@@ -101,12 +102,15 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = (props) =>
         demoURL,
         gitURL,
     } = props;
+
     const [open, setOpen] = React.useState(false);
     const history = useHistory();
     const slugURL = history.location.search?.split('=')[1];
     useEffect(() => {
         if (slugURL === slug) setOpen(true);
     }, [slugURL, slug]);
+
+
     return (
         <StyledCard>
             <Grid
@@ -134,7 +138,7 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = (props) =>
                         ))}
                     </div>
                     <div
-                        className={'paragraph'}>{description.en.split(' ').splice(0, 99).join(' ').concat('...')}{
+                        className={'paragraph'}>{description.en.split(' ').splice(0, 79).join(' ').concat('...')}{
                         <Link to={`/projects?project=${slug}`} onClick={() => setOpen(true)}>read more</Link>}</div>
                     <Grid container direction='row' justify={'flex-start'}>
                         <StyledLinkMod href={demoURL}>
