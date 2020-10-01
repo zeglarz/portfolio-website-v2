@@ -38,11 +38,23 @@ const StyledModal = styled(Dialog)`
           background: ${({ theme }) => theme.colors.background};
           padding: 20px;
      }
-img {
+     .img-container {
+       ${media.tablet`
+   overflow-y: scroll;
+    `}
+     img {
           border-radius: 16px;
-        height: auto;
-        width: 100%;
+        height: 100%;
+          ${media.thone`
+             overflow-y: scroll;
+
+        max-height: 300px;
+    `}
+  }
+
     }
+     }
+
     .details {
   display: flex;
   justify-content: flex-start;
@@ -79,7 +91,7 @@ img {
   margin-right: 15px;
   }
   .buttons {
-  margin: 15px;
+  margin: 15px 0;
   }
   .paragraph {
         text-align: justify;
@@ -145,7 +157,9 @@ const MuiModal: FunctionComponent<ModalProps & IProjects> = ({ open, stack, setO
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} className={'image'} justify='center' container>
-                    <img src={img} alt={title}/>
+                    <div className={'img-container'}>
+                        <img src={img} alt={title}/>
+                    </div>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12} className='details'>
 

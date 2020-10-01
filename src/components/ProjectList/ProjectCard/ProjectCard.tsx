@@ -27,6 +27,11 @@ const StyledCard = styled.div`
         max-width: 500px;
         border-radius: 16px;
         box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
+           ${media.tablet`
+    object-fit: cover;
+        width: 100%;
+        height: 100%;
+    `}
     }
   }
 
