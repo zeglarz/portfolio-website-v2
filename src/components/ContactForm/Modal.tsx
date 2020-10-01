@@ -4,12 +4,29 @@ import styled from 'styled-components';
 import { Button, Grid, Typography } from '@material-ui/core';
 import { IProjects } from '../ProjectList/constants';
 import { StyledLink } from '../../styles/StyledLink';
+import media from '../../styles/style';
 
 
 interface ModalProps {
     open: boolean,
     setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
+
+const StyledCloseButton = styled.button`
+    position: absolute;
+    font-size: 14px;
+    top: 15px;
+    right: 5px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(211, 211, 211, 0.6);
+    color: ${({ theme }) => theme.colors.contrast};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    width: 28px;
+`;
 
 const StyledModal = styled(Dialog)`
 .MuiDialog-paper {
@@ -22,12 +39,60 @@ const StyledModal = styled(Dialog)`
           padding: 20px;
      }
 img {
-padding: 20px;
           border-radius: 16px;
         height: auto;
         width: 100%;
-  
-    }     
+    }
+    .details {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  ${media.tablet`
+  flex-direction: center !important;
+  justify-content: center !important;
+  `}
+  }
+  .title {
+      font-family: 'Abril Fatface', sans-serif;
+      font-weight: 900;
+      color: ${({ theme }) => theme.colors.text};
+        ${media.tablet`
+            margin: 0 auto;
+         `}
+    }
+    .subtitle {
+      margin-bottom: 16px;
+      color: ${({ theme }) => theme.colors.secondary};
+         ${media.tablet`
+            margin: 0 auto;
+         `}
+    }
+    .skills {
+    margin: 15px 0;
+
+      ${media.tablet`
+            margin: 0 auto;
+         `};
+      margin-bottom: 8px;
+    }
+  button {
+  margin-right: 15px;
+  }
+  .buttons {
+  margin: 15px;
+  }
+  .paragraph {
+        text-align: justify;
+        color: ${({ theme }) => theme.colors.secondary};
+
+  a {
+    float: right;
+    color: ${({ theme }) => theme.colors.text};
+    &:hover {
+        text-decoration: underline;
+    }
+  } 
+  }    
 `;
 const Skill = styled.span`
   display: inline-flex;
@@ -54,7 +119,7 @@ const MuiModal: FunctionComponent<ModalProps & IProjects> = ({ open, stack, setO
                      onClose={handleClose}
                      aria-labelledby="simple-modal-title"
                      aria-describedby="simple-modal-description"
-                     scroll={'paper'}
+                     scroll={'body'}
                      maxWidth={'md'}
         >
             <Grid
@@ -64,16 +129,26 @@ const MuiModal: FunctionComponent<ModalProps & IProjects> = ({ open, stack, setO
                 justify='center'
                 className={'main-container'}
             >
-                <Grid item xs={12} sm={12} md={12} className={'image'} justify='center' container>
-                    <img src={img} alt={title}/>
-                </Grid>
-                <Grid item xs={12} sm={12} md={12} className='details'>
+                <StyledCloseButton onClick={() => setOpen(false)}>X</StyledCloseButton>
+
+                <Grid
+                    container
+                    direction={'column'}
+                    alignItems='center'
+                    justify='center'
+                >
                     <Typography variant='h6' className='title'>
                         {title}
                     </Typography>
                     <Typography variant='body2' className='subtitle'>
                         {subtitle.en}
                     </Typography>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} className={'image'} justify='center' container>
+                    <img src={img} alt={title}/>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} className='details'>
+
                     <div className='skills'>
                         {stack.map((s) => (
                             <Skill key={s}>
@@ -82,7 +157,7 @@ const MuiModal: FunctionComponent<ModalProps & IProjects> = ({ open, stack, setO
                         ))}
                     </div>
                     <div className={'paragraph'}>{description.en}</div>
-                    <Grid container direction='row' justify={'flex-start'}>
+                    <Grid container direction='row' justify={'flex-start'} className={'buttons'}>
                         <StyledLink href={demoURL}>
                             <Button
                                 variant='contained'

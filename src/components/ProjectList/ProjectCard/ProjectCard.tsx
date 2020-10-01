@@ -65,10 +65,11 @@ const StyledCard = styled.div`
   margin-right: 15px;
   }
   .paragraph a {
-    text-decoration: underline;
-float: right;
-      color: ${({ theme }) => theme.colors.text};
-
+    float: right;
+    color: ${({ theme }) => theme.colors.text};
+    &:hover {
+        text-decoration: underline;
+    }
   }
 `;
 
