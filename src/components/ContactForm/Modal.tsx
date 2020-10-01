@@ -39,13 +39,17 @@ const StyledModal = styled(Dialog)`
           padding: 20px;
      }
      .img-container {
+     width: 100%;
+     height: 100%;
        ${media.tablet`
    overflow-y: scroll;
     `}
      img {
           border-radius: 16px;
+          width: 100%;
         height: 100%;
           ${media.thone`
+          width: auto;
              overflow-y: scroll;
 
         max-height: 300px;

@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { Button, Grid, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 import { IProjects } from '../constants';
 import media from '../../../styles/style';
 import { StyledLink } from '../../../styles/StyledLink';
-import { Link } from 'react-router-dom';
 import Modal from '../../ContactForm/Modal';
 
 
@@ -102,7 +102,11 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = (props) =>
         gitURL,
     } = props;
     const [open, setOpen] = React.useState(false);
-
+    const history = useHistory();
+    const slugURL = history.location.search?.split('=')[1];
+    useEffect(() => {
+        if (slugURL === slug) setOpen(true);
+    }, [slugURL, slug]);
     return (
         <StyledCard>
             <Grid
@@ -131,7 +135,7 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = (props) =>
                     </div>
                     <div
                         className={'paragraph'}>{description.en.split(' ').splice(0, 99).join(' ').concat('...')}{
-                        <Link to={'#'} onClick={() => setOpen(true)}>read more</Link>}</div>
+                        <Link to={`/projects?project=${slug}`} onClick={() => setOpen(true)}>read more</Link>}</div>
                     <Grid container direction='row' justify={'flex-start'}>
                         <StyledLinkMod href={demoURL}>
                             <Button
