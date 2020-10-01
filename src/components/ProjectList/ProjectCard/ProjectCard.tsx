@@ -5,6 +5,7 @@ import { IProjects } from '../constants';
 import media from '../../../styles/style';
 import { StyledLink } from '../../../styles/StyledLink';
 import { Link } from 'react-router-dom';
+import Modal from '../../ContactForm/Modal';
 
 
 const StyledLinkMod = styled(StyledLink)`
@@ -81,18 +82,21 @@ const Skill = styled.span`
   border: 1px solid ${({ theme }) => theme.colors.text};
 `;
 
-const ProjectCard: FunctionComponent<IProjects & { index: number }> = ({
-                                                                           index,
-                                                                           title,
-                                                                           subtitle,
-                                                                           description,
-                                                                           stack,
-                                                                           category,
-                                                                           img,
-                                                                           slug,
-                                                                           demoURL,
-                                                                           gitURL,
-                                                                       }) => {
+const ProjectCard: FunctionComponent<IProjects & { index: number }> = (props) => {
+    const {
+        index,
+        title,
+        subtitle,
+        description,
+        stack,
+        category,
+        img,
+        slug,
+        demoURL,
+        gitURL,
+    } = props;
+    const [open, setOpen] = React.useState(false);
+
     return (
         <StyledCard>
             <Grid
@@ -121,7 +125,7 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = ({
                     </div>
                     <div
                         className={'paragraph'}>{description.en.split(' ').splice(0, 99).join(' ').concat('...')}{
-                        <Link to={'/'}>read more</Link>}</div>
+                        <Link to={'#'} onClick={() => setOpen(true)}>read more</Link>}</div>
                     <Grid container direction='row' justify={'flex-start'}>
                         <StyledLinkMod href={demoURL}>
                             <Button
@@ -144,6 +148,7 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = ({
                     </Grid>
                 </Grid>
             </Grid>
+            <Modal open={open} setOpen={setOpen} {...props}/>
         </StyledCard>
     );
 };
