@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import media from '../../styles/style';
 
+
 interface IDivider {
     vert?: boolean;
+    long?: boolean;
 }
 
 const StyledDivider = styled.div<IDivider>`
@@ -17,9 +19,9 @@ const StyledDivider = styled.div<IDivider>`
         display: none;
     `}
     span {
-    width: ${({vert}) => (vert ? '1px' : '40px')};
-    height: ${({vert}) => (vert ? '20px' : '1px')};
-    background: ${({theme}) => theme.colors.text};
+    width: ${({ vert }) => (vert ? '1px' : '40px')};
+    height: ${({ vert, long }) => (vert ? (long ? '40px' : '20px') : '1px')};
+    background: ${({ theme }) => theme.colors.text};
     opacity: 0.3;
     }
 `;

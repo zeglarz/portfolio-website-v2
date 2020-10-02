@@ -9,4 +9,6 @@ export const useHistoryListen = (listener) => {
         const unlisten = history.listen(listener);
         return () => unlisten();
     }, [history, listener]);
+
+    return history;
 };

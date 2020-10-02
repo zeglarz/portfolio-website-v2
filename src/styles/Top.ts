@@ -11,7 +11,7 @@ const StyledTop = styled.div<IPageWrapper>`
         display: flex;
         width: 100%;
         height: 100%;
-        min-height: calc(100vh - 85px);
+        min-height: calc(100vh - 105px);
         flex-direction: ${({ reverse }) => reverse ? 'row-reverse' : 'row'};
         ${({ noReverse }) => noReverse ?
                              css`

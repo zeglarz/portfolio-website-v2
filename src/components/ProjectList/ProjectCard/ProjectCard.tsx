@@ -81,7 +81,7 @@ const StyledCard = styled.div`
 `;
 
 const Skill = styled.span`
-        font-family: 'Inconsolata', sans-serif;
+        font-family: 'Inconsolata', sans-serif !important;
         display: inline-flex;
         padding: 6px;
         border-radius: 7px;

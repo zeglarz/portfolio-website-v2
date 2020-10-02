@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import GlobalStyle from './styles/GlobalStyle';
@@ -15,22 +15,27 @@ import Contact from './views/Contact/Contact';
 import Projects from './views/Projects/Projects';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 import { materialThemeDark, materialThemeLight } from './styles/theme/materialTheme';
+import Footer from './components/Footer/Footer';
 
 
 const App = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const showIntro = useIntro();
     const [theme, toggleTheme] = useTheme();
-    useHistoryListen(() => setMenuOpen(false));
+    const [isScrollable, setScrollable] = useState(false);
+    const history = useHistoryListen(() => setMenuOpen(false));
 
     useEffect(() => {
-        console.log('theme', theme);
-        menuOpen ? document.body.style.overflow = 'hidden' :
-        document.body.style.overflow = 'unset';
-
-        menuOpen ? document.body.style.height = '100vh' :
-        document.body.style.height = '100%';
-    }, [theme, menuOpen]);
+        const scrollable = document.body.clientHeight > document.documentElement.clientHeight;
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.height = '100vh';
+        } else {
+            document.body.style.overflow = 'unset';
+            document.body.style.height = '100%';
+        }
+        setScrollable(scrollable);
+    }, [theme, menuOpen, history.location.pathname]);
     return (
         <ThemeProvider theme={theme ? dark : light}>
             <MuiThemeProvider theme={theme ? materialThemeDark : materialThemeLight}>
@@ -52,9 +57,10 @@ const App = () => {
                         <Redirect to='/home'/>
                     </Switch>
                 </PageWrapper>
+                <Footer showVert={isScrollable}/>
             </MuiThemeProvider>
         </ThemeProvider>
     );
 };
 
-export default App;
+export default withRouter(App);
