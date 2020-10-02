@@ -38,6 +38,8 @@ import vscode from './vscode.png';
 import webpack from './webpack.png';
 import webstorm from './webstorm.png';
 import typescript from './typescript.png';
+import framer from './framer-motion.png';
+import formik from './formik.png';
 
 
 export {
@@ -80,5 +82,7 @@ export {
     vscode,
     webpack,
     webstorm,
-    typescript
+    typescript,
+    framer,
+    formik,
 };

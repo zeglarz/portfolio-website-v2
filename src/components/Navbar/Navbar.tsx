@@ -53,7 +53,7 @@ const Navbar = ({ toggleTheme, showIntro, theme, menuOpen, setMenuOpen }) => {
 
     return (
         <>
-            <NavbarContainer layout transition={{ type: 'spring', stiffness: 120, duration: .5 }}
+            <NavbarContainer layout transition={{ type: 'spring', stiffness: 80, duration: .6 }}
                              animate={{
                                  y: shouldShowNavbar ? 0 : -100,
                                  transition: { duration: 0.3 },

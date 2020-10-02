@@ -47,6 +47,11 @@ export const TECHS: ITechObj = {
                 proficiency: LEVELS.proficient,
                 image: img.styledcomponents,
             },
+            {
+                name: 'Framer Motion',
+                proficiency: LEVELS.proficient,
+                image: img.framer,
+            },
         ],
     },
     backEnd: {
@@ -161,6 +166,11 @@ export const TECHS: ITechObj = {
                 name: 'Webpack',
                 proficiency: LEVELS.competent,
                 image: img.webpack,
+            },
+            {
+                name: 'Formik',
+                proficiency: LEVELS.competent,
+                image: img.formik,
             },
         ],
     },
