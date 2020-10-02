@@ -38,31 +38,35 @@ const NavbarContent = styled.div<INavbar>`
 
 const Navbar = ({ toggleTheme, showIntro, theme, menuOpen, setMenuOpen }) => {
     const [scrolledToTop, setScrolledToTop] = useState(true);
-
+    const direction = useScrollUpDown();
+    const shouldShowNavbar = direction === 'up' || scrolledToTop;
     const handleScroll = () => {
         setScrolledToTop(window.pageYOffset < 50);
     };
 
     useEffect(() => {
+        console.log(direction);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [scrolledToTop]);
 
-    const direction = useScrollUpDown();
 
     return (
-        <NavbarContainer layout transition={{ type: 'spring', stiffness: 120, duration: .5 }}
-                         animate={{
-                             y: direction === 'down' && !scrolledToTop ? -100 : 0,
-                             transition: { duration: 0.3 },
-                         }}>
-            <NavbarContent onTop={scrolledToTop}>
-                <BrandLogo size={'50px'} showIntro={showIntro}/>
-                <NavLinks toggleTheme={toggleTheme} theme={theme}/>
-                <NavMenu toggleTheme={toggleTheme} theme={theme} menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-            </NavbarContent>
-            <ProgressBar shouldShowNavbar={true}/>
-        </NavbarContainer>
+        <>
+            <NavbarContainer layout transition={{ type: 'spring', stiffness: 120, duration: .5 }}
+                             animate={{
+                                 y: shouldShowNavbar ? 0 : -100,
+                                 transition: { duration: 0.3 },
+                             }}>
+                <NavbarContent onTop={scrolledToTop}>
+                    <BrandLogo size={'50px'} showIntro={showIntro}/>
+                    <NavLinks toggleTheme={toggleTheme} theme={theme}/>
+                    <NavMenu toggleTheme={toggleTheme} theme={theme} menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+                </NavbarContent>
+                <ProgressBar shouldShowNavbar={true}/>
+            </NavbarContainer>
+            {!shouldShowNavbar && <ProgressBar shouldShowNavbar={shouldShowNavbar}/>}
+        </>
     );
 };
 
