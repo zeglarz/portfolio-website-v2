@@ -1,4 +1,5 @@
-import {css, ThemedCssFunction} from 'styled-components';
+import { css, ThemedCssFunction } from 'styled-components';
+
 
 interface Sizes {
     [key: string]: number;
@@ -16,7 +17,7 @@ interface Sizes {
 const sizes: Sizes = {
     giant: 1440,
     bigDesktop: 1200,
-    desktop: 1000,
+    desktop: 1024,
     tablet: 768,
     thone: 600,
     phablet: 480,

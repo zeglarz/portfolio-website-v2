@@ -13,6 +13,7 @@ const StyledTop = styled.div<IPageWrapper>`
         height: 100%;
         min-height: calc(100vh - 105px);
         flex-direction: ${({ reverse }) => reverse ? 'row-reverse' : 'row'};
+
         ${({ noReverse }) => noReverse ?
                              css`
                         ${media.tablet`

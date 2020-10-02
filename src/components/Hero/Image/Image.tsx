@@ -13,9 +13,13 @@ const StyledImgContainer = styled(motion.div)`
  max-height: 480px;
  width: 100%;
  height: 100%;
-   overflow: hidden;
-
+ overflow: hidden;
  position: relative;
+     ${media.tablet`
+    object-fit: cover;
+    max-height: 350px;
+        max-width: 350px;
+    `}
    .rect1 {
     position: absolute;
     background: ${({ theme }) => theme.colors.background};
@@ -37,6 +41,8 @@ const StyledImgContainer = styled(motion.div)`
   img {
     ${media.tablet`
     object-fit: cover;
+    max-height: 350px;
+        max-width: 350px;
         width: 100%;
         height: 100%;
     `}

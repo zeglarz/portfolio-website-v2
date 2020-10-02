@@ -23,6 +23,7 @@ const App = () => {
     const showIntro = useIntro();
     const [theme, toggleTheme] = useTheme();
     const [isScrollable, setScrollable] = useState(false);
+
     const history = useHistoryListen(() => setMenuOpen(false));
 
     useEffect(() => {
@@ -36,6 +37,8 @@ const App = () => {
         }
         setScrollable(scrollable);
     }, [theme, menuOpen, history.location.pathname]);
+
+
     return (
         <ThemeProvider theme={theme ? dark : light}>
             <MuiThemeProvider theme={theme ? materialThemeDark : materialThemeLight}>
