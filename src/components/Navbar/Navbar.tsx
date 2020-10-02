@@ -7,6 +7,7 @@ import NavMenu from './NavMenu/NavMenu';
 import media from '../../styles/style';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import useScrollUpDown from '../../helpers/hooks/useScrollUpDown';
+import { hex2rgba } from '../../helpers/hex2rgba';
 
 
 interface INavbar {
@@ -18,7 +19,7 @@ const NavbarContainer = styled(motion.nav)`
     top: 0;
     left: 0;
     right: 0;
-    background: ${({ theme }) => theme.colors.background};
+    background: ${({ theme }) => hex2rgba(theme.colors.background, 0.95)};
     z-index: 10;
 `;
 

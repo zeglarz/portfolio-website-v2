@@ -4,8 +4,8 @@ import { DefaultTheme } from 'styled-components';
 const light: DefaultTheme = {
     colors: {
         text: 'black',
-        contrast: 'white',
-        background: 'white',
+        contrast: '#ffffff',
+        background: '#ffffff',
         secondary: '#656565',
     },
     gradients: {
