@@ -215,7 +215,7 @@ const About = () => {
                                     <ul>
                                         {techs[tech].stack.map(stack =>
                                             <li key={stack.name}>
-                                                <img src={stack.image} alt={stack.name} style={{}}/>
+                                                <img src={stack.image} alt={stack.name} />
                                                 <h4>{stack.name}</h4>
                                                 <p>{stack.proficiency}</p>
                                             </li>

@@ -57,15 +57,22 @@ const Navbar = ({ toggleTheme, showIntro, theme, menuOpen, setMenuOpen }) => {
             <NavbarContainer layout transition={{ type: 'spring', stiffness: 80, duration: .6 }}
                              animate={{
                                  y: shouldShowNavbar ? 0 : -100,
-                                 boxShadow: !scrolledToTop ? '0 5px 9px rgba(182, 182, 182, 0.3)' : '0 5px 9px rgba(182, 182, 182, 0.0)',
+                                 boxShadow:
+                                     !scrolledToTop ?
+                                     ('0 5px 9px rgba(182, 182, 182, 0.3)')
+                                                    :
+                                     ('0 5px 9px rgba(182, 182, 182, 0.0)'),
                                  transition: {
                                      y: { duration: 0.3 },
                                      boxShadow: { duration: scrolledToTop ? .3 : 0 },
                                  },
                              }}
                              initial={{
-                                 boxShadow: scrolledToTop ? '0 5px 9px rgba(182, 182, 182, 0.0)' : '0 5px 9px rgba(182, 182,' +
-                                     ' 182, 0.3)',
+                                 boxShadow:
+                                     scrolledToTop ?
+                                     ('0 5px 9px rgba(182, 182, 182, 0.0)')
+                                                   :
+                                     ('0 5px 9px rgba(182, 182, 182, 0.3)'),
                              }}
             >
                 <NavbarContent onTop={scrolledToTop}>

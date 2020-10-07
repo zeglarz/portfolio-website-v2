@@ -21,11 +21,7 @@ const SyledBar = styled(motion.div)<NavbarTypes>`
 const ProgressBar = (props) => {
     const { scrollYProgress } = useViewportScroll();
 
-    const progressY = useTransform(
-        scrollYProgress,
-        [0, 1],
-        ['0', '100%'],
-    );
+    const progressY = useTransform(scrollYProgress, [0, 1], ['0', '100%']);
 
     return (
         <SyledBar

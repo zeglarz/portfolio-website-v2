@@ -6,7 +6,7 @@ enum Direction {
     down = 'down'
 }
 
-const useScrollDirection = ({ initialDirection = Direction.down, thresholdPixels = 0, off = false } = {}) => {
+const useScrollDirection = (initialDirection = Direction.down, thresholdPixels = 0, off = false) => {
     const [scrollDir, setScrollDir] = useState(initialDirection);
 
     useEffect(() => {

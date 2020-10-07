@@ -20,6 +20,9 @@ const StyledRight = styled.div<IShowVert>`
  span {
 height: 20px;
 }
+ @media (max-width: 1000px) {
+      display: none;
+    }
 };
     display: flex;
     flex-direction: row;
