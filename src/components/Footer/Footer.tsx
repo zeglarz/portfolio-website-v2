@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import Right from './Right';
 import Left from './Left';
 import media from '../../styles/style';

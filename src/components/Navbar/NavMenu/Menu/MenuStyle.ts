@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import media from '../../../../styles/style';
 import {motion} from 'framer-motion';
 

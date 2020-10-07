@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Logo from './Logo';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import Particles from 'react-particles-js';
 
 

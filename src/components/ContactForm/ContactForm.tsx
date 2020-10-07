@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Formik } from 'formik';
 import { Button, Snackbar, TextField } from '@material-ui/core';
 import email from 'emailjs-com';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { TextFieldProps } from '@material-ui/core/TextField/TextField';
 import { object, string } from 'yup';
 import media from '../../styles/style';

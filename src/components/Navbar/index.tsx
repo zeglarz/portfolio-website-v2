@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { motion } from 'framer-motion';
 import NavLinks from './NavLinks/NavLinks';
 import BrandLogo from './BrandName/BrandLogo';
 import NavMenu from './NavMenu/NavMenu';
 import media from '../../styles/style';
 import ProgressBar from '../ProgressBar/ProgressBar';
-import useScrollUpDown from '../../helpers/hooks/useScrollUpDown';
+import useScrollUpDown from '../../hooks/useScrollUpDown';
 import { hex2rgba } from '../../helpers/hex2rgba';
 
 
@@ -37,7 +37,7 @@ const NavbarContent = styled.div<INavbar>`
     `}
 `;
 
-const Navbar = ({ toggleTheme, showIntro, theme, menuOpen, setMenuOpen }) => {
+const Index = ({ toggleTheme, showIntro, theme, menuOpen, setMenuOpen }) => {
     const [scrolledToTop, setScrolledToTop] = useState(true);
     const direction = useScrollUpDown();
     const shouldShowNavbar = direction === 'up' || scrolledToTop;
@@ -87,4 +87,4 @@ const Navbar = ({ toggleTheme, showIntro, theme, menuOpen, setMenuOpen }) => {
     );
 };
 
-export default Navbar;
+export default Index;

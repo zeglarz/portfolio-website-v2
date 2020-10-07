@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
 import {motion, Variants} from "framer-motion";
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const StyledCircle = styled(motion.g)`
     fill: ${({theme, custom}) => custom ? theme.colors.background : 'none'};

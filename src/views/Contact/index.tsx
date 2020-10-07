@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Container } from '@material-ui/core';
 import Hero from '../../components/Hero/Hero';
 import StyledTop from '../../styles/Top';
@@ -10,7 +10,7 @@ const StyledContact = styled.div`
   width: 100%;
 `;
 
-const Contact = () => {
+const Index = () => {
     return (
         <StyledContact>
             <Container>
@@ -32,4 +32,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default Index;

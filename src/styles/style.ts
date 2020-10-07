@@ -1,4 +1,4 @@
-import { css, ThemedCssFunction } from 'styled-components';
+import { css, ThemedCssFunction } from 'styled-components/macro';
 
 
 interface Sizes {

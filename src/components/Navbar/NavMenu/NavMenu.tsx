@@ -1,6 +1,6 @@
 import React from 'react';
 import ThemeIcon from '../Switch/Sun';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import Burger from './Burger/Burger';
 import Menu from './Menu/Menu';
 import { motion } from 'framer-motion';

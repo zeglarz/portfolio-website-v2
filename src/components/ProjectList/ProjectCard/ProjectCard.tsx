@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Button, Grid, Typography } from '@material-ui/core';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { IProjects } from '../constants';
 import media from '../../../styles/style';
 import { StyledLink } from '../../../styles/StyledLink';

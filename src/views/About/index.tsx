@@ -1,6 +1,6 @@
 import React, { MutableRefObject, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Hero from '../../components/Hero/Hero';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Container } from '@material-ui/core';
 import { TECHS as techs } from './constants';
 import { Title } from '../../styles/Title';
@@ -9,7 +9,7 @@ import StyledTop from '../../styles/Top';
 import media from '../../styles/style';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
 import ja from '../../assets/img/ja.png'
-import { useWindowResize } from '../../helpers/hooks/useWindowResize';
+import { useWindowResize } from '../../hooks/useWindowResize';
 
 const ListContainer = styled.div`
       width: 100%;
@@ -138,7 +138,7 @@ const StyledAbout = styled.div`
   } 
 `;
 
-const About = () => {
+const Index = () => {
     const ref: MutableRefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
     const [handleRotation, handleMove, handleScale, handleOpacity] = useWindowResize(ref);
 
@@ -231,5 +231,5 @@ const About = () => {
     );
 };
 
-export default About;
+export default Index;
 

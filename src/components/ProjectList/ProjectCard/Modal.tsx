@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Dialog from '@material-ui/core/Dialog';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Button, Grid, Typography } from '@material-ui/core';
 import { IProjects } from '../constants';
 import { StyledLink } from '../../../styles/StyledLink';

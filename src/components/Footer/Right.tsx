@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 import Divider from '../Divider/Dividier';
 import Icon from '../../components/Hero/SocialIcons/withIcon';
 import { github, linkedin, twitter } from '../Hero/SocialIcons/icons';

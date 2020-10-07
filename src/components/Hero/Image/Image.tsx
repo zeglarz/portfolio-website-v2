@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import {motion} from 'framer-motion';
 import media from '../../../styles/style';
 
