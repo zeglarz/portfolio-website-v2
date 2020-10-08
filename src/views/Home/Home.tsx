@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import Hero from '../../components/Hero/Hero';
+import Hero from '../../components/Hero';
 import { Container } from '@material-ui/core';
-import Index from '../../components/Hero/Image';
+import Image from '../../components/Hero/Image';
 import StyledTop from '../../styles/Top';
 
-const Home = () => {
+const Home = (): JSX.Element => {
   useEffect(() => {
     document.title = `Home · Konrad Rudnicki`;
   });
@@ -16,16 +16,16 @@ const Home = () => {
           <section>
             <Hero
               withSocial
-              title={'Home'}
-              fLine={'Welcome to my'}
-              sLine={'personal porfolio'}
+              title="Home"
+              fLine="Welcome to my"
+              sLine="personal portfolio"
               content={
                 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus distinctio doloremque dolores dolorum, earum facere, id illum in ipsum, itaque laudantium magni maiores molestiae mollitia neque nostrum qui repellendus.'
               }
             />
           </section>
           <section>
-            <Index src={'//unsplash.it/500/500'} />
+            <Image src="//unsplash.it/500/500" />
           </section>
         </StyledTop>
       </Container>

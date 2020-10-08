@@ -33,7 +33,7 @@ const StyledDivider = styled.div<IDivider>`
   }
 `;
 
-const Divider = (props) => {
+const Divider = (props): JSX.Element => {
   return (
     <StyledDivider {...props}>
       <span />

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Container } from '@material-ui/core';
-import Hero from '../../components/Hero/Hero';
-import Index from '../../components/Hero/Image';
+import Hero from '../../components/Hero';
+import Image from '../../components/Hero/Image';
 import StyledTop from '../../styles/Top';
 import ProjectList from '../../components/ProjectList/ProjectList';
 import { Title } from '../../styles/Title';
@@ -25,7 +25,7 @@ const Projects = (): JSX.Element => {
           />
         </section>
         <section>
-          <Index src={'//unsplash.it/500/500'} />
+          <Image src={'//unsplash.it/500/500'} />
         </section>
       </StyledTop>
       <div className="middle" style={{ marginTop: 85 }}>
