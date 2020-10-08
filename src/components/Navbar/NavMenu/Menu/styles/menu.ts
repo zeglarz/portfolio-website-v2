@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
-import media from '../../../../styles/style';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
+import media from '../../../../../styles/style';
 
 const StyledMenu = styled(motion.div)`
   position: fixed;
@@ -12,7 +12,7 @@ const StyledMenu = styled(motion.div)`
   z-index: -1;
   
   .backdrop {
-   background: ${({theme}) => theme.gradients.primary};
+   background: ${({ theme }) => theme.gradients.primary};
     position: fixed;
     width: 100%;
     height: 100%;
@@ -25,7 +25,7 @@ const StyledMenu = styled(motion.div)`
   
   .menu-container {
     position: relative;
-    background: ${({theme}) => theme.colors.background};
+    background: ${({ theme }) => theme.colors.background};
     height: 100%;
     overflow: hidden;
     display: flex;
@@ -53,14 +53,14 @@ const StyledMenu = styled(motion.div)`
         }
           a {
             display: inline-block;
-            color: ${({theme}) => theme.colors.text};
+            color: ${({ theme }) => theme.colors.text};
             padding: 10px 20px;
             &.active {
-                  background: ${({theme}) => theme.gradients.primary};
+                  background: ${({ theme }) => theme.gradients.primary};
                   color: white;
               }
               &:hover:not(.active) {
-                  background: ${({theme}) => theme.gradients.primary};
+                  background: ${({ theme }) => theme.gradients.primary};
                   -webkit-background-clip: text;
                   -webkit-text-fill-color: transparent;
                   -webkit-box-decoration-break: clone;
@@ -84,5 +84,4 @@ const StyledContainer = styled.div`
   `}
 `;
 
-
-export {StyledMenu, StyledContainer}
+export { StyledMenu, StyledContainer };

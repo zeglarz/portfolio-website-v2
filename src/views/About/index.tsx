@@ -84,6 +84,7 @@ const SkillListElement = styled.li<{ inverted?: boolean }>`
   `}
   }
   &:hover {
+    background: ${({ theme }) => theme.gradients.primary};
     img {
       filter: ${({ theme, inverted }) => {
         if (theme.theme == 'light') {
@@ -94,7 +95,6 @@ const SkillListElement = styled.li<{ inverted?: boolean }>`
         return 'none';
       }};
     }
-    background: ${({ theme }) => theme.colors.text};
     h4,
     p {
       color: ${({ theme }) => theme.colors.contrast};

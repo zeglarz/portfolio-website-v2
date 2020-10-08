@@ -1,91 +1,24 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { Tooltip } from '@material-ui/core';
+import { motion, Variants } from 'framer-motion';
 import media from '../../styles/style';
+import { Tooltip } from '@material-ui/core';
 import Icon from './SocialIcons/withIcon';
 import { SOCIAL as socials } from './constants';
 import { Title } from '../../styles/Title';
-import { motion, Variants } from 'framer-motion';
-import { StyledLink } from '../../styles/StyledLink';
-
-interface Custom {
-  withoutOutline?: boolean;
-}
-
-const StyledLinkContainer = styled(StyledLink)<Custom>`
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-inline-end: 8px;
-      padding: 8px;
-      
-      svg {
-        color: ${({ theme }) => theme.colors.text};
-        width: 24px;
-        height: 24px;
-      }
-      
-      &:hover {
-        svg {
-          fill: ${({ theme, withoutOutline }) =>
-            !withoutOutline ? '' : theme.gradients.svg};
-          stroke: ${({ theme, withoutOutline }) =>
-            withoutOutline ? '' : theme.gradients.svg};
-        }
-      }
-    }
-`;
-
-const StyledHero = styled.div`
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  display: flex;
-
-  ${media.tablet`
-    margin-top: 2rem;
-    justify-content: flex-start;
-    align-items: flex-start;
-  `}
-
-  .hero-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .social-links {
-    margin-bottom: 32px;
-    ul {
-      display: flex;
-      list-style: none;
-      li {
-        cursor: pointer;
-      }
-    }
-  }
-`;
-
-const main = {
-  animate: {
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
-const variants: Variants = {
-  init: { y: 300, visibility: 'hidden' },
-  animate: {
-    y: 0,
-    visibility: 'visible',
-    transition: { duration: 0.9, ease: 'easeOut' },
-  },
-};
+import StyledLinkContainer from './styles/contaner';
+import StyledHero from './styles/hero';
+import { main, variants } from './animations';
 
 const outLineCondition = (name) => name === 'Stack Overflow' || name === 'Mail';
 
-const Hero = ({ title, fLine, sLine, content, withSocial = false }) => {
+const Hero = ({
+  title,
+  fLine,
+  sLine,
+  content,
+  withSocial = false,
+}): JSX.Element => {
   return (
     <StyledHero>
       <div className="hero-container">
@@ -117,10 +50,7 @@ const Hero = ({ title, fLine, sLine, content, withSocial = false }) => {
                       href={social.link}
                       withoutOutline={outLineCondition(social.name)}
                     >
-                      <Icon
-                        icon={social.icon}
-                        withoutOutline={outLineCondition(social.name)}
-                      />
+                      <Icon icon={social.icon} />
                     </StyledLinkContainer>
                   </Tooltip>
                 </li>
