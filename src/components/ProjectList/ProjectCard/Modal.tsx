@@ -87,11 +87,9 @@ const StyledModal = styled(Dialog)`
         margin: 0 auto;
     `};
   }
-
   button {
     margin-right: 15px;
   }
-
   .buttons {
     margin: 15px 0;
   }
@@ -99,7 +97,6 @@ const StyledModal = styled(Dialog)`
     line-height: 1.7;
     text-align: justify;
     color: ${({ theme }) => theme.colors.secondary};
-
     a {
       float: right;
       color: ${({ theme }) => theme.colors.text};
@@ -131,8 +128,6 @@ const MuiModal: FunctionComponent<ModalProps & IProjects> = ({
   gitURL,
 }) => {
   const history = useHistory();
-
-  const handleOpen = () => setOpen(true);
 
   const handleClose = () => {
     setOpen(false);

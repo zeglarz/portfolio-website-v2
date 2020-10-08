@@ -1,7 +1,5 @@
 import React from 'react';
-import styled from 'styled-components/macro';
-import { motion, Variants } from 'framer-motion';
-import media from '../../styles/style';
+import { motion } from 'framer-motion';
 import { Tooltip } from '@material-ui/core';
 import Icon from './SocialIcons/withIcon';
 import { SOCIAL as socials } from './constants';
@@ -50,7 +48,10 @@ const Hero = ({
                       href={social.link}
                       withoutOutline={outLineCondition(social.name)}
                     >
-                      <Icon icon={social.icon} />
+                      <Icon
+                        icon={social.icon}
+                        withoutOutline={outLineCondition(social.name)}
+                      />
                     </StyledLinkContainer>
                   </Tooltip>
                 </li>
