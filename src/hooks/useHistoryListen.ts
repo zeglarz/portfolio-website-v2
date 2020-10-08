@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router';
 
-export default (listener: () => void): Location => {
+export default (listener: () => void): string => {
   const history = useHistory();
   const location = useLocation();
 
@@ -10,5 +10,5 @@ export default (listener: () => void): Location => {
     return () => unlisten();
   }, [history, listener]);
 
-  return location;
+  return location.pathname;
 };

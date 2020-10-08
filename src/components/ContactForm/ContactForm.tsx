@@ -97,8 +97,7 @@ const ContactForm = () => {
                 resetForm();
                 setIsSuccess(true);
               },
-              (error) => {
-                console.log(error);
+              () => {
                 setIsError(true);
                 setSubmitting(false);
               }

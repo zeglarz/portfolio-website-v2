@@ -29,7 +29,7 @@ const App = (): JSX.Element => {
   const showIntro = useIntro();
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const { pathname } = useHistoryListen(() => setMenuOpen(false));
+  const pathname = useHistoryListen(() => setMenuOpen(false));
 
   const [theme, toggleTheme] = useTheme();
 

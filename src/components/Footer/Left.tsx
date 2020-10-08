@@ -4,7 +4,7 @@ import Divider from '../Divider/Dividier';
 
 const SDivider = styled(Divider)``;
 
-const StyledLeft = styled.div<{ showVert?: boolean }>`
+const StyledLeft = styled.div<{ showVert?: boolean; left?: boolean }>`
   & > ${SDivider} {
     display: none;
   }
@@ -51,7 +51,7 @@ const StyledLeft = styled.div<{ showVert?: boolean }>`
             letter-spacing: 0.1em;
             -webkit-writing-mode: vertical-rl;
             writing-mode: vertical-rl;
-            margin: 20px 10px 0px 10px;
+            margin: 20px 10px 0 10px;
             padding: 10px;
             .status {
               color: ${({ theme }) => theme.colors.text};

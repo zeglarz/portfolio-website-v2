@@ -15,5 +15,6 @@ declare module 'styled-components' {
     shadows: {
       primary: string;
     };
+    theme: string;
   }
 }

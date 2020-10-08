@@ -1,11 +1,11 @@
 import React, { MutableRefObject, useEffect, useRef } from 'react';
 import styled from 'styled-components/macro';
 import { Container } from '@material-ui/core';
-import { motion, useTransform, useViewportScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Hero from '../../components/Hero/Hero';
 import { TECHS as techs } from './constants';
 import { Title } from '../../styles/Title';
-import Image from '../../components/Hero/Image/Image';
+import Image from '../../components/Hero/Image';
 import StyledTop from '../../styles/Top';
 import media from '../../styles/style';
 import ja from '../../assets/img/ja.png';
@@ -43,46 +43,57 @@ const ListContainer = styled.div`
       justify-content: flex-start;
       align-items: center;
       list-style: none;
+    }
+  }
+`;
 
-      li {
-        width: 33.3%;
-        transition: background ease 250ms;
-        padding: 1.5rem 0 1rem 0;
-        border-radius: 3px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-direction: column;
-        cursor: default;
-
-        img {
-          width: 85px;
-          height: auto;
-          margin: 0 auto;
-          ${media.tablet`
-                width: auto;
-                height: 60px;
-              `}
-        }
-        h4 {
-          color: ${({ theme }) => theme.colors.text};
-          text-align: center;
-          margin: 1rem 0 0.25rem 0;
-        }
-        p {
-          text-align: center;
-          color: ${({ theme }) => theme.colors.text};
-        }
-        &:hover {
-          background: ${({ theme }) => theme.colors.text};
-          h4,
-          p {
-            color: ${({ theme }) => theme.colors.contrast};
-          }
-          box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
-        }
+const StyledSkillImg = styled.img<{ inverted?: boolean }>`
+  width: 85px;
+  height: auto;
+  margin: 0 auto;
+  filter: ${({ theme, inverted }) => {
+    if (theme.theme == 'dark') {
+      if (inverted) {
+        return 'invert(1)';
       }
     }
+  }};
+  ${media.tablet`
+    width: auto;
+    height: 60px;
+  `}
+`;
+
+const SkillListElement = styled.li`
+  width: 33.3%;
+  transition: background ease 250ms;
+  padding: 1.5rem 0 1rem 0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  cursor: default;
+
+  h4 {
+    color: ${({ theme }) => theme.colors.text};
+    text-align: center;
+    margin: 1rem 0 0.25rem 0;
+  }
+  p {
+    text-align: center;
+    color: ${({ theme }) => theme.colors.text};
+  }
+  &:hover {
+    ${StyledSkillImg} {
+      filter: unset;
+    }
+    background: ${({ theme }) => theme.colors.text};
+    h4,
+    p {
+      color: ${({ theme }) => theme.colors.contrast};
+    }
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
   }
 `;
 
@@ -123,19 +134,18 @@ const Header = styled.div`
 
 const StyledAbout = styled.div`
   width: 100%;
-
   .skills {
     margin: 14rem 0 5rem 0;
     width: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    @media (max-width: 768px) {
+    ${media.tablet`
       margin-top: 4rem;
       margin-bottom: 0;
       flex-direction: column;
       justify-content: flex-start;
-    }
+    `}
   }
 `;
 
@@ -223,11 +233,15 @@ const Index = () => {
                   <h3>{techs[tech].title}</h3>
                   <ul>
                     {techs[tech].stack.map((stack) => (
-                      <li key={stack.name}>
-                        <img src={stack.image} alt={stack.name} />
+                      <SkillListElement key={stack.name}>
+                        <StyledSkillImg
+                          src={stack.image}
+                          alt={stack.name}
+                          inverted={stack.name === 'Formik'}
+                        />
                         <h4>{stack.name}</h4>
                         <p>{stack.proficiency}</p>
-                      </li>
+                      </SkillListElement>
                     ))}
                   </ul>
                 </div>
