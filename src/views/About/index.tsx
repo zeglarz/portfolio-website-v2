@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { MutableRefObject, useEffect, useRef } from 'react';
 import Hero from '../../components/Hero/Hero';
 import styled from 'styled-components/macro';
 import { Container } from '@material-ui/core';
@@ -8,7 +8,7 @@ import Image from '../../components/Hero/Image/Image';
 import StyledTop from '../../styles/Top';
 import media from '../../styles/style';
 import { motion, useTransform, useViewportScroll } from 'framer-motion';
-import ja from '../../assets/img/ja.png'
+import ja from '../../assets/img/ja.png';
 import { useWindowResize } from '../../hooks/useWindowResize';
 
 const ListContainer = styled.div`
@@ -83,38 +83,38 @@ const ListContainer = styled.div`
               }
             }
           }
-    }`
+    }`;
 
 const StyledImageSection = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    ${media.tablet`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ${media.tablet`
         margin-top: 10px;
         justify-content: center;
         flex-direction: column;
     `}
-    
-    img {
-        width: 100%;
-        max-width: 400px;      
-    }
-    .item {
-      position: relative;
-      ${media.tablet`
+
+  img {
+    width: 100%;
+    max-width: 400px;
+  }
+  .item {
+    position: relative;
+    ${media.tablet`
             margin-top: 20px;
       `}
-    }
+  }
 `;
 
 const Header = styled.div`
-      position: sticky;
-      top: 6rem;
-      align-self: flex-start;
-      padding-bottom: 4.46rem;
-       ${media.tablet`
+  position: sticky;
+  top: 6rem;
+  align-self: flex-start;
+  padding-bottom: 4.46rem;
+  ${media.tablet`
             position: static;
             padding: 0 0 2rem 0;
       `}
@@ -135,101 +135,110 @@ const StyledAbout = styled.div`
       flex-direction: column;
       justify-content: flex-start;
     }
-  } 
+  }
 `;
 
 const Index = () => {
-    const ref: MutableRefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(null);
-    const [handleRotation, handleMove, handleScale, handleOpacity] = useWindowResize(ref);
+  const ref: MutableRefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(
+    null
+  );
+  const [
+    handleRotation,
+    handleMove,
+    handleScale,
+    handleOpacity,
+  ] = useWindowResize(ref);
 
+  useEffect(() => {
+    document.title = `Home · Konrad Rudnicki`;
+  });
 
-    useEffect(() => {
-        document.title = `Home · Konrad Rudnicki`;
-    });
-
-    return (
-        <StyledAbout>
-            <Container>
-                <StyledTop>
-                    <section>
-                        <Hero
-                            title={'About'}
-                            fLine={'Want to know'}
-                            sLine={'more about me?'}
-                            content={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus distinctio doloremque dolores dolorum, earum facere, id illum in ipsum, itaque laudantium magni maiores molestiae mollitia neque nostrum qui repellendus.'}
-                        />
-                    </section>
-                    <section>
-                        <Image src={'//unsplash.it/501/501'}/>
-                    </section>
-                </StyledTop>
-                <div className={'middle'}>
-                    <StyledImageSection ref={ref}>
-                        <div>
-                            <motion.img
-                                style={{
-                                rotate: handleRotation,
-                                x: handleMove,
-                                scale: handleScale,
-                                opacity: handleOpacity
-                            }}
-                                src={ja}
-                                alt='placeholder image'
-                            />
-                        </div>
-                        <div className='item'>
-                            <Title pageTitle>Who am I?</Title>
-                            <Title section>
-                                <div className='line-wrapper'>
-                                    <div className='line'>My name is Konrad</div>
-                                </div>
-                            </Title>
-                            <div className='paragraph'>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus beatae commodi
-                                consectetur cum dolorem doloribus, fugiat id libero minima molestiae necessitatibus
-                                nihil odio quam quia quisquam quo tenetur ullam voluptas!
-                            </div>
-                        </div>
-                    </StyledImageSection>
-                    <div className={'skills'}>
-                        <Header>
-                            <Title pageTitle>Skills</Title>
-                            <Title section>
-                                <div className='line-wrapper'>
-                                    <div className='line'>Technologies I know</div>
-                                </div>
-                                <div className='line-wrapper'>
-                                    <div className='line'>I use some everyday</div>
-                                </div>
-                            </Title>
-                            <div className='paragraph'>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus beatae commodi
-                                consectetur cum dolorem doloribus, fugiat id libero minima molestiae necessitatibus
-                                nihil odio quam quia quisquam quo tenetur ullam voluptas!
-                            </div>
-                        </Header>
-                        <ListContainer>
-                            {Object.keys(techs).map(tech =>
-                                <div key={techs[tech].title}>
-                                    <h3>{techs[tech].title}</h3>
-                                    <ul>
-                                        {techs[tech].stack.map(stack =>
-                                            <li key={stack.name}>
-                                                <img src={stack.image} alt={stack.name} />
-                                                <h4>{stack.name}</h4>
-                                                <p>{stack.proficiency}</p>
-                                            </li>
-                                        )}
-                                    </ul>
-                                </div>,
-                            )}
-                        </ListContainer>
-                    </div>
+  return (
+    <StyledAbout>
+      <Container>
+        <StyledTop>
+          <section>
+            <Hero
+              title={'About'}
+              fLine={'Want to know'}
+              sLine={'more about me?'}
+              content={
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus distinctio doloremque dolores dolorum, earum facere, id illum in ipsum, itaque laudantium magni maiores molestiae mollitia neque nostrum qui repellendus.'
+              }
+            />
+          </section>
+          <section>
+            <Image src={'//unsplash.it/501/501'} />
+          </section>
+        </StyledTop>
+        <div className={'middle'}>
+          <StyledImageSection ref={ref}>
+            <div>
+              <motion.img
+                style={{
+                  rotate: handleRotation,
+                  x: handleMove,
+                  scale: handleScale,
+                  opacity: handleOpacity,
+                }}
+                src={ja}
+                alt="placeholder image"
+              />
+            </div>
+            <div className="item">
+              <Title pageTitle>Who am I?</Title>
+              <Title section>
+                <div className="line-wrapper">
+                  <div className="line">My name is Konrad</div>
                 </div>
-            </Container>
-        </StyledAbout>
-    );
+              </Title>
+              <div className="paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus beatae commodi consectetur cum dolorem doloribus,
+                fugiat id libero minima molestiae necessitatibus nihil odio quam
+                quia quisquam quo tenetur ullam voluptas!
+              </div>
+            </div>
+          </StyledImageSection>
+          <div className={'skills'}>
+            <Header>
+              <Title pageTitle>Skills</Title>
+              <Title section>
+                <div className="line-wrapper">
+                  <div className="line">Technologies I know</div>
+                </div>
+                <div className="line-wrapper">
+                  <div className="line">I use some everyday</div>
+                </div>
+              </Title>
+              <div className="paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus beatae commodi consectetur cum dolorem doloribus,
+                fugiat id libero minima molestiae necessitatibus nihil odio quam
+                quia quisquam quo tenetur ullam voluptas!
+              </div>
+            </Header>
+            <ListContainer>
+              {Object.keys(techs).map((tech) => (
+                <div key={techs[tech].title}>
+                  <h3>{techs[tech].title}</h3>
+                  <ul>
+                    {techs[tech].stack.map((stack) => (
+                      <li key={stack.name}>
+                        <img src={stack.image} alt={stack.name} />
+                        <h4>{stack.name}</h4>
+                        <p>{stack.proficiency}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </ListContainer>
+          </div>
+        </div>
+      </Container>
+    </StyledAbout>
+  );
 };
 
 export default Index;
-

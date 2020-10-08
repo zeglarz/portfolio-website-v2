@@ -10,10 +10,6 @@ import useScrollUpDown from '../../hooks/useScrollUpDown';
 import { hex2rgba } from '../../helpers/hex2rgba';
 
 
-interface INavbar {
-    onTop?: boolean;
-}
-
 const NavbarContainer = styled(motion.nav)`
     position: fixed;
     top: 0;
@@ -23,7 +19,7 @@ const NavbarContainer = styled(motion.nav)`
     z-index: 10;
 `;
 
-const NavbarContent = styled.div<INavbar>`
+const NavbarContent = styled.div<{ onTop?: boolean }>`
     display: flex;
     align-items: center;
     justify-content: space-between;

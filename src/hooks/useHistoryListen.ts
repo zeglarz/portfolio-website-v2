@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 
+export default (listener: () => void): Location => {
+  const history = useHistory();
+  const location = useLocation();
 
-export const useHistoryListen = (listener) => {
-    const history = useHistory();
+  useEffect(() => {
+    const unlisten = history.listen(listener);
+    return () => unlisten();
+  }, [history, listener]);
 
-    useEffect(() => {
-        const unlisten = history.listen(listener);
-        return () => unlisten();
-    }, [history, listener]);
-
-    return history;
+  return location;
 };
