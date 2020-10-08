@@ -31,6 +31,7 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "react/jsx-props-no-spreading": 0,
     "no-non-null-assertion": 1,
     "react/prop-types": 0,
     "import/no-named-as-default": 0,

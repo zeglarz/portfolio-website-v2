@@ -80,8 +80,8 @@ const ContactForm = () => {
         onSubmit={(values, { setSubmitting, resetForm }) => {
           email
             .send(
-              process.env.REACT_APP_EMAIL_JS_SERVICE_ID!,
-              process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID!,
+              process.env.REACT_APP_EMAIL_JS_SERVICE_ID as string,
+              process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID as string,
               {
                 name: values.name,
                 title: values.title,
