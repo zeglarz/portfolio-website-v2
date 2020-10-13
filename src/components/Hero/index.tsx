@@ -1,21 +1,38 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { motion } from 'framer-motion';
-import { Tooltip } from '@material-ui/core';
+import { Button, Tooltip } from '@material-ui/core';
 import Icon from './SocialIcons/withIcon';
 import { SOCIAL as socials } from './constants';
-import { Title } from '../../styles/Title';
+import Title from '../../styles/Title';
 import StyledLinkContainer from './styles/contaner';
 import StyledHero from './styles/hero';
 import { main, variants } from './animations';
+import { Link } from 'react-router-dom';
 
 const outLineCondition = (name) => name === 'Stack Overflow' || name === 'Mail';
 
-const Hero = ({
+interface IHero {
+  title: string;
+  fLine: string;
+  sLine: string;
+  content: string;
+  bText?: string;
+  bPath?: string;
+  bIcon?: JSX.Element;
+  withSocial?: boolean;
+  onClick?: () => void;
+}
+
+const Hero: FunctionComponent<IHero> = ({
   title,
   fLine,
   sLine,
   content,
+  bText = '',
+  bPath,
+  bIcon,
   withSocial = false,
+  onClick,
 }): JSX.Element => {
   return (
     <StyledHero>
@@ -58,6 +75,22 @@ const Hero = ({
               ))}
             </ul>
           </div>
+        )}
+        {bText && (
+          <>
+            <Button
+              component={Link}
+              to={bPath || '#'}
+              endIcon={bIcon && bIcon}
+              variant="outlined"
+              color="primary"
+              size="large"
+              className="custom-button"
+              onClick={onClick && onClick}
+            >
+              {bText}
+            </Button>
+          </>
         )}
       </div>
     </StyledHero>

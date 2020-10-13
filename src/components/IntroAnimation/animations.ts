@@ -19,7 +19,7 @@ export const endPathVariants = {
     opacity: [1, 0],
     transition: {
       duration: 0.5,
-      delay: 2,
+      delay: 2.2,
       ease: 'easeOut',
     },
   },

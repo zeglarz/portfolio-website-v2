@@ -6,6 +6,9 @@ export default styled(Particles).attrs({
     particles: {
       number: {
         value: 140,
+        speed: {
+          value: 120,
+        },
         density: {
           enable: true,
           value_area: 1000,

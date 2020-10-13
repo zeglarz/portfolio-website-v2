@@ -1,16 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { MutableRefObject, useEffect, useRef } from 'react';
 import { Container } from '@material-ui/core';
 import Hero from '../../components/Hero';
 import Image from '../../components/Hero/Image';
 import StyledTop from '../../styles/Top';
 import ProjectList from '../../components/ProjectList/ProjectList';
-import { Title } from '../../styles/Title';
-
+import Title from '../../styles/Title';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import Banner from '../../components/Banner';
 const Projects = (): JSX.Element => {
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = `Projects · Konrad Rudnicki`;
-  });
-
+  }, []);
+  const ref: MutableRefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(
+    null
+  );
+  const scroll = () => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <Container>
       <StyledTop reverse>
@@ -22,6 +31,9 @@ const Projects = (): JSX.Element => {
             content={
               'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus distinctio doloremque dolores dolorum, earum facere, id illum in ipsum, itaque laudantium magni maiores molestiae mollitia neque nostrum qui repellendus.'
             }
+            bText="See my projects"
+            onClick={() => scroll()}
+            bIcon={<VisibilityIcon />}
           />
         </section>
         <section>
@@ -29,7 +41,7 @@ const Projects = (): JSX.Element => {
         </section>
       </StyledTop>
       <div className="middle" style={{ marginTop: 85 }}>
-        <Title section>
+        <Title section ref={ref}>
           <div className="line-wrapper">
             <div className="line">I put my whole heart</div>
           </div>
@@ -46,6 +58,13 @@ const Projects = (): JSX.Element => {
         <div style={{ marginBottom: '4rem' }} />
         <ProjectList />
       </div>
+      <Banner
+        fLine="Do you feel like"
+        sLine="reaching out to me?"
+        content=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus beatae commodi consectetur cum dolorem doloribus, fugiat id libero minima molestiae necessitatibus nihil odio quam quia quisquam quo tenetur ullam voluptas!"
+        bText="Get in touch"
+        bPath="/contact"
+      />
     </Container>
   );
 };

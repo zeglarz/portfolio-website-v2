@@ -30,18 +30,18 @@ const PageWrapper = styled.div`
     width: 100%;
     height: 100%;
     flex-direction: column;
-    padding-bottom: 7rem;
+    padding-bottom: 5.5rem;
     ${media.tablet`
         padding-bottom: 5rem;
     `}
-    .button-banner {
+    .bottom-banner {
       margin: 2rem 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
       padding: 4rem 3rem;
-      background: ${({ theme }) => theme.colors.text};
+      background: ${({ theme }) => theme.colors.banner};
       border-radius: 5px;
       ${media.tablet`
         padding: 1.4rem;

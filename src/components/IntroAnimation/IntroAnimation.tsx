@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import Logo from './Logo';
-import StyledContainer from './Styles/container';
-import StyledParticles from './Styles/particles';
-import StyledLogo from './Styles/logo';
+import StyledContainer from './styles/container';
+import StyledParticles from './styles/particles';
+import StyledLogo from './styles/logo';
 
 const IntroAnimation: FunctionComponent<{ loading: boolean }> = ({
   loading,
