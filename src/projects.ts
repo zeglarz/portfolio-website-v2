@@ -270,8 +270,7 @@ export const projects: IProjects[] = [
     },
     description: {
       en: `The second version of my portfolio website, this time made with React. The development process was very
-challenging and full of various pitfalls, I learned a lot during this time. I must admit that the hardest part of this
-project was to learn TypeScript and make the compiler happy for the most part. I won't be lying to say that I had a few moments of doubt and had thoughts of going back to plain old JavaScript, but I forced my way through, and I will never forget this lesson. Hopefully, will I have a bright future in my next TS endeavors. For the
+challenging and full of various pitfalls, but I learned a lot during this time. I must admit that by far the hardest was to learn TypeScript and make the compiler happy for the most part. I won't be lying to say that I had a few moments of doubt and had thoughts of going back to old and familiar JavaScript, but I forced my way through, and I will never forget this lesson. Hopefully, will I have a bright future in my next TS endeavors. For the
 visual part of the website, I worked with Styled-Components which I learned to love and won't ditch it for other styling solutions anytime soon. I also gave a shot and try my best with Framer-Motion in regard to making
 my page more visually appealing with help of animations. Working with framer-motion proved easier than I initially
 had thought, I'm very happy with the final result, and I hope you would enjoy it too as well.`,

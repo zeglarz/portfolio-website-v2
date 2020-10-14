@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 // Themes
 import { MuiThemeProvider } from '@material-ui/core';
 import { ThemeProvider } from 'styled-components/macro';
@@ -22,7 +23,6 @@ import Footer from './components/Footer/Footer';
 import ScrollIndicator from './components/ScrollIndicator';
 // Data with routes
 import data from './data';
-import { Helmet } from 'react-helmet';
 
 const App = (): JSX.Element => {
   const showIntro = useIntro();
