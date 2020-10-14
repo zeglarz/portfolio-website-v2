@@ -1,79 +1,30 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
-import media from '../../../styles/style';
 import Divider from '../../Divider/Dividier';
 import Sun from '../Switch/Sun';
 import data from '../../../data';
+import { container, item } from '../animations';
+import { StyledList } from './styles/list';
+import { StyledLinkContainer } from './styles/container';
 
-const StyledLinkContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0;
-  ${media.desktop`
-      display: none;
-  `}
-`;
-
-const StyledList = styled.ul`
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  li {
-    a {
-      cursor: pointer;
-      display: flex;
-      font-size: 0.8rem;
-      font-family: 'Lato', sans-serif;
-      font-weight: 300;
-      padding: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: all ease-in-out 200ms;
-      color: ${({ theme }) => theme.colors.text};
-
-      ${media.bigDesktop`
-          font-size: 0.7rem;
-          padding: 0.8rem 0.5rem;
-          font-weight: 400;
-      `}
-
-      &.active {
-        display: inline-block;
-        background: ${({ theme }) => theme.gradients.primary};
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -webkit-box-decoration-break: clone;
-      }
-      &:hover {
-        color: ${({ theme }) => theme.gradients.primary};
-        svg {
-          fill: ${({ theme }) => theme.gradients.svg};
-        }
-      }
-    }
-    svg {
-      margin: 5px;
-    }
-  }
-`;
-
-const NavLinks = ({ toggleTheme, theme }) => {
+const NavLinks = ({ toggleTheme, theme, showIntro }) => {
   return (
     <StyledLinkContainer>
-      <StyledList>
+      <StyledList
+        variants={container(showIntro)}
+        initial="hidden"
+        animate="show"
+      >
         {data.views.map((link) => (
-          <li key={link.title}>
+          <motion.li key={link.title} variants={item}>
             <NavLink to={link.path}>{link.title}</NavLink>
-          </li>
+          </motion.li>
         ))}
         <Divider vert />
-        <li>
+        <motion.li variants={item}>
           <Sun toggleTheme={toggleTheme} theme={theme} />
-        </li>
+        </motion.li>
       </StyledList>
     </StyledLinkContainer>
   );

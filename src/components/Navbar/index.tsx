@@ -69,7 +69,11 @@ const Index = ({ toggleTheme, showIntro, theme, menuOpen, setMenuOpen }) => {
       >
         <NavbarContent onTop={scrolledToTop}>
           <BrandLogo size="50px" showIntro={showIntro} />
-          <NavLinks toggleTheme={toggleTheme} theme={theme} />
+          <NavLinks
+            toggleTheme={toggleTheme}
+            theme={theme}
+            showIntro={showIntro}
+          />
           <NavMenu
             toggleTheme={toggleTheme}
             theme={theme}
