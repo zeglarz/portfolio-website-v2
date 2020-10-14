@@ -9,20 +9,13 @@ const StyledContact = styled.div`
   width: 100%;
 `;
 
-const Contact = () => {
+const Contact = (props) => {
   return (
     <StyledContact>
       <Container>
         <StyledTop noReverse>
           <section>
-            <Hero
-              title={'Contact'}
-              fLine={'Contact'}
-              sLine={'Send me an email'}
-              content={
-                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus distinctio doloremque dolores dolorum, earum facere, id illum in ipsum, itaque laudantium magni maiores molestiae mollitia neque nostrum qui repellendus.'
-              }
-            />
+            <Hero {...props} />
           </section>
           <section>
             <ContactForm />

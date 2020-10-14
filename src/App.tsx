@@ -19,11 +19,8 @@ import PageWrapper from './components/PageWrapper/PageWrapper';
 import IntroAnimation from './components/IntroAnimation/IntroAnimation';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer/Footer';
-// Views
-import Home from './views/Home/Home';
-import About from './views/About';
-import Contact from './views/Contact';
-import Projects from './views/Projects/Projects';
+// Data with routes
+import data from './data';
 
 const App = (): JSX.Element => {
   const showIntro = useIntro();
@@ -63,10 +60,14 @@ const App = (): JSX.Element => {
         />
         <PageWrapper>
           <Switch>
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/projects" component={Projects} />
+            {data.views.map((route) => {
+              const { path, Component, ...rest } = route;
+              return (
+                <Route exact path={path}>
+                  <Component {...rest} />
+                </Route>
+              );
+            })}
             <Redirect to="/home" />
           </Switch>
         </PageWrapper>

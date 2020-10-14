@@ -4,7 +4,8 @@ import Image from '../../components/Hero/Image';
 import Hero from '../../components/Hero';
 import StyledTop from '../../styles/Top';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
-const Home = (): JSX.Element => {
+
+const Index = (props): JSX.Element => {
   useEffect(() => {
     document.title = `Home · Konrad Rudnicki`;
   });
@@ -14,18 +15,7 @@ const Home = (): JSX.Element => {
       <Container>
         <StyledTop reverse>
           <section>
-            <Hero
-              withSocial
-              title="Home"
-              fLine="Welcome to my"
-              sLine="personal portfolio"
-              content={
-                'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus distinctio doloremque dolores dolorum, earum facere, id illum in ipsum, itaque laudantium magni maiores molestiae mollitia neque nostrum qui repellendus.'
-              }
-              bIcon={<EmojiPeopleIcon />}
-              bText="Get to know me"
-              bPath="/about"
-            />
+            <Hero withSocial {...props} />
           </section>
           <section>
             <Image src="//unsplash.it/500/500" />
@@ -36,4 +26,4 @@ const Home = (): JSX.Element => {
   );
 };
 
-export default Home;
+export default Index;

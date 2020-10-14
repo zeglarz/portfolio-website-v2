@@ -85,7 +85,6 @@ const Hero: FunctionComponent<IHero> = ({
               variant="outlined"
               color="primary"
               size="large"
-              className="custom-button"
               onClick={onClick && onClick}
             >
               {bText}

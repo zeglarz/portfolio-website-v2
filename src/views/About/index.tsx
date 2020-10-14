@@ -17,7 +17,13 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner';
 
-const About = (): JSX.Element => {
+const About = (props): JSX.Element => {
+  const {
+    p1: { body, fLine, title },
+    p2: { body: body2, fLine: fLine2, sLine: sLine2, title: title2 },
+    banner,
+    ...rest
+  } = props;
   const ref: MutableRefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(
     null
   );
@@ -44,15 +50,7 @@ const About = (): JSX.Element => {
       <Container>
         <StyledTop>
           <section>
-            <Hero
-              title="About"
-              fLine="Want to know"
-              sLine="more about me?"
-              content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus distinctio doloremque dolores dolorum, earum facere, id illum in ipsum, itaque laudantium magni maiores molestiae mollitia neque nostrum qui repellendus."
-              bText="Read more about me"
-              bIcon={<ArrowDropDownIcon />}
-              onClick={() => scroll()}
-            />
+            <Hero {...rest} onClick={() => scroll()} />
           </section>
           <section>
             <Image src="//unsplash.it/501/501" />
@@ -73,37 +71,27 @@ const About = (): JSX.Element => {
               />
             </div>
             <div className="item">
-              <Title pageTitle>Who am I?</Title>
+              <Title pageTitle>{title}</Title>
               <Title section>
                 <div className="line-wrapper">
-                  <div className="line">My name is Konrad</div>
+                  <div className="line">{fLine}</div>
                 </div>
               </Title>
-              <div className="paragraph">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusamus beatae commodi consectetur cum dolorem doloribus,
-                fugiat id libero minima molestiae necessitatibus nihil odio quam
-                quia quisquam quo tenetur ullam voluptas!
-              </div>
+              <div className="paragraph">{body}</div>
             </div>
           </StyledImageSection>
           <div className="skills">
             <Header>
-              <Title pageTitle>Skills</Title>
+              <Title pageTitle>{title2}</Title>
               <Title section>
                 <div className="line-wrapper">
-                  <div className="line">Technologies I know</div>
+                  <div className="line">{fLine2}</div>
                 </div>
                 <div className="line-wrapper">
-                  <div className="line">I use some everyday</div>
+                  <div className="line">{sLine2}</div>
                 </div>
               </Title>
-              <div className="paragraph">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusamus beatae commodi consectetur cum dolorem doloribus,
-                fugiat id libero minima molestiae necessitatibus nihil odio quam
-                quia quisquam quo tenetur ullam voluptas!
-              </div>
+              <div className="paragraph">{body2}</div>
             </Header>
             <ListContainer>
               {Object.keys(techs).map((tech) => (
@@ -126,13 +114,7 @@ const About = (): JSX.Element => {
             </ListContainer>
           </div>
         </div>
-        <Banner
-          fLine="Want to check out my projects?"
-          sLine="Check them here!"
-          content=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus beatae commodi consectetur cum dolorem doloribus, fugiat id libero minima molestiae necessitatibus nihil odio quam quia quisquam quo tenetur ullam voluptas!"
-          bText="Go to projects"
-          bPath="/projects"
-        />
+        <Banner {...banner} />
       </Container>
     </StyledAbout>
   );

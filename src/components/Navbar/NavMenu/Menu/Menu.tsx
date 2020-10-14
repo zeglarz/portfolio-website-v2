@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledMenu, StyledContainer } from './styles/menu';
 import { NavLink } from 'react-router-dom';
-import { LINKS as links } from '../../constants';
+import data from '../../../../data';
 import { motion } from 'framer-motion';
 import {
   menuVariants,
@@ -32,8 +32,8 @@ const Menu = ({ menuOpen }) => {
         <StyledContainer>
           <nav className="menu-links">
             <motion.ul variants={listVariants}>
-              {links.map((link) => (
-                <li key={link.to}>
+              {data.views.map((link) => (
+                <li key={link.path}>
                   <motion.div
                     className="motionContainer"
                     variants={childrenVariants}
@@ -44,7 +44,7 @@ const Menu = ({ menuOpen }) => {
                       transition: { duration: 0.3 },
                     }}
                   >
-                    <NavLink to={link.to}>{link.title}</NavLink>
+                    <NavLink to={link.path}>{link.title}</NavLink>
                   </motion.div>
                 </li>
               ))}
