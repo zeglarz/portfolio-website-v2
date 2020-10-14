@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Button, Grid, Typography } from '@material-ui/core';
-import { IProjects } from '../projects';
+import { IProjects } from '../../../projects';
 import Modal from './Modal';
 import StyledCard from './styles/card';
 import Skill from './styles/skill';

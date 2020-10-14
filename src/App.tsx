@@ -19,13 +19,14 @@ import PageWrapper from './components/PageWrapper/PageWrapper';
 import IntroAnimation from './components/IntroAnimation/IntroAnimation';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer/Footer';
+import ScrollIndicator from './components/ScrollIndicator';
 // Data with routes
 import data from './data';
 import { Helmet } from 'react-helmet';
 
 const App = (): JSX.Element => {
   const showIntro = useIntro();
-
+  const [isTrueScrollable, setIsTrueScrollable] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = useHistoryListen(() => setMenuOpen(false));
 
@@ -46,7 +47,8 @@ const App = (): JSX.Element => {
       document.body.style.overflow = 'unset';
       document.body.style.height = '100%';
     }
-  }, [theme, menuOpen, pathname]);
+    setIsTrueScrollable(document.body.clientHeight - window.innerHeight > 200);
+  }, [theme, menuOpen, pathname, isTrueScrollable]);
   return (
     <ThemeProvider theme={theme ? dark : light}>
       <MuiThemeProvider theme={theme ? materialThemeDark : materialThemeLight}>
@@ -74,6 +76,10 @@ const App = (): JSX.Element => {
             })}
             <Redirect to="/home" />
           </Switch>
+          <ScrollIndicator
+            showMouse={isScrollable}
+            isTrueScrollable={isTrueScrollable}
+          />
         </PageWrapper>
         <Footer showVert={isScrollable} />
       </MuiThemeProvider>

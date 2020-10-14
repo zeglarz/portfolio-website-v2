@@ -2,7 +2,7 @@ import { DefaultTheme } from 'styled-components/macro';
 
 const light: DefaultTheme = {
   colors: {
-    text: 'black',
+    text: '#000000',
     contrast: '#ffffff',
     background: '#ffffff',
     secondary: '#656565',
@@ -23,7 +23,7 @@ const light: DefaultTheme = {
 
 const dark: DefaultTheme = {
   colors: {
-    text: 'white',
+    text: '#ffffff',
     contrast: 'black',
     background: '#100E17',
     secondary: '#aeaeae',

@@ -4,7 +4,7 @@ import Dialog from '@material-ui/core/Dialog';
 import styled from 'styled-components/macro';
 import Zoom from '@material-ui/core/Zoom';
 import { Button, Grid, Typography } from '@material-ui/core';
-import { IProjects } from '../projects';
+import { IProjects } from '../../../projects';
 import { StyledLink } from '../../../styles/StyledLink';
 import media from '../../../styles/style';
 

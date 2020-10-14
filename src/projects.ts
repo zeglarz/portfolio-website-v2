@@ -1,9 +1,9 @@
-import bookmates from '../../assets/projects/bookmates.png';
-import devbook from '../../assets/projects/devbook.png';
-import newsfeed from '../../assets/projects/newsfeed.png';
-import randomperson from '../../assets/projects/randomperson.png';
-import socialape from '../../assets/projects/socialape.png';
-import portfolio from '../../assets/projects/portfolio.png';
+import bookmates from './assets/projects/bookmates.png';
+import devbook from './assets/projects/devbook.png';
+import newsfeed from './assets/projects/newsfeed.png';
+import randomperson from './assets/projects/randomperson.png';
+import socialape from './assets/projects/socialape.png';
+import portfolio from './assets/projects/portfolio.png';
 
 enum Stack {
   js = 'JavaScript',
@@ -63,11 +63,11 @@ export const projects: IProjects[] = [
       en: `Project features up to date news from all around the world which are delivered by NewsAPI npm 
             module. By selecting country and category of your choice you will be presented with 20 top news 
             cards which are dynamically rendered. You can even filter them out by custom search field.`,
-      pl: `Pierwszy samodzielny projekt jaki wykonałem podczas bootcamp'u organizowanego przez Connectis
-            na fron-end developera. Głównym założeniem było stworzenie aplikacji wyświetlającej w sposób dynamiczny newsy
-            pozyskiwane z zewnętrznego API. Dane dostarczaje są przez backend oparty na NodeJS, który to z kolei fetchuje
-            je z Newsapi.com. Użytkownik ma możliwość wyboru interesującej go kategorii oraz państwa, którego newsy mają
-            dotyczć, po czym renderowanych jest 20 dynamicznych kart z newsami.`,
+      pl: `Pierwszy samodzielny projekt, jaki wykonałem podczas bootcamp'u organizowanego przez Connectis
+            na front-end developera. Głównym założeniem było stworzenie aplikacji wyświetlającej w sposób dynamiczny newsy
+            pozyskiwane z zewnętrznego API. Dane dostarczane są przez backend oparty na NodeJS, który to z kolei fetchuje
+            je z newsapi.com. Użytkownik ma możliwość wyboru interesującej go kategorii oraz państwa, którego newsy mają
+            dotyczyć, po czym renderowanych jest 20 dynamicznych kart z newsami.`,
     },
     stack: [
       Stack.js,
@@ -94,20 +94,20 @@ export const projects: IProjects[] = [
     },
     description: {
       en: `My first Flutter project which I published in Google Play Store. It features generation of random faux
-            data of people along with their picture. Data is fetch using external REST API from https://randomuser.me . 
+            data of people along with their picture. Data is fetched using external REST API from https://randomuser.me. 
             The project taught me number of things such as working with http requests in Flutter via http package as well
-            as it gave me good perspective on OOP, especially helped me grasp notion of classes. It's simple but yet I got
-            good perspective on full spectrum of dev cycle from planning, designing, coding to deployment to Google Play
+            as it gave me good perspective on OOP, especially helped me grasp a notion of classes. It's simple but, yet I got
+            good perspective on a full spectrum of dev cycle from planning, designing, coding to deployment to Google Play
             Store.`,
-      pl: `Mój jeden z pierwszych samodzielnych projektów napisany we Flutterze, który zdecydowałem się obulikować 
-            w Google Play Store. Aplikacja służy do geenrowania randomowych danych personalnych fikcyjnych osób, które w 
+      pl: `Mój jeden z pierwszych samodzielnych projektów napisany we Flutterze, który zdecydowałem się opublikować 
+            w Google Play Store. Aplikacja służy do generowania randomowych danych personalnych fikcyjnych osób, które w 
             łatwy sposób można skopiować do schowka i użyć przy rejestracji w różnych serwisach internetowych, którym nie
-            do końca ufamy w kontekście ochrony naszych cennych danych osobowych. Nauczenie się Darta powoliło mi lepiej
+            do końca ufamy w kontekście ochrony naszych cennych danych osobowych. Nauczenie się Darta pozwoliło mi lepiej
             zrozumieć zagadnienia związane z Object-orientated programming, a w szczególności sens tworzenia klas oraz 
-            statycznego typowania. Pomimo, iż sam projekt jest dość proty, pozwolił mi przejść pełną ścieżkę product 
-            developmentu, od pierwszego szkicu na kartce papieru, aż po sam deplyment do Play Store'a co pokazało mi jak
+            statycznego typowania. Pomimo iż sam projekt jest dość proty, pozwolił mi przejść pełną ścieżkę product 
+            developmentu, od pierwszego szkicu na kartce papieru, aż po sam deployment do Play Store'a co pokazało mi jak
             wiele wyzwań i przeszkód czeka na drodze developera. Najważniejsza, że udało się dowieźć projekt do końca, 
-            a efekt można zobaczyć na własne oczy pobierając aplikację ze sklepu Google, całkowicie za darmo i bez rekam :)`,
+            a efekt można zobaczyć na własne oczy, pobierając aplikację ze sklepu Google, całkowicie za darmo i bez reklam.`,
     },
     stack: [Stack.flutter, Stack.dart, Stack.mui, Stack.api],
     category: 'mobile',
@@ -129,15 +129,15 @@ export const projects: IProjects[] = [
             profile page and see profiles of other users. Logged user is also able to read, write, comment and 
             like posts. Profile page features top user’s repositories from GitHub which are fetched from REST 
              API. Backend is based on NodeJS which connects to MongoDB database. In this project I first used state
-             managment tool Redux. It helped me got broader understanding of `,
+             management tool Redux. It helped me got broader understanding of `,
       pl: `Mój autorski pomysł na stworzenie aplikacji webowej dedykowanej developerom. Aplikacja zbydowana została
-            przy wykorzystaniu stacku MERN, czyli React, NodeJS z Express oraz MongoDB czyli klasyka gatnku. Użytownik po 
-            rejestracji ma możiwość edycji oraz uzupełnieniu swojego publicznego profilu z miejscami pracy, edukacją, 
-            oraz umiejątnościami. Dodatkowo po wpisaniu nicku z githuba fetchowane są z wykorzystaniem REST API dane o 
+            przy wykorzystaniu stack-u MERN, czyli React, NodeJS z Express oraz MongoDB, czyli klasyka gatunku. Użytkownik po 
+            rejestracji ma możliwość edycji oraz uzupełnieniu swojego publicznego profilu z miejscami pracy, edukacją, 
+            oraz umiejętnościami. Dodatkowo po wpisaniu nicku z githuba fetchowane są z wykorzystaniem REST API dane o 
             repozytoriach danego użytkownika wraz z liczbami gwiazdek oraz forków. Zalogowani użytkownicy mają do dyspozycji
-            forum, w którym mogą pisać posty, komentować oraz like'ować posty innych użtykowników. Przy tym projekcie po 
-            raz pierwszy skorzystałem z najpopularniejszego framewoka do zarządznia stanem, czyli Redux'a, który dzięki
-            czemu nauczyłem się zasad pracy z tym framworkiem oraz lepszego zrozumienia zagadnień związanych z zarządzniem
+            forum, w którym mogą pisać posty, komentować oraz like-ować posty innych użytkowników. Przy tym projekcie po 
+            raz pierwszy skorzystałem z najpopularniejszego framework-a do zarządzania stanem, czyli Redux'a, który, dzięki czemu
+             nauczyłem się zasad pracy z tym framework-iem oraz lepszego zrozumienia zagadnień związanych z zarządzaniem
             stanem ogólnie.`,
     },
     stack: [
@@ -169,8 +169,8 @@ export const projects: IProjects[] = [
             I've used few 3rd party libraries, main one was jQuery, but also I used Superslides for main full screen
             slideshow, owlCarousel for charts and Isotope for filtering my projects by categories.`,
       pl: `Mój pierwszy projekt strony - portfolio, którą w dalszym ciągu rozwijam i aktualizuje. Ten projekt nauczył
-            mnie wiele odnośnie pracy z HTMLem CSS'em oraz JavaScript, a w szczególności z biblioteką jQuery. Jest to 
-            zapewne mój ostatni projekt bez frameworku, kolejne będą wykorzystywały takie frameworki jak m. in. React i 
+            mnie wiele odnośnie do pracy z HTML-em CSS-em oraz JavaScript, a w szczególności z biblioteką jQuery. Jest to 
+            zapewne mój ostatni projekt bez frameworku, kolejne będą wykorzystywały takie frameworki jak m.in. React i 
             Angular. Strona pokazuje moje podejście do designu, prezentacji danych oraz drobnych smaczków w postaci 
             animacji. Do zbudowania strony posłużyłem się w dużej mierze Boostrapem, jednak uzupełniłem go o wiele customowych
             elementów od siebie np. z wykorzystaniem Flexbox'a. Strona zbudowana zgodnie z filozofią 'mobile first', zatem
@@ -197,7 +197,7 @@ export const projects: IProjects[] = [
     subtitle: {
       en: 'React Create App | Team BootCamp Final Project',
       pl:
-        'React Create App | Projekt zespołowy zaliczeńowy BootCamp Connectis ',
+        'React Create App | Projekt zespołowy zaliczeniowy BootCamp Connectis ',
     },
     description: {
       en: `Project BookMates was coded by group of 4 people as final assignment for Connectis' C_School Full 
@@ -210,11 +210,11 @@ export const projects: IProjects[] = [
             na przełomie roku 2019/2020 w Connectis w Warszawie. Zespół poza mną liczył 3 osoby. Głównym założeniem projektu
             było storzenie serwisu spłecznośćiowego skupiającego miłośników książek. Moja odpowiedzialność za 
             projekt polegała zarówno na front-endzie jaki i back-endzie. Jeśli chodzi o back-end, oparty on został na 
-            NodeJS oraz Expressie. Zajmowałem się tworzeniem endpontów oraz pisaniu logiki do przetwarzania danych 
-            o książkach oraz użytkownikach oraz komunikacją z bazą danych PotgreSQL. Wykorzystałem w tym 
-            celu bazę danych Google Boooks, z którym komunikowałem się przez interfejs API. Na front-endzie pracowaliśmy w Reacie 
-            i tutaj odpowiadałem, za prezentację książek użytkownikom, formularz ręczngo dodania książki, wyszukiwania 
-            ksiązki, oraz indywidualne strony książek wraz z możliwością oceniania ich z wykorzystaniem gwiazdek`,
+            NodeJS oraz Expressie. Zajmowałem się tworzeniem endpointów oraz pisaniu logiki do przetwarzania danych 
+            o książkach, użytkownikach oraz komunikacją z bazą danych PotgreSQL. Wykorzystałem w tym 
+            celu bazę danych Google Boooks, z którym komunikowałem się przez interfejs API. Na front-endzie pracowaliśmy w Reakcie 
+            i tutaj odpowiadałem, za prezentację książek użytkownikom, formularz ręcznego dodania książki, wyszukiwania 
+            książki, oraz indywidualne strony książek wraz z możliwością oceniania ich przy pomocy gwiazdek.`,
     },
     stack: [
       Stack.react,
@@ -241,18 +241,18 @@ export const projects: IProjects[] = [
       en: `This was a follow along guide on how to create twitter clone app which I decided to undertake for the purpose of familiarizing myself
             with Firebase services. This over 11 hour tutorial was very helpful with conveying ins and outs of firebase
             functionality such as storage, cloud functions, authentication and authorization and last but not least to
-            perform CRUD operations on non-sql database provided by firebase. This project gave me some more practice with
+            perform CRUD operations on non-sql database provided by Firebase. The project gave me some more practice with
             state management tool Redux. I made some twists and turns to tweak this follow-along project to my liking. 
-             For example I made use of skeleton loading for the first time which is more modern approach over old turning
+             For example, I made use of skeleton loading for the first time which is more modern approach over old turning
              wheel when data loads. More and more big apps are using it nowadays and basically what it is, is as the name
-             suggest to see a skeleton in form of blocks and circles which pulse in exact place of where data is going to 
+             suggest seeing a skeleton in form of blocks and circles which pulse in exact place of where data is going to 
              reveal itself when it's been fetched.`,
-      pl: `Projekt tutorialowy, który podjąłem wcelu nauczenia się korzystania z funkcjonalności dostarczenej przez
-            serwis Firebase i polegał on na stworzeniu klona Twittera. ten ponad 11-godzinny kurs pozlolił mi nauczyć się korzystać ze storage, cloud functions, 
-            jak i komunikacji z niereleacyjną bazą danych oraz uwierzytelniania użytkownika. Tutorial pozwolił mi również 
-            utrwalić wiedzę związaną z wykorzystywaniem Reduxa do zarządznia stanem aplikacji. Pewnym smaczkiem wprowadzonum przeze
-            mnie było wprowadzenie tzw. sceleton loadingu, czyli wyświetlania szkieletu treśći, które dopiero są fetchowane,
-            zmiast przestarzałego już podejścia, czyli tzw. loader'a najczęściej pod postacią kręcącego się kółka.`,
+      pl: `Projekt tutorial-owy, który podjąłem w celu nauczenia się korzystania z funkcjonalności dostarczonej przez
+            serwis Firebase i polegał on na stworzeniu klona Twitter'a. ten ponad 11-godzinny kurs pozwolił mi nauczyć się korzystać ze storage, cloud functions, 
+            jak i komunikacji z nierelacyjną bazą danych oraz uwierzytelniania użytkownika. Tutorial pozwolił mi również 
+            utrwalić wiedzę związaną z wykorzystywaniem Redux'a do zarządzania stanem aplikacji. Pewnym smaczkiem wprowadzonym przeze
+            mnie było wprowadzenie tzw. skeleton loadingu, czyli wyświetlania szkieletu treści, które dopiero są fetchowane,
+            zamiast przestarzałego już podejścia, czyli tzw. loader'a najczęściej pod postacią kręcącego się kółka.`,
     },
     stack: [Stack.react, Stack.js, Stack.redux, Stack.firebase, Stack.scss],
     category: 'apps',
@@ -271,17 +271,17 @@ export const projects: IProjects[] = [
     description: {
       en: `The second version of my portfolio website, this time made with React. The development process was very
 challenging and full of various pitfalls, I learned a lot during this time. I must admit that the hardest part of this
-project was to learn TypeScript and make the compiler happy for the most part. I won't be lying to say that I had a few moments of doubt and had thoughts of going back to plain old JavaScript but I forced my way through and I will never forget this lesson. Hopefully, will I have a bright future in my next TS endeavors. For the
+project was to learn TypeScript and make the compiler happy for the most part. I won't be lying to say that I had a few moments of doubt and had thoughts of going back to plain old JavaScript, but I forced my way through, and I will never forget this lesson. Hopefully, will I have a bright future in my next TS endeavors. For the
 visual part of the website, I worked with Styled-Components which I learned to love and won't ditch it for other styling solutions anytime soon. I also gave a shot and try my best with Framer-Motion in regard to making
 my page more visually appealing with help of animations. Working with framer-motion proved easier than I initially
-had thought, I very happy with the final result and I hope you would enjoy it too as well.`,
-      pl: `Druga odsłona mojego osobistego portfolio, tym razem napisana w Reacie. Projekt ten okazał się dużym
+had thought, I'm very happy with the final result, and I hope you would enjoy it too as well.`,
+      pl: `Druga odsłona mojego osobistego portfolio, tym razem napisana w Reakcie. Projekt ten okazał się dużym
              wyzwaniem, podczas którego nauczyłem się wielu nowych rzeczy. Pierwszą i najważniejszą jest TypeScript. Jest
              to pierwsza strona od postaw napisana w tymże języku. Nie ukrywam, że krzywa uczenia była przy tym projekcie
-             dość stroma, miałem kilka momentów zwątpień, kiedy kombilator rozbyłskiwał czerownymi kolorami niczym choinka
-              i myślałem o powrocie do starego poczciwego JavaSripta, ale nie,
-              powiedziałem sobie, że się nie poddam! I nie żałuje tej decyzji, gdyż nie tylko udało mi się dowieźć ten projkt do końca,
-              ale chyba nawet polubiliśmy się na tyle, że kompilator już tak często się na mnie nie złości`,
+             dość stroma, miałem kilka momentów zwątpień, kiedy kompilator rozbłyskiwał czerwonymi kolorami niczym choinka
+              i myślałem o powrocie do starego poczciwego JavaScript-a, ale nie,
+              powiedziałem sobie, że się nie poddam! I nie żałuje tej decyzji, gdyż nie tylko udało mi się dowieźć ten projekt do końca,
+              ale chyba nawet polubiliśmy się na tyle, że kompilator już tak często się na mnie nie złości.`,
     },
     stack: [
       Stack.react,
