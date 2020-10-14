@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { motion } from 'framer-motion';
 import { Button, Tooltip } from '@material-ui/core';
 import Icon from './SocialIcons/withIcon';
-import { SOCIAL as socials } from './constants';
+import { SOCIAL as socials } from '../../socials';
 import Title from '../../styles/Title';
 import StyledLinkContainer from './styles/contaner';
 import StyledHero from './styles/hero';

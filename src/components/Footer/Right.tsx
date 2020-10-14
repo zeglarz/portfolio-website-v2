@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import styled, { css } from 'styled-components/macro';
 import Divider from '../Divider/Dividier';
-import Icon from '../../components/Hero/SocialIcons/withIcon';
-import { github, linkedin, twitter } from '../Hero/SocialIcons/icons';
+import Icon from '../Hero/SocialIcons/withIcon';
 import { StyledLink } from '../../styles/StyledLink';
+import { SOCIAL as icons } from '../../socials';
 
 const SDivider = styled(Divider)``;
 
@@ -92,22 +92,28 @@ const StyledRight = styled.div<IShowVert>`
     `}
 `;
 
+const outLineCondition = (name) => name === 'Stack Overflow' || name === 'Mail';
+
 const Right: FunctionComponent<{ showVert?: boolean }> = ({ showVert }) => {
   return (
     <StyledRight showVert={showVert}>
       <div>
         <p>Find me</p>
-        <SDivider long={showVert} vert />
+        <SDivider long={showVert} vert footer />
         <div className="icons">
-          <StyledLink href="#" className="icon">
-            <Icon icon={github} />
-          </StyledLink>
-          <StyledLink href="#" className="icon">
-            <Icon icon={twitter} />
-          </StyledLink>
-          <StyledLink href="#" className="icon">
-            <Icon icon={linkedin} />
-          </StyledLink>
+          {icons.map((icon) => {
+            if (icon.footer) {
+              return (
+                <StyledLink href={icon.link} className="icon">
+                  <Icon
+                    icon={icon.icon}
+                    withoutOutline={outLineCondition(icon.name)}
+                  />
+                </StyledLink>
+              );
+            }
+            return false;
+          })}
         </div>
       </div>
     </StyledRight>

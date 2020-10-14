@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
 import { Button, Snackbar, TextField } from '@material-ui/core';
+import Icon from '../Hero/SocialIcons/withIcon';
 import email from 'emailjs-com';
 import styled from 'styled-components/macro';
 import { TextFieldProps } from '@material-ui/core/TextField/TextField';
 import { object, string } from 'yup';
 import media from '../../styles/style';
+import { mail } from '../Hero/SocialIcons/icons';
 
 const initialValues = {
   email: '',
@@ -144,7 +146,7 @@ const ContactForm = () => {
                 size="large"
                 type="submit"
                 disabled={isSubmitting}
-                endIcon=""
+                endIcon={<Icon icon={mail} size={20} withoutOutline />}
               >
                 Send
               </Button>

@@ -5,14 +5,15 @@ import media from '../../styles/style';
 interface IDivider {
   vert?: boolean;
   long?: boolean;
+  footer?: boolean;
 }
 
 const StyledDivider = styled.div<IDivider>`
-  padding: 1rem;
+  padding: ${({ footer }) => (!footer ? '1rem' : '0.5rem')};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 1rem;
+  margin: ${({ footer }) => (!footer ? '0 1rem' : '0 0.3rem')};
 
   ${media.desktop`
         display: none;
