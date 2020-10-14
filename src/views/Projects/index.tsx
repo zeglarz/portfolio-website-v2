@@ -3,7 +3,7 @@ import { Container } from '@material-ui/core';
 import Hero from '../../components/Hero';
 import Image from '../../components/Hero/Image';
 import StyledTop from '../../styles/Top';
-import ProjectList from '../../components/ProjectList/ProjectList';
+import ProjectList from '../../ProjectList';
 import Title from '../../styles/Title';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import Banner from '../../components/Banner';

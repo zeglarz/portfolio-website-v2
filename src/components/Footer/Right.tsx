@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import styled, { css } from 'styled-components/macro';
+import { motion } from 'framer-motion';
 import Divider from '../Divider/Dividier';
 import Icon from '../Hero/SocialIcons/withIcon';
 import { StyledLink } from '../../styles/StyledLink';
@@ -105,10 +106,12 @@ const Right: FunctionComponent<{ showVert?: boolean }> = ({ showVert }) => {
             if (icon.footer) {
               return (
                 <StyledLink href={icon.link} className="icon">
-                  <Icon
-                    icon={icon.icon}
-                    withoutOutline={outLineCondition(icon.name)}
-                  />
+                  <motion.div whileHover={{ y: -5, scale: 1.05 }}>
+                    <Icon
+                      icon={icon.icon}
+                      withoutOutline={outLineCondition(icon.name)}
+                    />
+                  </motion.div>
                 </StyledLink>
               );
             }

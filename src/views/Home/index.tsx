@@ -3,13 +3,8 @@ import { Container } from '@material-ui/core';
 import Image from '../../components/Hero/Image';
 import Hero from '../../components/Hero';
 import StyledTop from '../../styles/Top';
-import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 
-const Index = (props): JSX.Element => {
-  useEffect(() => {
-    document.title = `Home · Konrad Rudnicki`;
-  });
-
+const Home = (props): JSX.Element => {
   return (
     <div>
       <Container>
@@ -26,4 +21,4 @@ const Index = (props): JSX.Element => {
   );
 };
 
-export default Index;
+export default Home;

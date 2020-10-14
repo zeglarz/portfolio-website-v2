@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { container, item } from './animations';
 import { NavLink } from 'react-router-dom';
 import Divider from '../../Divider/Dividier';
 import Sun from '../Switch/Sun';
 import data from '../../../data';
-import { container, item } from '../animations';
 import { StyledList } from './styles/list';
 import { StyledLinkContainer } from './styles/container';
 
