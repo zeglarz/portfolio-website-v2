@@ -17,7 +17,6 @@ const Index = (props): JSX.Element => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Projects · Konrad Rudnicki`;
   }, []);
   const ref: MutableRefObject<HTMLDivElement | null> = useRef<HTMLDivElement>(
     null

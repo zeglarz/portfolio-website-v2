@@ -36,7 +36,6 @@ const About = (props): JSX.Element => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `Home · Konrad Rudnicki`;
   }, []);
 
   const scroll = () => {

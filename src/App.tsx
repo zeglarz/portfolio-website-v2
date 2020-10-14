@@ -21,6 +21,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer/Footer';
 // Data with routes
 import data from './data';
+import { Helmet } from 'react-helmet';
 
 const App = (): JSX.Element => {
   const showIntro = useIntro();
@@ -61,9 +62,12 @@ const App = (): JSX.Element => {
         <PageWrapper>
           <Switch>
             {data.views.map((route) => {
-              const { path, Component, ...rest } = route;
+              const { path, pageName, Component, ...rest } = route;
               return (
                 <Route exact path={path}>
+                  <Helmet>
+                    <title>{pageName}</title>
+                  </Helmet>
                   <Component {...rest} />
                 </Route>
               );
