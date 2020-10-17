@@ -6,6 +6,8 @@ import Modal from './Modal';
 import StyledCard from './styles/card';
 import Skill from './styles/skill';
 import { StyledLink } from '../../../styles/StyledLink';
+import CodeIcon from '@material-ui/icons/Code';
+import PublicIcon from '@material-ui/icons/Public';
 
 const ProjectCard: FunctionComponent<IProjects & { index: number }> = (
   props
@@ -75,12 +77,22 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = (
           </div>
           <Grid container direction="row" justify="flex-start">
             <StyledLink href={demoURL}>
-              <Button variant="contained" color="primary" size="large">
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                endIcon={<PublicIcon />}
+              >
                 Demo
               </Button>
             </StyledLink>
             <StyledLink href={gitURL}>
-              <Button variant="outlined" color="primary" size="large">
+              <Button
+                variant="outlined"
+                color="primary"
+                size="large"
+                endIcon={<CodeIcon />}
+              >
                 Code
               </Button>
             </StyledLink>
