@@ -2,10 +2,10 @@ import React from 'react';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import VisibilityIcon from '@material-ui/icons/Visibility';
-import Home from './views/Home';
-import About from './views/About';
-import Contact from './views/Contact';
-import Projects from './views/Projects';
+import Home from '../views/Home';
+import About from '../views/About';
+import Contact from '../views/Contact';
+import Projects from '../views/Projects';
 
 export default {
   projectName: 'Konrad Rudnicki',

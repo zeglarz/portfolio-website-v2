@@ -38,7 +38,7 @@ const StyledMouse = styled.div`
   ${media.tablet`
     transform: scale(1.0);
   `}
-  ${media.phone`
+  ${media.phablet`
     display: none;
   `}
 `;
@@ -46,19 +46,21 @@ const StyledMouse = styled.div`
 const ScrollIndicator: FunctionComponent<{
   showMouse: boolean;
   isTrueScrollable: boolean;
-}> = ({ showMouse, isTrueScrollable }) => {
-  const [scrolledPastTreshold, setScrolledPastTreshold] = useState(
+  onClick: () => void;
+}> = ({ showMouse, isTrueScrollable, onClick }) => {
+  const [scrolledPastThreshold, setScrolledPastThreshold] = useState(
     window.pageYOffset < 25
   );
   const handleScroll = () => {
-    setScrolledPastTreshold(window.pageYOffset < 25);
+    setScrolledPastThreshold(window.pageYOffset < 25);
   };
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [scrolledPastTreshold]);
-  return showMouse && scrolledPastTreshold && isTrueScrollable ? (
-    <StyledMouse>
+  }, [scrolledPastThreshold]);
+
+  return showMouse && scrolledPastThreshold && isTrueScrollable ? (
+    <StyledMouse onClick={onClick}>
       <motion.div
         animate={{ y: 8 }}
         transition={{ yoyo: Infinity, duration: 0.6, repeatDelay: 0.3 }}

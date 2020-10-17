@@ -22,11 +22,12 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer/Footer';
 import ScrollIndicator from './components/ScrollIndicator';
 // Data with routes
-import data from './data';
+import data from './data/data';
 
 const App = (): JSX.Element => {
   const showIntro = useIntro();
   const [isTrueScrollable, setIsTrueScrollable] = useState(false);
+  const [vh, setVh] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = useHistoryListen(() => setMenuOpen(false));
 
@@ -39,7 +40,7 @@ const App = (): JSX.Element => {
     const { clientHeight: clientHeightBody } = document.body;
     const scrollable = clientHeightBody > clientHeight;
     setScrollable(scrollable);
-
+    setVh(window.innerHeight);
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
       document.body.style.height = '100vh';
@@ -79,6 +80,9 @@ const App = (): JSX.Element => {
           <ScrollIndicator
             showMouse={isScrollable}
             isTrueScrollable={isTrueScrollable}
+            onClick={() =>
+              window.scrollTo({ left: 0, top: vh - 120, behavior: 'smooth' })
+            }
           />
         </PageWrapper>
         <Footer showVert={isScrollable} />

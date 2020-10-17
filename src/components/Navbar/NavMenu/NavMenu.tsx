@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components/macro';
 import Burger from './Burger/Burger';
-import ThemeIcon from '../Switch/Sun';
+import ThemeIcon from '../Switch';
 import Menu from './Menu/Menu';
 
 const StyledNavMenu = styled(motion.div)`

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Divider from '../Divider/Dividier';
 import Icon from '../Hero/SocialIcons/withIcon';
 import { StyledLink } from '../../styles/StyledLink';
-import { SOCIAL as icons } from '../../socials';
+import { SOCIAL as icons } from '../../data/socials';
 
 const SDivider = styled(Divider)``;
 
@@ -105,14 +105,14 @@ const Right: FunctionComponent<{ showVert?: boolean }> = ({ showVert }) => {
           {icons.map((icon) => {
             if (icon.footer) {
               return (
-                <StyledLink href={icon.link} className="icon">
-                  <motion.div whileHover={{ y: -5, scale: 1.05 }}>
+                <motion.div whileHover={{ y: -5, scale: 1.05 }}>
+                  <StyledLink href={icon.link} className="icon">
                     <Icon
                       icon={icon.icon}
                       withoutOutline={outLineCondition(icon.name)}
                     />
-                  </motion.div>
-                </StyledLink>
+                  </StyledLink>
+                </motion.div>
               );
             }
             return false;

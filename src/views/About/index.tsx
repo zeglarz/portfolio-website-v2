@@ -2,7 +2,7 @@ import React, { MutableRefObject, useEffect, useRef } from 'react';
 import { Button, Container } from '@material-ui/core';
 import { motion } from 'framer-motion';
 import Hero from '../../components/Hero';
-import { TECHS as techs } from './constants';
+import { TECHS as techs } from '../../data/skills';
 import Title from '../../styles/Title';
 import Image from '../../components/Hero/Image';
 import StyledTop from '../../styles/Top';

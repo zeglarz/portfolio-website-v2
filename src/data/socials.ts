@@ -4,7 +4,7 @@ import {
   mail,
   stackoverflow,
   twitter,
-} from './components/Hero/SocialIcons/icons';
+} from '../components/Hero/SocialIcons/icons';
 
 interface ISocial {
   name: string;

@@ -115,8 +115,8 @@ const ContactForm = () => {
           errors,
           isSubmitting,
         }) => {
-          const isErrorForrm = (type) => !!(touched[type] && errors[type]);
-          const helperText = (type) => isErrorForrm(type) && errors[type];
+          const isErrorForm = (type) => !!(touched[type] && errors[type]);
+          const helperText = (type) => isErrorForm(type) && errors[type];
           const standardTextfield = (
             type: string,
             inputType = 'text'
@@ -129,7 +129,7 @@ const ContactForm = () => {
             value: values[type],
             size: 'small',
             onBlur: handleBlur,
-            error: isErrorForrm(type),
+            error: isErrorForm(type),
             helperText: helperText(type),
             onChange: handleChange,
           });

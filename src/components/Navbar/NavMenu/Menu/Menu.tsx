@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledMenu, StyledContainer } from './styles/menu';
 import { NavLink } from 'react-router-dom';
-import data from '../../../../data';
+import data from '../../../../data/data';
 import { motion } from 'framer-motion';
 import {
   menuVariants,

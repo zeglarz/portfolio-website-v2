@@ -7,7 +7,7 @@ interface ImageProps {
   src: string;
 }
 
-const Index: FunctionComponent<ImageProps> = ({ src }) => {
+const Image: FunctionComponent<ImageProps> = ({ src }) => {
   return (
     <StyledImgContainer variants={variants} initial="init" animate="end">
       <motion.div variants={divVariants2} className="rect2" />
@@ -17,4 +17,4 @@ const Index: FunctionComponent<ImageProps> = ({ src }) => {
   );
 };
 
-export default Index;
+export default Image;

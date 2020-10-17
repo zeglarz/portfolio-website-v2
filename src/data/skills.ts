@@ -1,5 +1,5 @@
-import { ITechObj, LEVELS } from './constants.d';
-import * as img from '../../assets/skills';
+import { ITechObj, LEVELS } from './skills.d';
+import * as img from '../assets/skills';
 
 export const TECHS: ITechObj = {
   fontEnd: {
