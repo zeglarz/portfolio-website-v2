@@ -54,8 +54,8 @@ const About = (props): JSX.Element => {
             <Image src="//unsplash.it/501/501" />
           </section>
         </StyledTop>
-        <div className="middle" id="middle">
-          <StyledImageSection ref={ref}>
+        <div className="middle" id="middle" ref={ref}>
+          <StyledImageSection>
             <div>
               <motion.img
                 style={{

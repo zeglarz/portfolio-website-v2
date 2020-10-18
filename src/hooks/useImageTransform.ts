@@ -14,7 +14,9 @@ export default (
   useLayoutEffect(() => {
     const handleResize = () => {
       if (ref.current) {
-        setRatio(ref.current.offsetTop / window.document.body.offsetHeight);
+        setRatio(
+          (ref.current.offsetTop - 120) / window.document.body.offsetHeight
+        );
       }
     };
     handleResize();
