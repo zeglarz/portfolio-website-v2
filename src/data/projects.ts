@@ -51,8 +51,6 @@ export interface IProjects {
   gitURL: string;
   level: number;
   finished: string;
-  label: string;
-  value: string;
 }
 
 export const projects: IProjects[] = [
@@ -87,16 +85,10 @@ export const projects: IProjects[] = [
     category: 'apps',
     img: newsfeed,
     slug: 'newsfeed',
-    demoURL: 'https://newsify.konradrudnicki.com',
+    demoURL: 'http://indyanin.myqnapcloud.com/newsify',
     gitURL: 'https://github.com/zeglarz/News-Feed-API',
     level: 5,
     finished: '2020-02-01',
-    get value() {
-      return this.category;
-    },
-    get label() {
-      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
-    },
   },
   {
     id: 2,
@@ -131,12 +123,6 @@ export const projects: IProjects[] = [
     gitURL: 'https://github.com/zeglarz/random-person-generator-flutter',
     level: 6,
     finished: '2020-05-01',
-    get value() {
-      return this.category;
-    },
-    get label() {
-      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
-    },
   },
   {
     id: 3,
@@ -147,7 +133,8 @@ export const projects: IProjects[] = [
     },
     description: {
       en: `The app is a social media site for developers. It allows users to sign up and create a portfolio 
-           profile page and see profiles of other users. Logged user is also able to read, write, comment, and like posts. Profile page features top user’s repositories from GitHub which are fetched from REST 
+           profile page and see profiles of other users. Logged user is also able to read, write, comment, and like posts.
+           Profile page features top user’s repositories from GitHub which are fetched from REST 
            API. Backend is based on NodeJS which connects to the MongoDB database. In this project, I first used the state
            management tool Redux. It helped me got a broader understanding of state management ins and outs as well as 
            working with the non-relational DB such as MongoDB which in my opinion works super well with NodeJS.`,
@@ -172,16 +159,10 @@ export const projects: IProjects[] = [
     category: 'apps',
     img: devbook,
     slug: 'devbook',
-    demoURL: 'https://devbook.konradrudnicki.com',
+    demoURL: 'http://indyanin.myqnapcloud.com/devbook',
     gitURL: 'https://github.com/zeglarz/DevBook',
     level: 7,
     finished: '2020-04-01',
-    get value() {
-      return this.slug;
-    },
-    get label() {
-      return this.title;
-    },
   },
   {
     id: 4,
@@ -197,7 +178,8 @@ export const projects: IProjects[] = [
            as well as give me a more straight forward way for future updates. 
            I've used a few 3rd party libraries, the main one was jQuery, but also I used Superslides for the main full-screen
            slideshow, owlCarousel for charts, and Isotope for filtering my projects by categories. It also lets a user pick 
-           one of two available languages - Polish or English. The language changes dynamically behind the scenes without the need to reload the page.`,
+           one of two available languages - Polish or English. The language changes dynamically behind the scenes without 
+           the need to reload the page.`,
       pl: `Mój pierwszy projekt strony - portfolio, którą w dalszym ciągu rozwijam i aktualizuje. Ten projekt nauczył
            mnie wiele odnośnie do pracy z HTML-em CSS-em oraz JavaScript, a w szczególności z biblioteką jQuery. Jest to 
            zapewne mój ostatni projekt bez frameworku, kolejne będą wykorzystywały takie frameworki jak m.in. React i 
@@ -218,7 +200,7 @@ export const projects: IProjects[] = [
     category: 'web',
     img: portfolio,
     slug: 'portfolio',
-    demoURL: 'https://konradrudnicki.com',
+    demoURL: 'http://indyanin.myqnapcloud.com',
     gitURL: 'https://github.com/zeglarz/portfolio-webpage-v1',
     level: 6,
     finished: '2020-03-01',
@@ -239,17 +221,20 @@ export const projects: IProjects[] = [
     },
     description: {
       en: `Project BookMates was coded by a group of 4 people as the final assignment for Connectis' C_School Full 
-           Stack Boot Camp. The app is build using React in the front-end, NodeJS in the back-end coupled with PostgreSQL. The main goal of the project was to deliver an app that will connect people interested in books. My field of responsibility is to implement fetching book data using Google REST API, connecting with the SQL database in the backend, and 
-           handling searching and presenting of the book data on the front-end. All of the requirements were fulfilled`,
+           Stack Boot Camp. The app is build using React in the front-end, NodeJS in the back-end coupled with PostgreSQL.
+           The main goal of the project was to deliver an app that will connect people interested in books. My field of 
+           responsibility is to implement fetching book data using Google REST API, connecting with the SQL database 
+           in the backend, and handling searching and presenting of the book data on the front-end. All of the requirements
+            were fulfilled`,
       pl: `Projekt grupowy, który był końcowym projektem zaliczeniowym bootcampu full-stackowego, który odbywałem 
            na przełomie roku 2019/2020 w Connectis w Warszawie. Zespół poza mną liczył 3 osoby. Głównym założeniem projektu
            było storzenie serwisu spłecznośćiowego skupiającego miłośników książek. Moja odpowiedzialność za 
            projekt polegała zarówno na front-endzie jaki i back-endzie. Jeśli chodzi o back-end, oparty on został na 
            NodeJS oraz Expressie. Zajmowałem się tworzeniem endpointów oraz pisaniu logiki do przetwarzania danych 
            o książkach, użytkownikach oraz komunikacją z bazą danych PotgreSQL. Wykorzystałem w tym 
-           celu bazę danych Google Boooks, z którym komunikowałem się przez interfejs API. Na front-endzie pracowaliśmy w Reakcie 
-           i tutaj odpowiadałem, za prezentację książek użytkownikom, formularz ręcznego dodania książki, wyszukiwania 
-           książki, oraz indywidualne strony książek wraz z możliwością oceniania ich przy pomocy gwiazdek.`,
+           celu bazę danych Google Boooks, z którym komunikowałem się przez interfejs API. Na front-endzie pracowaliśmy
+           w Reakcie i tutaj odpowiadałem, za prezentację książek użytkownikom, formularz ręcznego dodania książki, 
+           wyszukiwania książki, oraz indywidualne strony książek wraz z możliwością oceniania ich przy pomocy gwiazdek.`,
     },
     stack: [
       Stack.react,
@@ -266,12 +251,6 @@ export const projects: IProjects[] = [
     gitURL: 'https://github.com/KrzysztofZiemski/bookmates',
     level: 8,
     finished: '2020-04-15',
-    get value() {
-      return this.category;
-    },
-    get label() {
-      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
-    },
   },
   {
     id: 6,
@@ -302,12 +281,6 @@ export const projects: IProjects[] = [
     gitURL: 'https://github.com/zeglarz/socialape-firebase-frontend',
     level: 6,
     finished: '2020-04-01',
-    get value() {
-      return this.category;
-    },
-    get label() {
-      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
-    },
   },
   {
     id: 7,
@@ -317,7 +290,8 @@ export const projects: IProjects[] = [
       pl: 'Create React App TypeScript | Portfolio Personalne 2 odsłona',
     },
     description: {
-      en: `The second version of my portfolio website, this time made with React. The development process was very challenging and full of various pitfalls, but I learned a lot during this time. I must admit that by far the hardest was to learn TypeScript and make the compiler happy for the most part. I won't be lying to say that I had a few moments of doubt and had thoughts of going back to old and familiar JavaScript, but I forced my way through, and I will never forget this lesson. Hopefully, will I have a bright future in my next TS endeavors? For the
+      en: `The second version of my portfolio website, this time made with React. The development process was very 
+           challenging and full of various pitfalls, but I learned a lot during this time. I must admit that by far the hardest was to learn TypeScript and make the compiler happy for the most part. I won't be lying to say that I had a few moments of doubt and had thoughts of going back to old and familiar JavaScript, but I forced my way through, and I will never forget this lesson. Hopefully, will I have a bright future in my next TS endeavors? For the
            visual part of the website, I worked with Styled-Components which I learned to love and won't ditch it for other styling solutions anytime soon. I also gave a shot and try my best with Framer-Motion in regard to making
            my page more visually appealing with help of animations. Working with framer-motion proved easier than I initially
            had thought, I'm very happy with the final result, and I hope you would enjoy it too as well.`,
@@ -341,15 +315,9 @@ export const projects: IProjects[] = [
     category: 'apps',
     img: portfoliov2,
     slug: 'portfolio-v2',
-    demoURL: 'https://socialape-659f4.web.app',
-    gitURL: 'https://github.com/zeglarz/socialape-firebase-frontend',
+    demoURL: 'https://konradrudnicki.com',
+    gitURL: 'https://github.com/zeglarz/portfolio-website-v2',
     level: 10,
     finished: '2020-10-15',
-    get value() {
-      return this.category;
-    },
-    get label() {
-      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
-    },
   },
 ];
