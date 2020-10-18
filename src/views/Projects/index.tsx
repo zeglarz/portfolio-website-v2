@@ -46,7 +46,6 @@ const Index = (props): JSX.Element => {
           </div>
         </Title>
         <div className={'paragraph'}>{body}</div>
-        <div style={{ marginBottom: '4rem' }} />
         <ProjectList />
       </div>
       <Banner {...banner} />

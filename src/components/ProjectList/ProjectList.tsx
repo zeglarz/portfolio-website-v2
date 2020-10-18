@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 import Select from 'react-select';
 import ProjectCard from './ProjectCard/ProjectCard';
 import { projects } from '../../data/projects';
+import dateFormat from '../../helpers/date';
 
 const StyledSelect = styled(Select)`
   margin: 20px;
@@ -31,6 +32,10 @@ const StyledCategory = styled.div`
   padding-top: 1rem;
   padding-bottom: 2.5rem;
   text-transform: capitalize;
+  sup {
+    text-transform: none;
+    font-size: 1rem;
+  }
 `;
 const ProjectList = () => {
   const [proj, setProj] = useState(projects);
@@ -55,20 +60,18 @@ const ProjectList = () => {
   const orderBy = [
     {
       value: -1,
-      label: 'Asc',
+      label: 'Ascending',
     },
     {
       value: 1,
-      label: 'Desc',
+      label: 'Descending',
     },
   ];
   useEffect(() => {
-    console.log(selected, order);
     const sorted = [...proj].sort((a, b) =>
       a[selected] < b[selected] ? order : -order
     );
     setProj(sorted);
-    console.log(sorted);
   }, [selected, order]);
 
   const handleCat = (selectedOption) => {
@@ -76,42 +79,6 @@ const ProjectList = () => {
   };
   const handleOrder = (selectedOption) => {
     setOrder(selectedOption.value);
-  };
-
-  const dateFormat = (date) => {
-    const nth = (d) => {
-      if (d > 3 && d < 21) return 'th';
-      switch (d % 10) {
-        case 0:
-          return '';
-        case 1:
-          return 'st';
-        case 2:
-          return 'nd';
-        case 3:
-          return 'rd';
-        default:
-          return 'th';
-      }
-    };
-    const newDate = new Date(date);
-    const d = newDate.getDate();
-    const month = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ][newDate.getMonth()];
-
-    return `${newDate.getFullYear()} ${month} ${d} ${nth(d)}`;
   };
 
   return (
@@ -127,7 +94,9 @@ const ProjectList = () => {
         <StyledSelect
           options={orderBy}
           onChange={handleOrder}
-          defaultValue={orderBy.filter((option) => option.label === 'Desc')}
+          defaultValue={orderBy.filter(
+            (option) => option.label === 'Descending'
+          )}
         />
       </StyledSelectContainer>
       {proj.map((p, i) => (
@@ -140,7 +109,9 @@ const ProjectList = () => {
           {selected === 'finished' &&
             i < proj.length &&
             proj[i - 1]?.finished !== p.finished && (
-              <StyledCategory>{dateFormat(p.finished)}</StyledCategory>
+              <StyledCategory
+                dangerouslySetInnerHTML={dateFormat(p.finished)}
+              />
             )}
           <ProjectCard key={p.id} index={i + 1} {...p} />
         </>

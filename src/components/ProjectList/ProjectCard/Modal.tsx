@@ -7,6 +7,7 @@ import { Button, Grid, Typography } from '@material-ui/core';
 import { IProjects } from '../../../data/projects';
 import { StyledLink } from '../../../styles/StyledLink';
 import media from '../../../styles/style';
+import ProjectButtons from '../ProjectButtons';
 
 interface ModalProps {
   open: boolean;
@@ -183,23 +184,7 @@ const MuiModal: FunctionComponent<ModalProps & IProjects> = ({
             ))}
           </div>
           <div className="paragraph">{description.en}</div>
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            className="buttons"
-          >
-            <StyledLink href={demoURL}>
-              <Button variant="contained" color="primary" size="large">
-                Demo
-              </Button>
-            </StyledLink>
-            <StyledLink href={gitURL}>
-              <Button variant="outlined" color="primary" size="large">
-                Code
-              </Button>
-            </StyledLink>
-          </Grid>
+          <ProjectButtons demoURL={demoURL} gitURL={gitURL} />
         </Grid>
       </Grid>
     </StyledModal>

@@ -8,6 +8,7 @@ import Modal from './Modal';
 import StyledCard from './styles/card';
 import Skill from './styles/skill';
 import { StyledLink } from '../../../styles/StyledLink';
+import ProjectButtons from '../ProjectButtons';
 
 const ProjectCard: FunctionComponent<IProjects & { index: number }> = (
   props
@@ -66,7 +67,7 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = (
               </Skill>
             ))}
           </div>
-          <div className="paragraph">
+          <div className="paragraph" style={{ marginBottom: 5 }}>
             {description.en.split(' ').splice(0, 79).join(' ').concat('...')}
             <Link
               to={`/projects?project=${slug}`}
@@ -75,28 +76,7 @@ const ProjectCard: FunctionComponent<IProjects & { index: number }> = (
               Read more
             </Link>
           </div>
-          <Grid container direction="row" justify="flex-start">
-            <StyledLink href={demoURL}>
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                endIcon={<PublicIcon />}
-              >
-                Demo
-              </Button>
-            </StyledLink>
-            <StyledLink href={gitURL}>
-              <Button
-                variant="outlined"
-                color="primary"
-                size="large"
-                endIcon={<CodeIcon />}
-              >
-                Code
-              </Button>
-            </StyledLink>
-          </Grid>
+          <ProjectButtons demoURL={demoURL} gitURL={gitURL} />
         </Grid>
       </Grid>
       <Modal open={open} setOpen={setOpen} {...props} />

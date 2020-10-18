@@ -204,12 +204,6 @@ export const projects: IProjects[] = [
     gitURL: 'https://github.com/zeglarz/portfolio-webpage-v1',
     level: 6,
     finished: '2020-03-01',
-    get value() {
-      return this.category;
-    },
-    get label() {
-      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
-    },
   },
   {
     id: 5,
