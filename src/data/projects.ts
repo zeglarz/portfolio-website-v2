@@ -10,7 +10,7 @@ enum Stack {
   js = 'JavaScript',
   ts = 'TypeScript',
   react = 'React',
-  sc = 'styled-components/macro',
+  sc = 'Styled-Components',
   fm = 'Framer Motion',
   mui = 'Material UI',
   html = 'HTML',

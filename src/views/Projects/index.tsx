@@ -5,7 +5,7 @@ import Image from '../../components/Hero/Image';
 import StyledTop from '../../styles/Top';
 import ProjectList from '../../components/ProjectList/ProjectList';
 import Title from '../../styles/Title';
-import VisibilityIcon from '@material-ui/icons/Visibility';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
 import Banner from '../../components/Banner';
 
 const Index = (props): JSX.Element => {
@@ -48,7 +48,7 @@ const Index = (props): JSX.Element => {
         <div className={'paragraph'}>{body}</div>
         <ProjectList />
       </div>
-      <Banner {...banner} />
+      <Banner {...banner} endIcon={<ContactMailIcon />} />
     </Container>
   );
 };

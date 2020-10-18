@@ -9,6 +9,7 @@ interface IBanner {
   content: string;
   bText: string;
   bPath: string;
+  endIcon: JSX.Element;
 }
 
 const Banner: FunctionComponent<IBanner> = ({
@@ -17,6 +18,7 @@ const Banner: FunctionComponent<IBanner> = ({
   content,
   bText,
   bPath,
+  endIcon,
 }) => {
   return (
     <div className="bottom">
@@ -34,7 +36,7 @@ const Banner: FunctionComponent<IBanner> = ({
           component={Link}
           variant="outlined"
           to={bPath}
-          endIcon=""
+          endIcon={endIcon}
           size="large"
         >
           {bText}

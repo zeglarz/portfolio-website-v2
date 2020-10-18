@@ -13,8 +13,7 @@ import SkillListElement from './styles/item';
 import StyledImageSection from './styles/image';
 import Header from './styles/header';
 import StyledAbout from './styles/main';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import { Link } from 'react-router-dom';
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import Banner from '../../components/Banner';
 
 const About = (props): JSX.Element => {
@@ -113,7 +112,7 @@ const About = (props): JSX.Element => {
             </ListContainer>
           </div>
         </div>
-        <Banner {...banner} />
+        <Banner {...banner} endIcon={<AccountTreeIcon />} />
       </Container>
     </StyledAbout>
   );
