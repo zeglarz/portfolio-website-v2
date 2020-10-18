@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
 import Select from 'react-select';
 import ProjectCard from './ProjectCard/ProjectCard';
@@ -100,7 +100,7 @@ const ProjectList = () => {
         />
       </StyledSelectContainer>
       {proj.map((p, i) => (
-        <>
+        <Fragment key={p.demoURL}>
           {selected === 'category' &&
             i < proj.length &&
             proj[i - 1]?.category !== p.category && (
@@ -114,7 +114,7 @@ const ProjectList = () => {
               />
             )}
           <ProjectCard key={p.id} index={i + 1} {...p} />
-        </>
+        </Fragment>
       ))}
     </>
   );

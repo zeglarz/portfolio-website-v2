@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import VisibilityIcon from '@material-ui/icons/Visibility';

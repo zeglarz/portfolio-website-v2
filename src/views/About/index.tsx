@@ -1,5 +1,5 @@
 import React, { MutableRefObject, useEffect, useRef } from 'react';
-import { Button, Container } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import { motion } from 'framer-motion';
 import Hero from '../../components/Hero';
 import { TECHS as techs } from '../../data/skills';

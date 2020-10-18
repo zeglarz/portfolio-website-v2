@@ -7,7 +7,6 @@ import {
   menuVariants,
   backdropVariants,
   listVariants,
-  childrenTransition,
   childrenVariants,
 } from './animations';
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container } from '@material-ui/core';
 import Image from '../../components/Hero/Image';
 import Hero from '../../components/Hero';

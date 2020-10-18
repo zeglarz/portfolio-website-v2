@@ -219,7 +219,7 @@ export const projects: IProjects[] = [
            The main goal of the project was to deliver an app that will connect people interested in books. My field of 
            responsibility is to implement fetching book data using Google REST API, connecting with the SQL database 
            in the backend, and handling searching and presenting of the book data on the front-end. All of the requirements
-            were fulfilled`,
+            were fulfilled.`,
       pl: `Projekt grupowy, który był końcowym projektem zaliczeniowym bootcampu full-stackowego, który odbywałem 
            na przełomie roku 2019/2020 w Connectis w Warszawie. Zespół poza mną liczył 3 osoby. Głównym założeniem projektu
            było storzenie serwisu spłecznośćiowego skupiającego miłośników książek. Moja odpowiedzialność za 

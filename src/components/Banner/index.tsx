@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Title from '../../styles/Title';
-import { Button, Container } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 interface IBanner {

@@ -105,7 +105,7 @@ const Right: FunctionComponent<{ showVert?: boolean }> = ({ showVert }) => {
           {icons.map((icon) => {
             if (icon.footer) {
               return (
-                <motion.div whileHover={{ y: -5, scale: 1.05 }}>
+                <motion.div whileHover={{ y: -5, scale: 1.05 }} key={icon.link}>
                   <StyledLink href={icon.link} className="icon">
                     <Icon
                       icon={icon.icon}

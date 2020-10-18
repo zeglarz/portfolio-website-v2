@@ -68,7 +68,7 @@ const App = (): JSX.Element => {
               {data.views.map((route) => {
                 const { path, pageName, Component, ...rest } = route;
                 return (
-                  <Route exact path={path}>
+                  <Route exact path={path} key={path}>
                     <Helmet>
                       <title>{pageName}</title>
                     </Helmet>

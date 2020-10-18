@@ -41,7 +41,6 @@ const Index = ({ toggleTheme, showIntro, theme, menuOpen, setMenuOpen }) => {
   };
 
   useEffect(() => {
-    console.log(direction);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolledToTop]);

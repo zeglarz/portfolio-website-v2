@@ -3,9 +3,8 @@ import { useHistory } from 'react-router-dom';
 import Dialog from '@material-ui/core/Dialog';
 import styled from 'styled-components/macro';
 import Zoom from '@material-ui/core/Zoom';
-import { Button, Grid, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { IProjects } from '../../../data/projects';
-import { StyledLink } from '../../../styles/StyledLink';
 import media from '../../../styles/style';
 import ProjectButtons from '../ProjectButtons';
 
