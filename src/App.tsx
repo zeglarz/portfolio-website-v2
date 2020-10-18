@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 // Themes
@@ -63,20 +63,22 @@ const App = (): JSX.Element => {
           setMenuOpen={setMenuOpen}
         />
         <PageWrapper>
-          <Switch>
-            {data.views.map((route) => {
-              const { path, pageName, Component, ...rest } = route;
-              return (
-                <Route exact path={path}>
-                  <Helmet>
-                    <title>{pageName}</title>
-                  </Helmet>
-                  <Component {...rest} />
-                </Route>
-              );
-            })}
-            <Redirect to="/home" />
-          </Switch>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Switch>
+              {data.views.map((route) => {
+                const { path, pageName, Component, ...rest } = route;
+                return (
+                  <Route exact path={path}>
+                    <Helmet>
+                      <title>{pageName}</title>
+                    </Helmet>
+                    <Component {...rest} />
+                  </Route>
+                );
+              })}
+              <Redirect to="/home" />
+            </Switch>
+          </Suspense>
           <ScrollIndicator
             showMouse={isScrollable}
             isTrueScrollable={isTrueScrollable}

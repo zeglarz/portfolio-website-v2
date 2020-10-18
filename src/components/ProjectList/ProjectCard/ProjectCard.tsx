@@ -1,13 +1,13 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Button, Grid, Typography } from '@material-ui/core';
+import CodeIcon from '@material-ui/icons/Code';
+import PublicIcon from '@material-ui/icons/Public';
 import { IProjects } from '../../../data/projects';
 import Modal from './Modal';
 import StyledCard from './styles/card';
 import Skill from './styles/skill';
 import { StyledLink } from '../../../styles/StyledLink';
-import CodeIcon from '@material-ui/icons/Code';
-import PublicIcon from '@material-ui/icons/Public';
 
 const ProjectCard: FunctionComponent<IProjects & { index: number }> = (
   props

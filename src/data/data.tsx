@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import VisibilityIcon from '@material-ui/icons/Visibility';
-import Home from '../views/Home';
-import About from '../views/About';
-import Contact from '../views/Contact';
-import Projects from '../views/Projects';
+
+const Home = lazy(() => import('../views/Home'));
+const About = lazy(() => import('../views/About'));
+const Contact = lazy(() => import('../views/Contact'));
+const Projects = lazy(() => import('../views/Projects'));
 
 export default {
   projectName: 'Konrad Rudnicki',

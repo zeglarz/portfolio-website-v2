@@ -4,6 +4,7 @@ import newsfeed from '../assets/projects/newsfeed.png';
 import randomperson from '../assets/projects/randomperson.png';
 import socialape from '../assets/projects/socialape.png';
 import portfolio from '../assets/projects/portfolio.png';
+import portfoliov2 from '../assets/projects/portfolio-v2.jpg';
 
 enum Stack {
   js = 'JavaScript',
@@ -48,6 +49,10 @@ export interface IProjects {
   slug: string;
   demoURL: string;
   gitURL: string;
+  level: number;
+  finished: string;
+  label: string;
+  value: string;
 }
 
 export const projects: IProjects[] = [
@@ -84,6 +89,14 @@ export const projects: IProjects[] = [
     slug: 'newsfeed',
     demoURL: 'https://newsify.konradrudnicki.com',
     gitURL: 'https://github.com/zeglarz/News-Feed-API',
+    level: 5,
+    finished: '2020-02-01',
+    get value() {
+      return this.category;
+    },
+    get label() {
+      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
+    },
   },
   {
     id: 2,
@@ -93,11 +106,11 @@ export const projects: IProjects[] = [
       pl: 'Aplikacja mobilna Flutter | Projekt Samodzielny',
     },
     description: {
-      en: `My first Flutter project which I published in Google Play Store. It features generation of random faux
-           data of people along with their picture. Data is fetched using external REST API from https://randomuser.me. 
-           The project taught me number of things such as working with http requests in Flutter via http package as well
-           as it gave me good perspective on OOP, especially helped me grasp a notion of classes. It's simple but, yet I got
-           good perspective on a full spectrum of dev cycle from planning, designing, coding to deployment to Google Play
+      en: `My first Flutter project which I published in Google Play Store. It features the generation of random faux
+           data of people along with their pictures. Data is fetched using external REST API from https://randomuser.me. 
+           The project taught me several things such as working with Http requests in Flutter via the "Http" package as well
+           as it gave me a good perspective on OOP, especially helped me grasp a notion of classes. It's simple but, yet I got
+           a good perspective on a full spectrum of dev cycle from planning, designing, coding to deployment to Google Play
            Store.`,
       pl: `Mój jeden z pierwszych samodzielnych projektów napisany we Flutterze, który zdecydowałem się opublikować 
            w Google Play Store. Aplikacja służy do generowania randomowych danych personalnych fikcyjnych osób, które w 
@@ -116,6 +129,14 @@ export const projects: IProjects[] = [
     demoURL:
       'https://play.google.com/store/apps/details?id=com.konradrudnicki.randompersongenerator',
     gitURL: 'https://github.com/zeglarz/random-person-generator-flutter',
+    level: 6,
+    finished: '2020-05-01',
+    get value() {
+      return this.category;
+    },
+    get label() {
+      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
+    },
   },
   {
     id: 3,
@@ -125,11 +146,11 @@ export const projects: IProjects[] = [
       pl: 'Create React App | Projekt Samodzielny z Bootcampu Connects',
     },
     description: {
-      en: `The app is social media site for developers. It allows users to sign up and create portfolio 
-           profile page and see profiles of other users. Logged user is also able to read, write, comment and 
-           like posts. Profile page features top user’s repositories from GitHub which are fetched from REST 
-           API. Backend is based on NodeJS which connects to MongoDB database. In this project I first used state
-           management tool Redux. It helped me got broader understanding of `,
+      en: `The app is a social media site for developers. It allows users to sign up and create a portfolio 
+           profile page and see profiles of other users. Logged user is also able to read, write, comment, and like posts. Profile page features top user’s repositories from GitHub which are fetched from REST 
+           API. Backend is based on NodeJS which connects to the MongoDB database. In this project, I first used the state
+           management tool Redux. It helped me got a broader understanding of state management ins and outs as well as 
+           working with the non-relational DB such as MongoDB which in my opinion works super well with NodeJS.`,
       pl: `Mój autorski pomysł na stworzenie aplikacji webowej dedykowanej developerom. Aplikacja zbydowana została
            przy wykorzystaniu stack-u MERN, czyli React, NodeJS z Express oraz MongoDB, czyli klasyka gatunku. Użytkownik po 
            rejestracji ma możliwość edycji oraz uzupełnieniu swojego publicznego profilu z miejscami pracy, edukacją, 
@@ -153,6 +174,14 @@ export const projects: IProjects[] = [
     slug: 'devbook',
     demoURL: 'https://devbook.konradrudnicki.com',
     gitURL: 'https://github.com/zeglarz/DevBook',
+    level: 7,
+    finished: '2020-04-01',
+    get value() {
+      return this.slug;
+    },
+    get label() {
+      return this.title;
+    },
   },
   {
     id: 4,
@@ -162,12 +191,13 @@ export const projects: IProjects[] = [
       pl: 'Strona Statyczna | Projekt Samodzielny',
     },
     description: {
-      en: `My very first portfolio website I've ever built. This project thought me a lot about HTML and CSS. This 
-           is my first and probably last frameworkless project as future one are going to be build using React and Angular.
+      en: `The very first portfolio website I've ever built. This project thought me a lot about HTML and CSS. This 
+           is my first and probably last frameworkless project as future ones are going to be build using React and Angular.
            Even though this project was mainly HTML I tried to separate data into several components which clean the code 
-           as well as give me more straight forward way for future updates. 
-           I've used few 3rd party libraries, main one was jQuery, but also I used Superslides for main full screen
-           slideshow, owlCarousel for charts and Isotope for filtering my projects by categories.`,
+           as well as give me a more straight forward way for future updates. 
+           I've used a few 3rd party libraries, the main one was jQuery, but also I used Superslides for the main full-screen
+           slideshow, owlCarousel for charts, and Isotope for filtering my projects by categories. It also lets a user pick 
+           one of two available languages - Polish or English. The language changes dynamically behind the scenes without the need to reload the page.`,
       pl: `Mój pierwszy projekt strony - portfolio, którą w dalszym ciągu rozwijam i aktualizuje. Ten projekt nauczył
            mnie wiele odnośnie do pracy z HTML-em CSS-em oraz JavaScript, a w szczególności z biblioteką jQuery. Jest to 
            zapewne mój ostatni projekt bez frameworku, kolejne będą wykorzystywały takie frameworki jak m.in. React i 
@@ -190,6 +220,14 @@ export const projects: IProjects[] = [
     slug: 'portfolio',
     demoURL: 'https://konradrudnicki.com',
     gitURL: 'https://github.com/zeglarz/portfolio-webpage-v1',
+    level: 6,
+    finished: '2020-03-01',
+    get value() {
+      return this.category;
+    },
+    get label() {
+      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
+    },
   },
   {
     id: 5,
@@ -200,10 +238,8 @@ export const projects: IProjects[] = [
         'React Create App | Projekt zespołowy zaliczeniowy BootCamp Connectis ',
     },
     description: {
-      en: `Project BookMates was coded by group of 4 people as final assignment for Connectis' C_School Full 
-           Stack Boot Camp. App is build using React in front-end, NodeJS in back-end coupled with PostgreSQL. The main
-           goal of a project was to deliver an app that will connect people interested in books. My field of responsibility
-           is to implement fetching book data using Google REST API, connecting with SQL database in the backend and 
+      en: `Project BookMates was coded by a group of 4 people as the final assignment for Connectis' C_School Full 
+           Stack Boot Camp. The app is build using React in the front-end, NodeJS in the back-end coupled with PostgreSQL. The main goal of the project was to deliver an app that will connect people interested in books. My field of responsibility is to implement fetching book data using Google REST API, connecting with the SQL database in the backend, and 
            handling searching and presenting of the book data on the front-end. All of the requirements were fulfilled`,
       pl: `Projekt grupowy, który był końcowym projektem zaliczeniowym bootcampu full-stackowego, który odbywałem 
            na przełomie roku 2019/2020 w Connectis w Warszawie. Zespół poza mną liczył 3 osoby. Głównym założeniem projektu
@@ -228,6 +264,14 @@ export const projects: IProjects[] = [
     slug: 'bookmates',
     demoURL: 'https://bookmates.krzysztofziemski.com',
     gitURL: 'https://github.com/KrzysztofZiemski/bookmates',
+    level: 8,
+    finished: '2020-04-15',
+    get value() {
+      return this.category;
+    },
+    get label() {
+      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
+    },
   },
   {
     id: 6,
@@ -237,15 +281,12 @@ export const projects: IProjects[] = [
       pl: 'Gatsby | Prejekt Tutorialowy',
     },
     description: {
-      en: `This was a follow along guide on how to create twitter clone app which I decided to undertake for the purpose of familiarizing myself
-           with Firebase services. This over 11 hour tutorial was very helpful with conveying ins and outs of firebase
-           functionality such as storage, cloud functions, authentication and authorization and last but not least to
-           perform CRUD operations on non-sql database provided by Firebase. The project gave me some more practice with
-           state management tool Redux. I made some twists and turns to tweak this follow-along project to my liking. 
-           For example, I made use of skeleton loading for the first time which is more modern approach over old turning
+      en: `This was a follow-along tutorial on creating a Twitter clone app that I decided to undertake for the purpose of familiarizing myself
+           with Firebase services. This over 11-hour tutorial was very helpful with conveying ins and outs of firebase
+           functionality such as storage, cloud functions, authentication, and authorization and last but not least to perform CRUD operations on non-SQL database provided by Firebase. The project gave me some more practice with the state management tool Redux. I made some twists and turns to tweak this follow-along project to my liking. 
+           For example, I made use of skeleton loading for the first time which is a more modern approach over the old turning
            wheel when data loads. More and more big apps are using it nowadays and basically what it is, is as the name
-           suggest seeing a skeleton in form of blocks and circles which pulse in exact place of where data is going to 
-           reveal itself when it's been fetched.`,
+           suggests seeing a skeleton in form of blocks and circles which pulse in the exact place where data is going to reveal itself when it's been fetched.`,
       pl: `Projekt tutorial-owy, który podjąłem w celu nauczenia się korzystania z funkcjonalności dostarczonej przez
            serwis Firebase i polegał on na stworzeniu klona Twitter'a. ten ponad 11-godzinny kurs pozwolił mi nauczyć się korzystać ze storage, cloud functions, 
            jak i komunikacji z nierelacyjną bazą danych oraz uwierzytelniania użytkownika. Tutorial pozwolił mi również 
@@ -259,6 +300,14 @@ export const projects: IProjects[] = [
     slug: 'socialape',
     demoURL: 'https://socialape-659f4.web.app',
     gitURL: 'https://github.com/zeglarz/socialape-firebase-frontend',
+    level: 6,
+    finished: '2020-04-01',
+    get value() {
+      return this.category;
+    },
+    get label() {
+      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
+    },
   },
   {
     id: 7,
@@ -268,18 +317,17 @@ export const projects: IProjects[] = [
       pl: 'Create React App TypeScript | Portfolio Personalne 2 odsłona',
     },
     description: {
-      en: `The second version of my portfolio website, this time made with React. The development process was very
-challenging and full of various pitfalls, but I learned a lot during this time. I must admit that by far the hardest was to learn TypeScript and make the compiler happy for the most part. I won't be lying to say that I had a few moments of doubt and had thoughts of going back to old and familiar JavaScript, but I forced my way through, and I will never forget this lesson. Hopefully, will I have a bright future in my next TS endeavors. For the
-visual part of the website, I worked with Styled-Components which I learned to love and won't ditch it for other styling solutions anytime soon. I also gave a shot and try my best with Framer-Motion in regard to making
-my page more visually appealing with help of animations. Working with framer-motion proved easier than I initially
-had thought, I'm very happy with the final result, and I hope you would enjoy it too as well.`,
+      en: `The second version of my portfolio website, this time made with React. The development process was very challenging and full of various pitfalls, but I learned a lot during this time. I must admit that by far the hardest was to learn TypeScript and make the compiler happy for the most part. I won't be lying to say that I had a few moments of doubt and had thoughts of going back to old and familiar JavaScript, but I forced my way through, and I will never forget this lesson. Hopefully, will I have a bright future in my next TS endeavors? For the
+           visual part of the website, I worked with Styled-Components which I learned to love and won't ditch it for other styling solutions anytime soon. I also gave a shot and try my best with Framer-Motion in regard to making
+           my page more visually appealing with help of animations. Working with framer-motion proved easier than I initially
+           had thought, I'm very happy with the final result, and I hope you would enjoy it too as well.`,
       pl: `Druga odsłona mojego osobistego portfolio, tym razem napisana w Reakcie. Projekt ten okazał się dużym
-             wyzwaniem, podczas którego nauczyłem się wielu nowych rzeczy. Pierwszą i najważniejszą jest TypeScript. Jest
-             to pierwsza strona od postaw napisana w tymże języku. Nie ukrywam, że krzywa uczenia była przy tym projekcie
-             dość stroma, miałem kilka momentów zwątpień, kiedy kompilator rozbłyskiwał czerwonymi kolorami niczym choinka
-              i myślałem o powrocie do starego poczciwego JavaScript-a, ale nie,
-              powiedziałem sobie, że się nie poddam! I nie żałuje tej decyzji, gdyż nie tylko udało mi się dowieźć ten projekt do końca,
-              ale chyba nawet polubiliśmy się na tyle, że kompilator już tak często się na mnie nie złości.`,
+           wyzwaniem, podczas którego nauczyłem się wielu nowych rzeczy. Pierwszą i najważniejszą jest TypeScript. Jest
+           to pierwsza strona od postaw napisana w tymże języku. Nie ukrywam, że krzywa uczenia była przy tym projekcie
+           dość stroma, miałem kilka momentów zwątpień, kiedy kompilator rozbłyskiwał czerwonymi kolorami niczym choinka
+           i myślałem o powrocie do starego poczciwego JavaScript-a, ale nie,
+           powiedziałem sobie, że się nie poddam! I nie żałuje tej decyzji, gdyż nie tylko udało mi się dowieźć ten projekt do końca,
+           ale chyba nawet polubiliśmy się na tyle, że kompilator już tak często się na mnie nie złości.`,
     },
     stack: [
       Stack.react,
@@ -291,9 +339,17 @@ had thought, I'm very happy with the final result, and I hope you would enjoy it
       Stack.sketch,
     ],
     category: 'apps',
-    img: portfolio,
+    img: portfoliov2,
     slug: 'portfolio-v2',
     demoURL: 'https://socialape-659f4.web.app',
     gitURL: 'https://github.com/zeglarz/socialape-firebase-frontend',
+    level: 10,
+    finished: '2020-10-15',
+    get value() {
+      return this.category;
+    },
+    get label() {
+      return this.category.charAt(0).toUpperCase() + this.category.slice(1);
+    },
   },
 ];
