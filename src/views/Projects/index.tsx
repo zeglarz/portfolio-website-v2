@@ -45,7 +45,7 @@ const Index = (props): JSX.Element => {
             <div className="line">{sLine}</div>
           </div>
         </Title>
-        <div className={'paragraph'}>{body}</div>
+        <div className="paragraph">{body}</div>
         <ProjectList />
       </div>
       <Banner {...banner} endIcon={<ContactMailIcon />} />
