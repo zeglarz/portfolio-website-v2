@@ -31,6 +31,11 @@ export const TECHS: ITechObj = {
         image: img.react,
       },
       {
+        name: 'Flutter',
+        proficiency: LEVELS.beginner,
+        image: img.flutter,
+      },
+      {
         name: 'Sass',
         proficiency: LEVELS.competent,
         image: img.sass,
